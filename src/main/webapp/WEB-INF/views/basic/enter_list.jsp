@@ -13,6 +13,7 @@
 <body>
     <main>
         <div class="enter_list_area">
+            <a href="/">메인으로고고</a>
             <table>
                 <thead>
                     <tr>
@@ -33,12 +34,14 @@
                 </tbody>
             </c:forEach>
             </table>
+            <button id="enter_popup_button">기획사 정보 추가</button>
         </div>
-        <div class="add_ent_popup">
+        <div class="add_ent_popup" style="display: none;">
             <div class="add_ent_area">
                 <p class>기획사 이름</p>
                 <input type="text" id="ent_name">
                 <button id="add_ent">등록</button>
+                <button id="cancel_ent">닫기</button>
             </div>
         </div>
     </main>
