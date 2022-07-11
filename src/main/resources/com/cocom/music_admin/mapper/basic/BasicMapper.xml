@@ -10,4 +10,7 @@
         values
         (#{gr_name})
     </insert>
+    <delete id="deleteGenreInfo">
+        delete from genre_info where gr_seq = #{seq}
+    </delete>
 </mapper>

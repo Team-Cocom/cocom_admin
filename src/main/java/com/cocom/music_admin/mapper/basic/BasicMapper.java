@@ -10,4 +10,5 @@ import com.cocom.music_admin.data.basic.GenreInfo;
 public interface BasicMapper {
     public List<GenreInfo> selectAllGenreInfo();
     public void insertGenreInfo(String name); 
+    public void deleteGenreInfo(Integer seq);
 }
