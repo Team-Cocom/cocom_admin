@@ -16,6 +16,9 @@
     <select id="selectAllEnterInfo" resultType="com.cocom.music_admin.data.basic.EnterInfo">
         select * from enter_info
     </select>
+    <select id="selectEnterName" resultType="java.lang.Integer">
+        select count(*) from enter_info where ent_name = #{name}
+    </select>
     <insert id="insertEnterInfo">
         insert into enter_info (ent_name)
         values
@@ -24,6 +27,9 @@
     <delete id="deleteEnterInfo">
     DELETE FROM enter_info
 WHERE ent_seq=#{ent_seq};
+</delete>
+    <delete id="deleteGenreInfo">
+        delete from genre_info where gr_seq = #{seq}
     </delete>
     <delete id="deleteGenreInfo">
         delete from genre_info where gr_seq = #{seq}
@@ -43,4 +49,18 @@ WHERE ent_seq=#{ent_seq};
     <delete id="deleteCountryInfo">
         delete from country_info where cr_seq = #{seq}
     </delete>
+    <insert id="insertReleaseCompany">
+    INSERT INTO release_company_info
+(rci_name)
+VALUES(#{rci_name});
+    </insert>
+    <select id="selectAllReleaseInfo" resultType="com.cocom.music_admin.data.basic.ReleaseCompanyInfo">
+     select * from release_company_info
+    </select>
+    <delete id="deleteReleaseInfo">
+    DELETE FROM release_company_info
+WHERE rci_seq=#{rci_seq};
+
+    </delete>
+    
 </mapper>

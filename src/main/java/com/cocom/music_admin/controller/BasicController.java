@@ -20,12 +20,21 @@ public class BasicController {
     }
     @GetMapping("/enter/list")
     public String getEnterList(Model model){
+<<<<<<< HEAD
         model.addAttribute("list", enter_mapper.selectAllEnterInfo());
+=======
+        model.addAttribute("list", basic_mapper.selectAllEnterInfo());
+>>>>>>> a68b40e82393dfba480012dfc1931dcc066ea11b
         return "/basic/enter_list";
     }
     @GetMapping("/country/list")
     public String getCountryList(Model model){
         model.addAttribute("list",basic_mapper.selectAllCountryInfo());
         return "/basic/country_list";
+    }
+    @GetMapping("/release/list")
+    public String getReleaseList(Model model) {
+        model.addAttribute("list", basic_mapper.selectAllReleaseInfo());
+        return "/basic/release_list";
     }
 }
