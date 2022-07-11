@@ -24,6 +24,12 @@
     <delete id="deleteEnterInfo">
     DELETE FROM enter_info
 WHERE ent_seq=#{ent_seq};
+<<<<<<< HEAD
+=======
+    </delete>
+    <delete id="deleteGenreInfo">
+        delete from genre_info where gr_seq = #{seq}
+>>>>>>> basic_work
     </delete>
     
     <select id="selectAllCountryInfo" resultType="com.cocom.music_admin.data.basic.CountryInfo">
