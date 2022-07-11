@@ -10,5 +10,6 @@
 <body>
     <h1>메인페이지</h1>
     <a href="/genre/list">장르 정보</a>
+    <a href="/enter/list">기획사정보 정보</a>
 </body>
 </html>

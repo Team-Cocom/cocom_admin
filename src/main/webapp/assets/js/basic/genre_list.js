@@ -13,6 +13,7 @@ $(function(){
             type:"put",
             success:function(r){
                 alert(r.message);
+                location.reload();
             }
         })
     });
