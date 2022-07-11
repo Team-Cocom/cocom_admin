@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cocom.music_admin.data.basic.EnterInfo;
+
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 
@@ -33,7 +33,7 @@ public class BasicAPIController {
         resultMap.put("message", name+"장르를 추가하였습니다");
         return resultMap;
     }
-<<<<<<< HEAD
+
     @PutMapping("/enter/add")
     public Map<String, Object> putenter(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -52,7 +52,7 @@ public class BasicAPIController {
         return resultMap;
 
     }
-=======
+
     @DeleteMapping("/genre/delete")
     public Map<String,Object> deleteGenre(@RequestParam Integer seq){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -61,9 +61,7 @@ public class BasicAPIController {
         resultMap.put("message", "장르를 삭제 하였습니다");
         return resultMap;
     }
-<<<<<<< HEAD
->>>>>>> 96b4d1e964177ac8d6c46e138aedf4788197a0fc
-=======
+
 
     @PutMapping("/country/add")
     public Map<String,Object> putCountry(@RequestParam String name){
@@ -88,5 +86,5 @@ public class BasicAPIController {
         resultMap.put("message", "국가이름을 삭제 하였습니다");
         return resultMap;
     }
->>>>>>> basic_work
+
 }
