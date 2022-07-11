@@ -4,12 +4,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cocom.music_admin.data.basic.EnterInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
+
 
 @RestController
 @RequestMapping("/api")
@@ -22,5 +25,23 @@ public class BasicAPIController {
         resultMap.put("status", true);
         resultMap.put("message", name+"장르를 추가하였습니다");
         return resultMap;
+    }
+    @PutMapping("/enter/add")
+    public Map<String, Object> putenter(@RequestParam String name) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        
+        basic_mapper.insertEnterInfo(name);
+        resultMap.put("status", true);
+        resultMap.put("message", name+"기획사를 추가하였습니다.");
+        return resultMap;
+    }
+    @DeleteMapping("/enter/delete")
+    public Map<String, Object> deleteEnterInfo(@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteEnterInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "기획사가 삭제되었습니다.");
+        return resultMap;
+
     }
 }

@@ -10,4 +10,17 @@
         values
         (#{gr_name})
     </insert>
+    <select id="selectAllEnterInfo" resultType="com.cocom.music_admin.data.basic.EnterInfo">
+        select * from enter_info
+    </select>
+    <insert id="insertEnterInfo">
+        insert into enter_info (ent_name)
+        values
+        (#{ent_name})
+    </insert>
+    <delete id="deleteEnterInfo">
+    DELETE FROM enter_info
+WHERE ent_seq=#{ent_seq};
+
+    </delete>
 </mapper>
