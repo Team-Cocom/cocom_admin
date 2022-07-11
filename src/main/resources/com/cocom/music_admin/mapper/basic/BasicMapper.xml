@@ -13,4 +13,61 @@
     <select id="dpchkGenreNames" resultType="java.lang.Integer">
         select count(*) from genre_info where gr_name = #{name}
     </select>
+<<<<<<< HEAD
+=======
+    <insert id="insertEnterInfo">
+        insert into enter_info (ent_name)
+        values
+        (#{ent_name})
+    </insert>
+    <delete id="deleteEnterInfo">
+    DELETE FROM enter_info
+WHERE ent_seq=#{ent_seq};
+</delete>
+    <delete id="deleteGenreInfo">
+        delete from genre_info where gr_seq = #{seq}
+    </delete>
+    
+    <select id="selectAllCountryInfo" resultType="com.cocom.music_admin.data.basic.CountryInfo">
+        select * from country_info
+    </select>
+    <select id="selectCountryName" resultType="java.lang.Integer">
+        select count(*) from country_info where cr_name = #{name}
+    </select>
+    <insert id="insertCountryInfo">
+        insert into country_info (cr_name)
+        values
+        (#{name})
+    </insert>
+    <delete id="deleteCountryInfo">
+        delete from country_info where cr_seq = #{seq}
+    </delete>
+    <insert id="insertReleaseCompany">
+    INSERT INTO release_company_info
+    (rci_name)
+    VALUES(#{rci_name});
+    </insert>
+    <select id="selectAllReleaseInfo" resultType="com.cocom.music_admin.data.basic.ReleaseCompanyInfo">
+     select * from release_company_info
+    </select>
+    <delete id="deleteReleaseInfo">
+        DELETE FROM release_company_info
+        WHERE rci_seq=#{rci_seq};
+    </delete>
+    <insert id="insertMusicInfo">
+    INSERT INTO music_info
+    (mu_name, mu_ai_seq, mu_lyrics, mu_ab_seq, mu_img_file, mu_music_file, mu_li_seq, mu_playtime, mu_explain_txt, mu_age)
+    VALUES
+    (#{mu_name},#{mu_ai_seq},#{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age})
+
+    </insert>
+    <select id="selectAllfromMusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info
+        where mu_name like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectAllfromMusicPageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from music_info where mu_name like '%${keyword}%'
+    </select>
+>>>>>>> basic_work
 </mapper>
