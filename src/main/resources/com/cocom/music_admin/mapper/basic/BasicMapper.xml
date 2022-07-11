@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cocom.music_admin.mapper.basic.BasicMapper">
+    <select id="selectAllGenreInfo" resultType="com.cocom.music_admin.data.basic.GenreInfo">
+        select * from genre_info
+    </select>
+    <insert id="insertGenreInfo">
+        insert into genre_info (gr_name)
+        values
+        (#{gr_name})
+    </insert>
+</mapper>
