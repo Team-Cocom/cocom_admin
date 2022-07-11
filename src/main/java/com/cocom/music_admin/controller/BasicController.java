@@ -15,6 +15,7 @@ public class BasicController {
     @Autowired BasicMapper enter_mapper;
 
     @GetMapping("/genre/list")
+
     public String getGenreList(Model model){
         model.addAttribute("list",basic_mapper.selectAllGenreInfo());
         return "/basic/genre/list";
