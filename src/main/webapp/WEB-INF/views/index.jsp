@@ -9,10 +9,5 @@
 </head>
 <body>
     <h1>메인페이지</h1>
-<<<<<<< HEAD
-    <a href="/genre/list">장르 정보</a>
-    <a href="/enter/list">기획사정보 정보</a>
-=======
->>>>>>> develop
 </body>
 </html>

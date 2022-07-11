@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 
@@ -25,7 +22,7 @@ public class BasicAPIController {
     public Map<String,Object> putGenre(@RequestParam String name){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         Integer isDuplicateName = basic_mapper.selectGenreName(name);
-        if(isDuplicateName != null){
+        if(isDuplicateName > 0 ){
             resultMap.put("status", false);
             resultMap.put("message", name+"은 중복 된 장르 입니다");
             return resultMap;
@@ -36,14 +33,16 @@ public class BasicAPIController {
         resultMap.put("message", name+"장르를 추가하였습니다");
         return resultMap;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
     @PutMapping("/enter/add")
     public Map<String, Object> putenter(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
-        
+        Integer isDuplicateName = basic_mapper.selectEnterName(name);
+        if(isDuplicateName > 0){
+            resultMap.put("status", false);
+            resultMap.put("message", name+"은 중복 된 기획사 입니다");
+            return resultMap;
+        }
         basic_mapper.insertEnterInfo(name);
         resultMap.put("status", true);
         resultMap.put("message", name+"기획사를 추가하였습니다.");
@@ -67,15 +66,13 @@ public class BasicAPIController {
         resultMap.put("message", "장르를 삭제 하였습니다");
         return resultMap;
     }
-<<<<<<< HEAD
-=======
 
 
     @PutMapping("/country/add")
     public Map<String,Object> putCountry(@RequestParam String name){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         Integer isDuplicateName = basic_mapper.selectCountryName(name);
-        if(isDuplicateName != null){
+        if(isDuplicateName > 0 ){
             resultMap.put("status", false);
             resultMap.put("message", name+"은 중복 된  국가입니다");
             return resultMap;
@@ -94,6 +91,24 @@ public class BasicAPIController {
         resultMap.put("message", "국가이름을 삭제 하였습니다");
         return resultMap;
     }
+    @PutMapping("/release/add")
+    public Map<String, Object> insertReleaseCompany(@RequestParam String name) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        
+        basic_mapper.insertReleaseCompany(name);
+        
+        resultMap.put("status", true);
+        resultMap.put("message", "발매사 이름을 추가하였습니다.");
+        
+        return resultMap;
+    }
+    @DeleteMapping("/release/delete")
+    public Map<String, Object> deleteReleaseInfo(@RequestParam Integer seq) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteReleaseInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message","발매사 이름을 삭제하였습니다.");
+        return resultMap;
+    }
 
->>>>>>> develop
 }

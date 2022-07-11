@@ -9,6 +9,7 @@ import com.cocom.music_admin.data.basic.EnterInfo;
 
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
+import com.cocom.music_admin.data.basic.ReleaseCompanyInfo;
 
 @Mapper
 public interface BasicMapper {
@@ -18,15 +19,19 @@ public interface BasicMapper {
 
     public List<EnterInfo> selectAllEnterInfo();
     public void insertEnterInfo(String name);
+    public Integer selectEnterName(String name);
+
     public void deleteEnterInfo(Integer seq);
 
     public void deleteGenreInfo(Integer seq);
 
-<<<<<<< HEAD
-=======
     public List<CountryInfo> selectAllCountryInfo();
     public Integer selectCountryName(String name);
     public void insertCountryInfo(String name); 
     public void deleteCountryInfo(Integer seq);
->>>>>>> develop
+
+    public void insertReleaseCompany(String name);
+    public List<ReleaseCompanyInfo> selectAllReleaseInfo();
+    public void deleteReleaseInfo(Integer seq);
+
 }
