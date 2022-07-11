@@ -15,4 +15,9 @@ public class BasicController {
         model.addAttribute("list",basic_mapper.selectAllGenreInfo());
         return "/basic/genre/list";
     }
+    @GetMapping("/country/list")
+    public String getCountryList(Model model){
+        model.addAttribute("list",basic_mapper.selectAllCountryInfo());
+        return "/basic/country_list";
+    }
 }

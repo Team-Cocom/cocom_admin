@@ -9,6 +9,5 @@
 </head>
 <body>
     <h1>메인페이지</h1>
-    <a href="/genre/list">장르 정보</a>
 </body>
 </html>

@@ -1,16 +1,15 @@
-
 $(function(){
-    $("#genre_popup_button").click(function(){$(".add_genre_popup").show();})
-    $("#add_genre").click(function(){
-        let g_name = $("#gr_name").val()
-        if(isEmpty(g_name,false)){
+    $("#country_popup_button").click(function(){$(".add_country_popup").show();})
+    $("#add_country").click(function(){
+        let c_name = $("#cr_name").val();
+        if(isEmpty(c_name,false)){
             alert("장르 명을 올바르게 입력해주세요.")
             return;
         }
 
         if(!confirm("추가 하시겠습니까?")) return;
         $.ajax({
-            url:"/api/genre/add?name="+g_name,
+            url:"/api/country/add?name="+c_name,
             type:"put",
             success:function(r){
                 if(!r.status){
@@ -23,14 +22,14 @@ $(function(){
         })
     });
 
-    $("#cancel_genre").click(function(){$(".add_genre_popup").hide();})
+    $("#cancel_country").click(function(){$(".add_country_popup").hide();})
 
-    $(".delete_genre").click(function(){
-        let gr_name = $(this).attr("data-name");
-        if(!confirm(gr_name+"을 삭제하시겠습니까?")) return;
+    $(".delete_country").click(function(){
+        let cr_name = $(this).attr("data-name");
+        if(!confirm(cr_name+"을 삭제하시겠습니까?")) return;
 
         $.ajax({
-            url:"/api/genre/delete?seq="+$(this).attr("data-seq"),
+            url:"/api/country/delete?seq="+$(this).attr("data-seq"),
             type:"delete",
             success:function(r){
                 alert(r.message);
