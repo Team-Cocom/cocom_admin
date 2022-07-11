@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,14 @@ public class BasicAPIController {
         basic_mapper.insertGenreInfo(name);
         resultMap.put("status", true);
         resultMap.put("message", name+"장르를 추가하였습니다");
+        return resultMap;
+    }
+    @DeleteMapping("/genre/delete")
+    public Map<String,Object> deleteGenre(@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteGenreInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "장르를 삭제 하였습니다");
         return resultMap;
     }
 }

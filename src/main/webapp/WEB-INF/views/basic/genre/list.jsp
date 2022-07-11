@@ -25,18 +25,20 @@
                         <td>${stat.count}</td>
                         <td>${item.gr_name}</td>
                         <td>
-                            <button id="delete_genre" data-seq="${item.gr_seq}">삭제</button>
+                            <button class="delete_genre" data-name="${item.gr_name}" data-seq="${item.gr_seq}">삭제</button>
                         </td>
                     </tr>
                 </tbody>
             </c:forEach>
-            </table>
+        </table>
+        <button id="genre_popup_button">장르 정보 추가</button>
         </div>
-        <div class="add_genre_popup">
+        <div class="add_genre_popup" style="display: none;">
             <div class="add_genre_area">
                 <p class>장르 이름</p>
                 <input type="text" id="gr_name">
                 <button id="add_genre">등록</button>
+                <button id="cancel_genre">닫기</button>
             </div>
         </div>
     </main>
