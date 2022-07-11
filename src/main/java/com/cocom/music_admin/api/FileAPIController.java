@@ -85,6 +85,13 @@ public class FileAPIController {
                 return resultMap;
             }
         }
+        else if(filetype.equals("music")){
+            if(!ext.equalsIgnoreCase("mp3")) {
+                resultMap.put("status", false);
+                resultMap.put("message", "영상 파일 확장자는 mp3만 허용합니다");
+                return resultMap;
+            }
+        }
 
         else {
             resultMap.put("status", false);

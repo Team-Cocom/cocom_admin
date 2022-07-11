@@ -6,11 +6,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 
@@ -22,11 +23,7 @@ public class BasicAPIController {
     public Map<String,Object> putGenre(@RequestParam String name){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         Integer isDuplicateName = basic_mapper.selectGenreName(name);
-<<<<<<< HEAD
         if(isDuplicateName > 0){
-=======
-        if(isDuplicateName > 0 ){
->>>>>>> a68b40e82393dfba480012dfc1931dcc066ea11b
             resultMap.put("status", false);
             resultMap.put("message", name+"은 중복 된 장르 입니다");
             return resultMap;
@@ -78,11 +75,7 @@ public class BasicAPIController {
     public Map<String,Object> putCountry(@RequestParam String name){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         Integer isDuplicateName = basic_mapper.selectCountryName(name);
-<<<<<<< HEAD
         if(isDuplicateName > 0){
-=======
-        if(isDuplicateName > 0 ){
->>>>>>> a68b40e82393dfba480012dfc1931dcc066ea11b
             resultMap.put("status", false);
             resultMap.put("message", name+"은 중복 된  국가입니다");
             return resultMap;
@@ -118,6 +111,16 @@ public class BasicAPIController {
         basic_mapper.deleteReleaseInfo(seq);
         resultMap.put("status", true);
         resultMap.put("message","발매사 이름을 삭제하였습니다.");
+        return resultMap;
+    }
+
+    @PutMapping("/music/add")
+    public Map<String,Object> putMusic(@RequestBody MusicInfo data){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        System.out.println(data);
+        basic_mapper.insertMusicInfo(data);
+        resultMap.put("status", true);
+        resultMap.put("message","노래 정보를 추가하였습니다.");
         return resultMap;
     }
 

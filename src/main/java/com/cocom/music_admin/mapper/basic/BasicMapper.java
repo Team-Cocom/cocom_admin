@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.cocom.music_admin.data.basic.EnterInfo;
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
+import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.basic.ReleaseCompanyInfo;
 
 @Mapper
@@ -31,5 +32,9 @@ public interface BasicMapper {
     public void insertReleaseCompany(String name);
     public List<ReleaseCompanyInfo> selectAllReleaseInfo();
     public void deleteReleaseInfo(Integer seq);
+
+    public void insertMusicInfo(MusicInfo data);
+    public List<MusicInfo> selectAllfromMusicInfo(String keyword , Integer offset);
+    public Integer selectAllfromMusicPageCnt(String keyword);
 
 }
