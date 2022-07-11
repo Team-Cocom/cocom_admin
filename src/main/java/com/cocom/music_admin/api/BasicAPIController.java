@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 
@@ -20,11 +24,22 @@ public class BasicAPIController {
     @PutMapping("/genre/add")
     public Map<String,Object> putGenre(@RequestParam String name){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        Integer isDuplicateName = basic_mapper.selectGenreName(name);
+        if(isDuplicateName != null){
+            resultMap.put("status", false);
+            resultMap.put("message", name+"은 중복 된 장르 입니다");
+            return resultMap;
+        }
+
         basic_mapper.insertGenreInfo(name);
         resultMap.put("status", true);
         resultMap.put("message", name+"장르를 추가하였습니다");
         return resultMap;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
     @PutMapping("/enter/add")
     public Map<String, Object> putenter(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -52,4 +67,33 @@ public class BasicAPIController {
         resultMap.put("message", "장르를 삭제 하였습니다");
         return resultMap;
     }
+<<<<<<< HEAD
+=======
+
+
+    @PutMapping("/country/add")
+    public Map<String,Object> putCountry(@RequestParam String name){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        Integer isDuplicateName = basic_mapper.selectCountryName(name);
+        if(isDuplicateName != null){
+            resultMap.put("status", false);
+            resultMap.put("message", name+"은 중복 된  국가입니다");
+            return resultMap;
+        }
+
+        basic_mapper.insertCountryInfo(name);
+        resultMap.put("status", true);
+        resultMap.put("message", name+" 국가를 추가하였습니다");
+        return resultMap;
+    }
+    @DeleteMapping("/country/delete")
+    public Map<String,Object> deleteCountry(@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteCountryInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "국가이름을 삭제 하였습니다");
+        return resultMap;
+    }
+
+>>>>>>> develop
 }
