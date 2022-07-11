@@ -2,5 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.account.AccountMapper">
-
+    <insert id="insertAdminAccount">
+        INSERT INTO admin_account_info
+        (aa_id, aa_name, aa_pwd, aa_role)
+        VALUES (#{aa_id}, #{aa_name}, #{aa_pwd}, #{aa_role})
+    </insert>
+    <update id="updateAdminAccountInfo">
+        UPDATE admin_account_info
+        SET aa_id=#{aa_id}, aa_name=#{aa_name}, aa_pwd=#{aa_pwd}, aa_role=#{aa_role}
+        WHERE aa_seq=#{seq}
+    </update>
+    <delete id="deleteAdminAccountInfo">
+        DELETE FROM admin_account_info
+        WHERE aa_seq=#{seq}
+    </delete>
+    <select id="login" resultType="com.cocom.music_admin.data.account.AdminAccountInfo">
+        SELECT aa_seq, aa_id, aa_pwd, aa_role, aa_ip
+        FROM admin_account_info
+        WHERE aa_id=#{aa_id} and aa_pwd =#{aa_pwd}
+    </select>
 </mapper>

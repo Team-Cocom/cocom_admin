@@ -6,6 +6,7 @@ import lombok.Data;
 public class AdminAccountInfo {
     private Integer aa_seq;
     private String aa_id;
+    private String aa_name;
     private String aa_pwd;
     private Integer aa_role;
     private String aa_ip;
