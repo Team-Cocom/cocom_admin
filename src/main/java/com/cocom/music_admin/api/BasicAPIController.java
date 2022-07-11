@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> basic_work
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 
@@ -38,10 +35,7 @@ public class BasicAPIController {
         return resultMap;
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> basic_work
     @PutMapping("/enter/add")
     public Map<String, Object> putenter(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -69,10 +63,7 @@ public class BasicAPIController {
         resultMap.put("message", "장르를 삭제 하였습니다");
         return resultMap;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> basic_work
 
     @PutMapping("/country/add")
     public Map<String,Object> putCountry(@RequestParam String name){

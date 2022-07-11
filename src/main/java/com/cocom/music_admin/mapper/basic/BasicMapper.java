@@ -4,13 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-<<<<<<< HEAD
-
 import com.cocom.music_admin.data.basic.EnterInfo;
-
-=======
-import com.cocom.music_admin.data.basic.EnterInfo;
->>>>>>> basic_work
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
 
@@ -25,17 +19,9 @@ public interface BasicMapper {
     public void deleteEnterInfo(Integer seq);
 
     public void deleteGenreInfo(Integer seq);
-<<<<<<< HEAD
-=======
-
->>>>>>> basic_work
 
     public List<CountryInfo> selectAllCountryInfo();
     public Integer selectCountryName(String name);
     public void insertCountryInfo(String name); 
     public void deleteCountryInfo(Integer seq);
-<<<<<<< HEAD
-=======
-
->>>>>>> basic_work
 }
