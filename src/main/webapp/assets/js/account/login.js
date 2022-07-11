@@ -1,6 +1,5 @@
 $(function(){
     $("#login").click(function(){
-
         let data = {
             aa_id:$("#aa_id").val(),
             aa_pwd:$("#aa_pwd").val(),

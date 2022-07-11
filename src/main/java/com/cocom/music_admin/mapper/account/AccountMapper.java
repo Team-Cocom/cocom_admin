@@ -9,7 +9,6 @@ public interface AccountMapper {
     public void insertAdminAccount(AdminAccountInfo data);
     public void updateAdminAccountInfo(AdminAccountInfo data);
     public void deleteAdminAccountInfo(AdminAccountInfo data);
-
     
     public AdminAccountInfo login(AdminAccountInfo data);
 }

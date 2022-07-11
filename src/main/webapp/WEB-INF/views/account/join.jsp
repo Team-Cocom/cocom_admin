@@ -23,8 +23,6 @@
                 <tbody>
                     <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -34,13 +32,17 @@
             <input type="text" id="aa_id">
             <p>비밀번호</p>
             <input type="password" id="aa_pwd">
+            <p>이름</p>
+            <input type="text" id="aa_name">
             <p>관리자 유형</p>
             <select id="aa_role">
-                <option value="1">관리자</option>
+                <option value="1">일반 관리자</option>
                 <option value="2">슈퍼 관리자</option>
             </select>
-            <button id="join">등록</button>
+            <button id="add">등록</button>
+            <button id="add_cancel">취소</button>
         </div>
+        <button id="delete">삭제</button>
     </main>
 </body>
 </html>
