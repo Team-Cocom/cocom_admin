@@ -2,22 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.basic.BasicMapper">
-    <select id="selectAllGenreInfo" resultType="com.cocom.music_admin.data.basic.GenreInfo">
-        select * from genre_info
-    </select>
-    <select id="selectGenreName" resultType="java.lang.Integer">
-        select count(*) from genre_info where gr_name = #{name}
-    </select>
-    <insert id="insertGenreInfo">
+    <insert id="insertGenreName">
         insert into genre_info (gr_name)
         values
-        (#{name})
+        (#{gr_name})
     </insert>
-    <select id="selectAllEnterInfo" resultType="com.cocom.music_admin.data.basic.EnterInfo">
-        select * from enter_info
+    <select id="selectAllGenreInfos" resultType="com.cocom.music_admin.data.basic.GenreInfo">
+        select * from genre_info
     </select>
-    <select id="selectEnterName" resultType="java.lang.Integer">
-        select count(*) from enter_info where ent_name = #{name}
+    <select id="dpchkGenreNames" resultType="java.lang.Integer">
+        select count(*) from genre_info where gr_name = #{name}
     </select>
     <insert id="insertEnterInfo">
         insert into enter_info (ent_name)
@@ -48,16 +42,29 @@ WHERE ent_seq=#{ent_seq};
     </delete>
     <insert id="insertReleaseCompany">
     INSERT INTO release_company_info
-(rci_name)
-VALUES(#{rci_name});
+    (rci_name)
+    VALUES(#{rci_name});
     </insert>
     <select id="selectAllReleaseInfo" resultType="com.cocom.music_admin.data.basic.ReleaseCompanyInfo">
      select * from release_company_info
     </select>
     <delete id="deleteReleaseInfo">
-    DELETE FROM release_company_info
-WHERE rci_seq=#{rci_seq};
-
+        DELETE FROM release_company_info
+        WHERE rci_seq=#{rci_seq};
     </delete>
-    
+    <insert id="insertMusicInfo">
+    INSERT INTO music_info
+    (mu_name, mu_ai_seq, mu_lyrics, mu_ab_seq, mu_img_file, mu_music_file, mu_li_seq, mu_playtime, mu_explain_txt, mu_age)
+    VALUES
+    (#{mu_name},#{mu_ai_seq},#{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age})
+
+    </insert>
+    <select id="selectAllfromMusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info
+        where mu_name like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectAllfromMusicPageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from music_info where mu_name like '%${keyword}%'
+    </select>
 </mapper>
