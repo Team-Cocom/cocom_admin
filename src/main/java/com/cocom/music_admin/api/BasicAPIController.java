@@ -4,19 +4,14 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-=======
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cocom.music_admin.data.basic.MusicInfo;
->>>>>>> basic_work
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 @RestController
@@ -24,10 +19,6 @@ public class BasicAPIController {
     @Autowired BasicMapper basic_mapper;
     @PutMapping("/genre/add")
     public Map<String,Object> putGenre(@RequestParam String name){
-<<<<<<< HEAD
-        Map<String,Object> m = new LinkedHashMap<String,Object>();
-
-=======
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         Integer isDuplicateName = basic_mapper.selectGenreName(name);
         if(isDuplicateName > 0){
@@ -103,8 +94,7 @@ public class BasicAPIController {
     }
     @PutMapping("/release/add")
     public Map<String, Object> insertReleaseCompany(@RequestParam String name) {
-        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
->>>>>>> basic_work
+        Map<String,Object> m = new LinkedHashMap<String,Object>();
         
         Integer isDuplicatedName = basic_mapper.dpchkGenreNames(name);
         if(isDuplicatedName > 0) {
@@ -117,8 +107,6 @@ public class BasicAPIController {
         m.put("message", name+"를 추가하였습니다");
         return m;
     }
-<<<<<<< HEAD
-=======
     @DeleteMapping("/release/delete")
     public Map<String, Object> deleteReleaseInfo(@RequestParam Integer seq) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -138,5 +126,4 @@ public class BasicAPIController {
         return resultMap;
     }
 
->>>>>>> basic_work
 }

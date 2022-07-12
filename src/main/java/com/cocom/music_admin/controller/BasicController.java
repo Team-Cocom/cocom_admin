@@ -5,11 +5,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PutMapping;
-=======
 import org.springframework.web.bind.annotation.RequestParam;
->>>>>>> basic_work
 
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
@@ -20,11 +17,6 @@ public class BasicController {
     @Autowired BasicMapper basic_mapper;
     @GetMapping("/genre/list")
     public String getGenreList(Model model){
-<<<<<<< HEAD
-        model.addAttribute("list", basic_mapper.selectAllGenreInfos());
-        
-        return "/basic/genre";
-=======
         model.addAttribute("list",basic_mapper.selectAllGenreInfo());
         return "/basic/genre_list";
     }
@@ -42,7 +34,6 @@ public class BasicController {
     public String getReleaseList(Model model) {
         model.addAttribute("list", basic_mapper.selectAllReleaseInfo());
         return "/basic/release_list";
->>>>>>> basic_work
     }
 
     @GetMapping("/music/list")
