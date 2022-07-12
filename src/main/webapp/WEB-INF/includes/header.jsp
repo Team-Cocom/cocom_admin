@@ -29,11 +29,13 @@
 </head>
 <body>
     <header>
+        <a href="/">메인페이지</a>
         <a href="/genre/list">장르 정보</a>
         <a href="/country/list">국가 정보</a>
         <a href="/enter/list">기획사 정보</a>
         <a href="/release/list">발매사 정보</a>
         <a href="/music/list">노래 정보</a>
+        <a href="/goods/list">굿즈 정보</a>
     </header>
 </body>
 </html>
