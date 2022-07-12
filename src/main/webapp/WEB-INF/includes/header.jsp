@@ -34,6 +34,7 @@
         <a href="/enter/list">기획사 정보</a>
         <a href="/release/list">발매사 정보</a>
         <a href="/music/list">노래 정보</a>
+        <a href="/magazine/list">매거진 정보</a>
     </header>
 </body>
 </html>
