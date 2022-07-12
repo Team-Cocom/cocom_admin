@@ -34,4 +34,10 @@
     <select id="selectRecommendByString" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
         select * from admin_play_list where ard_title = #{title}
     </select>
+    <select id="selectMusicInfoByUser" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info order by rand() limit 2
+    </select>
+    <select id="selectMusicInfoRecommend" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info order by rand() limit 2
+    </select>
 </mapper>

@@ -20,6 +20,8 @@ public class BusinessController {
         model.addAttribute("genre_list", business_mapper.selectAllRecommendGenre());
         model.addAttribute("artist_list", business_mapper.selectAllRecommendArtis());
         model.addAttribute("album_list", business_mapper.selectAllRecommendAlbum());
+        model.addAttribute("musicList", business_mapper.selectMusicInfoByUser());
+        model.addAttribute("music_recommend", business_mapper.selectMusicInfoRecommend());
         return "/business/admin_recommend_list";
     }
     @GetMapping("/admin/recommend/add")

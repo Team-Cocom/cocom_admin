@@ -64,9 +64,45 @@ main {padding: 30px; min-width: 1280px; text-align: center;
 .starpost_section > h1 {
     font-size: 24px; font-weight: 700; position: relative; margin-bottom: 30px;
 }
-.starpost_section .poster{
-    width: 900px; height: 700px; border: 0;
+.music_list_wrap > a {display: inline-block; margin: 10px; 
+    vertical-align: top; color: #333; text-decoration: none;
+}
+.music_img {font-size: 0;}
+
+.music_img {position: relative;}
+
+.music_list_item {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow:0 0 10px #00000022;
+}
+.music_list_item .music_title {
+    font-size: 14px; color: #fff;
+    width: 120px; height: 30px; background-color: #333;
+    border-radius: 3px; text-align: center; line-height: 30px;
+    font-weight: 100; margin:0 auto;
+}
+.music_list_item .artis_info {
+    text-align: center; margin-top: 10px; font-size: 14px;
+    width: 100%; overflow: hidden;
+    white-space: nowrap; text-overflow:ellipsis;
+}
+.music_list_item .audio {
+    text-align: center; margin-top: 10px; font-size: 14px;
+    width: 100%;
+}
+
+.music_list_wrap .music_img {
+    width: 150px; height: 200px; border: 0;
     background-size: auto 100% ; background-position:center;
     background-repeat: no-repeat; margin: 0 auto;
     margin-bottom: 10px;
+}
+
+.recommend_section {
+    position: absolute; top:870px; margin-left: 900px; width: 900px; text-align: center;
+}
+
+.recommend_section > h1 {
+    font-size: 24px; font-weight: 700; margin-bottom: 30px;
 }

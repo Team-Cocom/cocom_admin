@@ -41,25 +41,53 @@
             </div>
         </section>
         <section class="starpost_section">
-            <h1>스타들은 지금📢</h1>
+            <h1>유저님의 취향저격 노래📢</h1>
             <a href="#">
-                <div class="poster" style="background-image: url('/images/music_cover/images.jpg');"></div>
+                <div class="music_list_wrap">
+                    <c:forEach items="${musicList}" var="item" varStatus="stat">
+                        <a href="/music/detail?music_no=${item.mu_seq}" class="music_list_item">
+                            <div class="music_img" style="background-image: url('/images/music_cover/${item.mu_img_file}');"></div>
+                            <p class="music_title">${item.mu_name}</p>
+                            <p class="artis_info">아티스트</p>
+                            <p class="audio">
+                                <audio src="/images/music/${item.mu_music_file}" controls></audio>
+                            </p>
+                        </a>
+                    </c:forEach>
+                </div>
             </a>
         </section>
         <section class="recommend_list_section">
             <h1>신나는 음악 틀어놓고 새벽 드라이브 어때😎🚗</h1>
             <div class="recommend_list_area">
-                    <c:forEach items="${artist_list}" var="item">
-                        <a href="/admin/recommend/list?title=${item.ard_title}" target="_blank"class="recommend_item">
-                            <div class="recommend_img" style="background-image: url('/images/music_cover/${item.mu_img_file}');">
-                            </div>
-                            <div class="recommend_item_txt">
-                                <p class="recommend_title">${item.ard_title}</p>
-                                <p class="recommend_name">${item.mu_name}<span>...</span></p>
-                            </div>
+                <c:forEach items="${artist_list}" var="item">
+                    <a href="/admin/recommend/list?title=${item.ard_title}" target="_blank"class="recommend_item">
+                        <div class="recommend_img" style="background-image: url('/images/music_cover/${item.mu_img_file}');">
+                        </div>
+                        <div class="recommend_item_txt">
+                            <p class="recommend_title">${item.ard_title}</p>
+                            <p class="recommend_name">${item.mu_name}<span>...</span></p>
+                        </div>
+                    </a>
+                </c:forEach>
+            </div>
+        </section>
+        <section class="recommend_section">
+            <h1>이런 노래는 어떠신가요?❔</h1>
+            <a href="#">
+                <div class="music_list_wrap">
+                    <c:forEach items="${music_recommend}" var="item" varStatus="stat">
+                        <a href="/music/detail?music_no=${item.mu_seq}" class="music_list_item">
+                            <div class="music_img" style="background-image: url('/images/music_cover/${item.mu_img_file}');"></div>
+                            <p class="music_title">${item.mu_name}</p>
+                            <p class="artis_info">아티스트</p>
+                            <p class="audio">
+                                <audio src="/images/music/${item.mu_music_file}" controls></audio>
+                            </p>
                         </a>
                     </c:forEach>
-            </div>
+                </div>
+            </a>
         </section>
         <section class="recommend_list_section">
             <h1>감성 가득한 여름밤, 신선한 밤공기 무드 노래들 🎇</h1>
