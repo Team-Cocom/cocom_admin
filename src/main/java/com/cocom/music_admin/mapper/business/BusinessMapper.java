@@ -11,6 +11,9 @@ import com.cocom.music_admin.data.business.request.AdminPlayListVO;
 public interface BusinessMapper {
     public void insertAdminRecommend(AdminRecommend data);
     public Integer selectMusicSeq(String filename);
-    public List<AdminRecommend> selectAllRecommend();
+    public List<AdminPlayListVO> selectAllTodayRecommend();
+    public List<AdminPlayListVO> selectAllRecommendGenre();
+    public List<AdminPlayListVO> selectAllRecommendArtis();
+    public List<AdminPlayListVO> selectAllRecommendAlbum();
     public List<AdminPlayListVO> selectRecommendByString(String title);
 }

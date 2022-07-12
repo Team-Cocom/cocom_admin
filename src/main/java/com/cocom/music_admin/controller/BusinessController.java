@@ -16,7 +16,10 @@ public class BusinessController {
     @Autowired BusinessMapper business_mapper;
     @GetMapping("/admin/recommend")
     public String getAdRecommend(Model model){
-        model.addAttribute("list", business_mapper.selectAllRecommend());
+        model.addAttribute("list", business_mapper.selectAllTodayRecommend());
+        model.addAttribute("genre_list", business_mapper.selectAllRecommendGenre());
+        model.addAttribute("artist_list", business_mapper.selectAllRecommendArtis());
+        model.addAttribute("album_list", business_mapper.selectAllRecommendAlbum());
         return "/business/admin_recommend_list";
     }
     @GetMapping("/admin/recommend/add")
