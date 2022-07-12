@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
-
 @RestController
-@RequestMapping("/api")
 public class BasicAPIController {
     @Autowired BasicMapper basic_mapper;
     @PutMapping("/genre/add")
@@ -96,15 +94,10 @@ public class BasicAPIController {
     }
     @PutMapping("/release/add")
     public Map<String, Object> insertReleaseCompany(@RequestParam String name) {
-        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
-        
-        basic_mapper.insertReleaseCompany(name);
-        
-        resultMap.put("status", true);
-        resultMap.put("message", "발매사 이름을 추가하였습니다.");
-        
-        return resultMap;
-    }
+        Map<String,Object> m = new LinkedHashMap<String,Object>();
+
+            return m;
+        }
     @DeleteMapping("/release/delete")
     public Map<String, Object> deleteReleaseInfo(@RequestParam Integer seq) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
