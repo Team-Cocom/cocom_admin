@@ -5,11 +5,7 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.PutMapping;
-=======
 import org.springframework.web.bind.annotation.RequestParam;
->>>>>>> basic_work
 
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
@@ -18,33 +14,6 @@ import com.cocom.music_admin.mapper.basic.BasicMapper;
 @Controller
 public class BasicController {
     @Autowired BasicMapper basic_mapper;
-    @GetMapping("/genre/list")
-    public String getGenreList(Model model){
-<<<<<<< HEAD
-        model.addAttribute("list", basic_mapper.selectAllGenreInfos());
-        
-        return "/basic/genre";
-=======
-        model.addAttribute("list",basic_mapper.selectAllGenreInfo());
-        return "/basic/genre_list";
-    }
-    @GetMapping("/enter/list")
-    public String getEnterList(Model model){
-        model.addAttribute("list", basic_mapper.selectAllEnterInfo());
-        return "/basic/enter_list";
-    }
-    @GetMapping("/country/list")
-    public String getCountryList(Model model){
-        model.addAttribute("list",basic_mapper.selectAllCountryInfo());
-        return "/basic/country_list";
-    }
-    @GetMapping("/release/list")
-    public String getReleaseList(Model model) {
-        model.addAttribute("list", basic_mapper.selectAllReleaseInfo());
-        return "/basic/release_list";
->>>>>>> basic_work
-    }
-
     @GetMapping("/music/list")
     public String getMusicList(
         Model model,
@@ -62,4 +31,24 @@ public class BasicController {
     public String addMusic(Model model){
         return "/basic/music_add";
     }
+    @GetMapping("/genre/list")
+    public String listGenre(Model model) {
+        model.addAttribute("list", basic_mapper.selectGenreInfo());
+        return "/basic/genre_list";
+    }
+    @GetMapping("/genre/add")
+    public String addGenre(Model model) {
+        return "/basic/genre_add";
+    }
+    @GetMapping("/genre/delete")
+    public String deleteGenre(Model model) {
+        return "/basic/genre_delete";
+    }
+    @GetMapping("/country/list")
+    public String listCountry(Model model) {
+        model.addAttribute("list", basic_mapper.selectCountryInfo());
+        return "/basic/country_list";
+    }
+    
+
 }

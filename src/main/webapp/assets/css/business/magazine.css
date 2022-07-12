@@ -1,0 +1,64 @@
+main {padding: 30px; min-width: 1280px; text-align: center;
+    padding-top: 15px;}
+    .magazine_list_section > a {display: inline-block; margin: 10px; 
+        vertical-align: top; color: #333; text-decoration: none;
+    }
+    .magazine_img {font-size: 0;}
+    
+    .magazine_img {position: relative;}
+
+    .magazine_list_item {
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow:0 0 10px #00000022;
+    }
+    .magazine_list_item .magazine_title {
+        font-size: 14px; color: #fff;
+        width: 120px; height: 30px; background-color: #333;
+        border-radius: 3px; text-align: center; line-height: 30px;
+        font-weight: 100; margin:0 auto;
+    }
+    .magazine_list_item .artis_info {
+        text-align: center; margin-top: 10px; font-size: 14px;
+        width: 100%; overflow: hidden;
+        white-space: nowrap; text-overflow:ellipsis;
+    }
+    .magazine_list_item .audio {
+        text-align: center; margin-top: 10px; font-size: 14px;
+        width: 100%;
+    }
+    
+    .magazine_list_item .magazine_img {
+        width: 150px; height: 200px; border: 0;
+        background-size: auto 100% ; background-position:center;
+        background-repeat: no-repeat; margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .search_box {margin-top: 10px;}
+.search_box input {
+    font-family: "Noto Sans KR";
+    border: 0;
+    border-bottom: 1px solid #999;
+    height:30px; width: 150px; outline:none;
+}
+.search_box button {
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:60px; height:30px; border-radius: 3px;
+    position: relative; top: 2px; margin-left: 5px;
+    cursor:pointer;
+}
+.search_box button:hover {
+    color: #fff; background-color: #333;
+    border-color: #333;
+}
+
+.pager_area {margin-top: 30px; text-align: center;}
+.pager_area a {font-weight: 700; color: #999; text-decoration: none;
+margin:10px;}
+.pager_area a:hover {color: #333; text-decoration: underline;}
+
+    
