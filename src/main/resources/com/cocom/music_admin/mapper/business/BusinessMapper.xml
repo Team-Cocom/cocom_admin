@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cocom.music_admin.mapper.business.BusinessMapper">
+    <select id="selectMusicSeq" resultType="java.lang.Integer">
+        select mu_seq from music_info where mu_music_file = #{filename}
+    </select>
+    <insert id="insertAdminRecommend">
+        INSERT INTO admin_recommend
+        (ard_aa_seq, ard_mu_seq, ard_title, ard_ab_seq)
+        VALUES
+        (#{ard_aa_seq},#{ard_mu_seq},#{ard_title},#{ard_ab_seq})
+    </insert>
+    <select id="selectAllRecommend" resultType="com.cocom.music_admin.data.business.AdminRecommend">
+        select * from admin_recommend
+    </select>
+    <select id="selectRecommendByString" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
+        select * from admin_play_list where ard_title = #{title}
+    </select>
+</mapper>
