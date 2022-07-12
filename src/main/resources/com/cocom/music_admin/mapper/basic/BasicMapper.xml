@@ -18,6 +18,7 @@
     <select id="selectAllfromMusicPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from music_info where mu_name like '%${keyword}%'
     </select>
+<<<<<<< HEAD
     <select id="selectGenreInfo" resultType="com.cocom.music_admin.data.basic.GenreInfo">
         SELECT *
         FROM genre_info;
@@ -49,4 +50,25 @@ WHERE cr_seq= #{cr_seq};
     <select id="selectCountryInfos" resultType="java.lang.Integer">
     SELECT count(*) from country_info where (cr_name) = (#{name})
     </select>
+=======
+    <select id="selectMusicInfoBySeq" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info where mu_seq = #{seq}
+    </select>
+    <update id="deleteMusicImgFile">
+        update music_info set mu_img_file = ''
+        where mu_img_file = #{filename}
+    </update>
+    <update id="deleteMusicFile">
+        update music_info set mu_music_file = ''
+        where mu_music_file = #{filename}
+    </update>
+    <update id="updateMusicInfo">
+        UPDATE 
+        music_info
+        SET 
+        mu_name=#{mu_name}, mu_ai_seq=#{mu_ai_seq}, mu_lyrics=#{mu_lyrics}, mu_ab_seq=#{mu_ab_seq}, mu_img_file=#{mu_img_file}, mu_music_file=#{mu_music_file},
+        mu_playtime=#{mu_playtime}, mu_explain_txt=#{mu_explain_txt}, mu_age=#{mu_age} 
+        WHERE mu_seq=#{mu_seq}
+    </update>
+>>>>>>> basic_work
 </mapper>
