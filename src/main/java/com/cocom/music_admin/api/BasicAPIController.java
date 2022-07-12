@@ -95,24 +95,11 @@ public class BasicAPIController {
     @PutMapping("/release/add")
     public Map<String, Object> insertReleaseCompany(@RequestParam String name) {
         Map<String,Object> m = new LinkedHashMap<String,Object>();
-<<<<<<< HEAD
         
-        Integer isDuplicatedName = basic_mapper.dpchkGenreNames(name);
-        if(isDuplicatedName > 0) {
-            m.put("status", false);
-            m.put("message", name+"(는)은 중복 된 장르명입니다.");
-            return m;
-        }
-        basic_mapper.insertGenreName(name);
         m.put("status", true);
         m.put("message", name+"를 추가하였습니다");
         return m;
     }
-=======
-
-            return m;
-        }
->>>>>>> basic_work
     @DeleteMapping("/release/delete")
     public Map<String, Object> deleteReleaseInfo(@RequestParam Integer seq) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();

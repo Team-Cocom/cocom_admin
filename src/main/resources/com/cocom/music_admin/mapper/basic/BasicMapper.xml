@@ -13,8 +13,6 @@
     <select id="dpchkGenreNames" resultType="java.lang.Integer">
         select count(*) from genre_info where gr_name = #{name}
     </select>
-<<<<<<< HEAD
-=======
     <insert id="insertEnterInfo">
         insert into enter_info (ent_name)
         values
@@ -69,5 +67,4 @@ WHERE ent_seq=#{ent_seq};
     <select id="selectAllfromMusicPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from music_info where mu_name like '%${keyword}%'
     </select>
->>>>>>> basic_work
 </mapper>
