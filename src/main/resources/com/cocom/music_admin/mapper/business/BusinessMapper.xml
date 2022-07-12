@@ -2,27 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.business.BusinessMapper">
-<<<<<<< HEAD
-<select id="selectMagazineList" resultType="com.cocom.music_admin.data.business.MagazineInfo">
-SELECT mz_seq, mz_name, mz_poster_img, mz_reg_dt, mz_mzd_seq
-FROM magazine_info;
-</select>
-<insert id="insertMagazine">
-INSERT INTO magazine_info
-(mz_name, mz_poster_img)
-VALUES(#{mz_name},
-#{mz_poster_img});
-</insert>
-<delete id="deleteMagazineInfo">
-delete from magazine_info where mz_seq = #{mz_seq};
-</delete>
-<insert id="insertMagazineDesc">
-INSERT INTO magazine_desc
-(mzd_name, mzd_text, mzd_img_file)
-VALUES(#{mzd_name},#{mzd_text} , #{mzd_img_file});
-
-</insert>
-=======
     <select id="selectMusicSeq" resultType="java.lang.Integer">
         select mu_seq from music_info where mu_music_file = #{filename}
     </select>
@@ -38,5 +17,4 @@ VALUES(#{mzd_name},#{mzd_text} , #{mzd_img_file});
     <select id="selectRecommendByString" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
         select * from admin_play_list where ard_title = #{title}
     </select>
->>>>>>> basic_work
 </mapper>

@@ -38,24 +38,4 @@ public class BasicController {
         model.addAttribute("music_no", music_no);
         return "/basic/music_add";
     }
-    @GetMapping("/genre/list")
-    public String listGenre(Model model) {
-        model.addAttribute("list", basic_mapper.selectGenreInfo());
-        return "/basic/genre_list";
-    }
-    @GetMapping("/genre/add")
-    public String addGenre(Model model) {
-        return "/basic/genre_add";
-    }
-    @GetMapping("/genre/delete")
-    public String deleteGenre(Model model) {
-        return "/basic/genre_delete";
-    }
-    @GetMapping("/country/list")
-    public String listCountry(Model model) {
-        model.addAttribute("list", basic_mapper.selectCountryInfo());
-        return "/basic/country_list";
-    }
-    
-
 }

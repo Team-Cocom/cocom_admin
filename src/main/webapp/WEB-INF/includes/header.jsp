@@ -34,11 +34,7 @@
         <a href="/enter/list">기획사 정보</a>
         <a href="/release/list">발매사 정보</a>
         <a href="/music/list">노래 정보</a>
-<<<<<<< HEAD
-        <a href="/magazine/list">매거진 정보</a>
-=======
         <a href="/admin/recommend">관리자 추천 리스트</a>
->>>>>>> basic_work
     </header>
 </body>
 </html>
