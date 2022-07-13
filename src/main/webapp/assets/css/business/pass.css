@@ -1,7 +1,7 @@
 
 
 main {
-    min-width: 1280px;
+    min-width: 1280px; 
 }
 #pass_popup{background-color: #fff; position: absolute; right:390px; top: 85px; border: 1px solid #999;
     font-family: "Noto Sans KR"; color: #333; background-color: #fff;
