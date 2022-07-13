@@ -3,6 +3,7 @@ package com.cocom.music_admin.api;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
 import com.cocom.music_admin.mapper.business.BusinessMapper;
 

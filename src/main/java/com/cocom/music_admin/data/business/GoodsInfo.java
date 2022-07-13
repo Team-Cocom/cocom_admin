@@ -1,4 +1,4 @@
-package com.cocom.music_admin.data.basic;
+package com.cocom.music_admin.data.business;
 
 import java.util.Date;
 
@@ -14,4 +14,11 @@ public class GoodsInfo {
     private Integer gz_ab_seq;
     private Date gz_reg_dt;
     private String gz_ex_text;
+    private Integer gz_price;
+    private Integer gz_count;
+    private String gz_notice;
+    private Integer gz_stock;
+
+    private String ent_name;
+
 }
