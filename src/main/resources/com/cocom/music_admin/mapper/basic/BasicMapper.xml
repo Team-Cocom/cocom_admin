@@ -17,7 +17,7 @@
     <select id="selectAllfromMusicPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from music_info where mu_name like '%${keyword}%'
     </select>
-<<<<<<< HEAD
+
     <select id="selectGenreInfo" resultType="com.cocom.music_admin.data.basic.GenreInfo">
         SELECT *
         FROM genre_info;
@@ -28,8 +28,7 @@
     </insert>
     <delete id="deleteGenreInfo">
     DELETE FROM genre_info
-WHERE gr_seq= #{gr_seq};
-
+    WHERE gr_seq= #{gr_seq};
     </delete>
     <select id="selectGenreInfos" resultType="java.lang.Integer">
     SELECT count(*) from genre_info where (gr_name) = (#{name})
@@ -49,8 +48,6 @@ WHERE cr_seq= #{cr_seq};
     <select id="selectCountryInfos" resultType="java.lang.Integer">
     SELECT count(*) from country_info where (cr_name) = (#{name})
     </select>
-</mapper>
-=======
 
     <select id="selectAllEnterInfo" resultType="com.cocom.music_admin.data.basic.EnterInfo">
         select * from enter_info
@@ -69,6 +66,9 @@ WHERE cr_seq= #{cr_seq};
     <delete id="deleteEnterInfo">
         delete from enter_info where ent_seq = #{seq}
     </delete>
+    <select id="selectAllfromEnter" resultType="com.cocom.music_admin.data.basic.EnterInfo">
+        select * from enter_info
+    </select>
     
     <select id="selectAllReCompanyInfos" resultType="com.cocom.music_admin.data.basic.ReleaseCompanyInfo">
         select * from release_company_info
@@ -87,24 +87,17 @@ WHERE cr_seq= #{cr_seq};
     <delete id="deleteRelComInfo">
         delete from release_company_info where rci_seq = #{seq}
     </delete>
-
-    <select id="selectAllGoodsList" resultType="com.cocom.music_admin.data.basic.GoodsInfo">
-        SELECT * FROM goods_info
-        where gz_name like '%${keyword}%'
+    <select id="selectAlbumsInfo" resultType="com.cocom.music_admin.data.basic.AlbumInfo">
+        select * from album_info
+        where ab_name like '%${keyword}%'
         limit 10 offset #{offset}
     </select>
-    <select id="selectGoodsPageCnt" resultType="java.lang.Integer">
-        select ceil(count(*)/10) from goods_info where gz_name like '%${keyword}%'
+    <select id="selectAlbumPageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from album_info where ab_name like '%${keyword}%'
     </select>
-    <select id="selectGoodsName" resultType="java.lang.Integer">
-        select count(*) from goods_info where gz_name = #{name}
-    </select>
-    <insert id="insertGoodsInfo">
-        INSERT INTO goods_info
-            (gz_name, gz_img_file, gz_ex_text, gz_count, gz_notice, gz_price, gz_stock)
-        VALUES
-            (#{gz_name}, #{gz_img_file}, #{gz_ex_text}, #{gz_count}, #{gz_notice}, #{gz_price}, #{gz_stock})
+    <insert id="">
     </insert>
+
 </mapper>
 
 
@@ -112,4 +105,3 @@ WHERE cr_seq= #{cr_seq};
     <select id="" resultType="">
     </select>
     --> 
->>>>>>> yuna_work

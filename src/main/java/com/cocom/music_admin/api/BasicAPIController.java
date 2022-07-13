@@ -5,18 +5,13 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
-import com.cocom.music_admin.data.basic.GenreInfo;
-=======
-import com.cocom.music_admin.data.basic.GoodsInfo;
->>>>>>> yuna_work
+import com.cocom.music_admin.data.basic.AlbumInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
@@ -86,9 +81,7 @@ public class BasicAPIController {
         return resultMap;
     }
 
-
     
-
     @PutMapping("/enter/list")
     public Map<String,Object> putEnterList(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -135,19 +128,11 @@ public class BasicAPIController {
         resultMap.put("message", "발매사 삭제를 완료했습니다.");
         return resultMap;
         }
-
-    @PutMapping("/goods/add")
-    public Map<String, Object> putGoodsInfoList(@RequestBody GoodsInfo data){
+    
+    @PutMapping("/album/add")
+    public Map<String, Object> putAlbumsInfo(@RequestBody AlbumInfo data) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
-        Integer isDuplicateGzName = basic_mapper.selectGoodsName(data.getGz_name());
-        if(isDuplicateGzName > 0) {
-            resultMap.put("status", false);
-            resultMap.put("message", data.getGz_name()+"은 이미 등록된 굿즈 정보 입니다.");
-            return resultMap;
-        }
-        basic_mapper.insertGoodsInfo(data);
-        resultMap.put("status", true);
-        resultMap.put("message", "굿즈 등록을 완료했습니다.");
         return resultMap;
     }
+
 }

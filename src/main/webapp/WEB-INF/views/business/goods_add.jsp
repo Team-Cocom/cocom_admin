@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="/assets/js/basic/goods_add.js"></script>
+    <script src="/assets/js/business/goods_add.js"></script>
 </head>
 <body>
     <h1>굿즈사이트에오</h1>
@@ -26,6 +26,14 @@
                     <td>재고</td>
                     <td>
                         <input type="number" id="gz_stock" value="0">
+                    </td>
+                    <td>기획사</td>
+                    <td>
+                        <select id="gz_ent_seq">
+                            <c:forEach items="${enterList}" var="item">
+                            <option value="${item.ent_seq}">${item.ent_name}</option>
+                        </c:forEach>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -51,8 +59,10 @@
         <form id="goods_img_form" data-name="">
             <input type="file" name="file" id="goods_img_file" hidden accept = "image/gif, image/jpeg, image/png">
         </form>
-        <div class="goods_imgs">
-            <div class="img_list"                        
+        <div class="goods_imgs_list">
+            <div class="img_list">
+                
+            </div>                       
         </div>
         <button id="browse" onclick="document.getElementById('goods_img_file').click()">이미지선택</button>
     </div>

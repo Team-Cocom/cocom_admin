@@ -2,23 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.business.BusinessMapper">
-<select id="selectMagazineList" resultType="com.cocom.music_admin.data.business.MagazineInfo">
-SELECT mz_seq, mz_name, mz_poster_img, mz_reg_dt, mz_mzd_seq
-FROM magazine_info;
-</select>
-<insert id="insertMagazine">
-INSERT INTO magazine_info
-(mz_name, mz_poster_img)
-VALUES(#{mz_name},
-#{mz_poster_img});
-</insert>
-<delete id="deleteMagazineInfo">
-delete from magazine_info where mz_seq = #{mz_seq};
-</delete>
-<insert id="insertMagazineDesc">
-INSERT INTO magazine_desc
-(mzd_name, mzd_text, mzd_img_file)
-VALUES(#{mzd_name},#{mzd_text} , #{mzd_img_file});
+    <select id="selectMagazineList" resultType="com.cocom.music_admin.data.business.MagazineInfo">
+        SELECT mz_seq, mz_name, mz_poster_img, mz_reg_dt, mz_mzd_seq
+        FROM magazine_info;
+    </select>
+    <insert id="insertMagazine">
+        INSERT INTO magazine_info (mz_name, mz_poster_img)
+        VALUES(#{mz_name}, #{mz_poster_img});
+    </insert>
+    <delete id="deleteMagazineInfo">
+        delete from magazine_info where mz_seq = #{mz_seq};
+    </delete>
+    <insert id="insertMagazineDesc">
+        INSERT INTO magazine_desc
+            (mzd_name, mzd_text, mzd_img_file)
+        VALUES(#{mzd_name},#{mzd_text} , #{mzd_img_file});
+    </insert>
 
-</insert>
+    <select id="selectAllGoodsList" resultType="com.cocom.music_admin.data.business.GoodsInfo">
+        SELECT * FROM goods_info_ent
+        where gz_name like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectGoodsPageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from goods_info where gz_name like '%${keyword}%'
+    </select>
+    <select id="selectGoodsName" resultType="java.lang.Integer">
+        select count(*) from goods_info where gz_name = #{name}
+    </select>
+    <insert id="insertGoodsInfo">
+        INSERT INTO goods_info
+            (gz_name, gz_img_file, gz_ex_text, gz_count, gz_notice, gz_price, gz_stock,gz_ent_seq)
+        VALUES
+            (#{gz_name}, #{gz_img_file}, #{gz_ex_text}, #{gz_count}, #{gz_notice}, #{gz_price}, #{gz_stock},#{gz_ent_seq})
+    </insert>
+    <delete id="deleteGoodsInfo">
+        delete from goods_info where gz_seq = #{seq}
+    </delete>
 </mapper>

@@ -31,7 +31,6 @@ public class BasicController {
     public String addMusic(Model model){
         return "/basic/music_add";
     }
-<<<<<<< HEAD
     @GetMapping("/genre/list")
     public String listGenre(Model model) {
         model.addAttribute("list", basic_mapper.selectGenreInfo());
@@ -50,8 +49,6 @@ public class BasicController {
         model.addAttribute("list", basic_mapper.selectCountryInfo());
         return "/basic/country_list";
     }
-    
-=======
 
     @GetMapping("/enter/list")
     public String getEnterList(
@@ -68,9 +65,7 @@ public class BasicController {
     }
 
     @GetMapping("/release/list")
-    public String getReleaseList(
-        Model model,
-        @RequestParam @Nullable String keyword,
+    public String getReleaseList(Model model, @RequestParam @Nullable String keyword,
         @RequestParam @Nullable Integer page
         ){
         if(page == null)  page = 1;
@@ -80,33 +75,16 @@ public class BasicController {
         model.addAttribute("pageCnt", basic_mapper.selectAllReComPageCnt(keyword));
         return "/basic/release";
     }
-    @GetMapping("/goods/list")
-    public String getGoodsList(
-        Model model,
-        @RequestParam @Nullable String keyword,
-        @RequestParam @Nullable Integer page
-        ){         
-            if(page == null) page = 1;
-            model.addAttribute("keyword", keyword);
-            model.addAttribute("page", page);
-            model.addAttribute("list", basic_mapper.selectAllGoodsList(keyword, (page-1)*10));
-            model.addAttribute("pageCnt", basic_mapper.selectGoodsPageCnt(keyword));
-            return "/basic/goods";
-    }
 
-    @GetMapping("/goods/add")
-    public String getGoodsAdd(
-        Model model,
-        @RequestParam @Nullable String keyword,
-        @RequestParam @Nullable Integer page
-        ){         
-            if(page == null) page = 1;
-            model.addAttribute("keyword", keyword);
-            model.addAttribute("page", page);
-            model.addAttribute("list", basic_mapper.selectAllGoodsList(keyword, (page-1)*10));
-            model.addAttribute("pageCnt", basic_mapper.selectGoodsPageCnt(keyword));
-            return "/basic/goods_add";
+    @GetMapping("/album/list")
+    public String getAlbumList (Model model, @RequestParam @Nullable String keyword,
+    @RequestParam @Nullable Integer page
+    ){
+        if(page == null) page = 1;
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("page", page);
+        model.addAttribute("list", basic_mapper.selectAlbumsInfo(keyword, (page-1)*10));
+        model.addAttribute("pageCnt", basic_mapper.selectAlbumPageCnt(keyword));
+        return "/basic/album_list";
     }
->>>>>>> yuna_work
-
 }

@@ -6,33 +6,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="/assets/js/basic/goods.js"></script>
+    <script src="/assets/js/basic/album_detail.js"></script>
 </head>
 <body>
-    <h1>굿즈사이트에오</h1>
-    <button id="goods_popup_btn">
-        <a href="/goods/add">굿즈 추가</a>
+    <h1>앨범정보에오</h1>
+    <button id="album_popup_btn">
+        <a href="/albums/add">앨범 정보 추가</a>
     </button>
     <div class="basic_info">
-        <h1>굿즈 기본 정보</h1>
-        <table class="goods_info">
+        <h1>앨범 기본 정보</h1>
+        <table class="album_info">
             <thead>
                 <tr>
-                    <td>제품명</td>
-                    <td>가격</td>
-                    <td>수량</td>
-                    <td>재고</td>
+                    <td>앨범명</td>
+                    <td>가수</td>
+                    <td>소속사</td>
+                    <td>발매사</td>
                     <td></td>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach items="${list}" var="item" varStatus="stat">
                     <tr>
-                        <td>${stat.count}</td>
-                        <td>${item.gz_name}</td>
-                        <td>${item.gz_price}</td>
-                        <td>${item.gz_count}</td>
-                        <td>${item.gz_stock}</td>
+                        <td></td>
+                        <td>
+                            <button class="del_btn" data-seq="${item.ab_seq}">삭제</button>
+                        </td>
                         <td></td>
                     </tr>
                 </c:forEach>
@@ -41,7 +40,7 @@
     </div>
     <div class="pager_area">
         <c:forEach begin="1" end="${pageCnt}" var="i">
-            <a href="/release/list?page=${i}&keyword=${keyword}">${i}</a>
+            <a href="/album/list?page=${i}&keyword=${keyword}">${i}</a>
         </c:forEach>
     </div>
 </body>

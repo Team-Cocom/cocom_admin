@@ -3,15 +3,16 @@ package com.cocom.music_admin.api;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cocom.music_admin.data.business.GoodsInfo;
 import com.cocom.music_admin.data.business.MagazineDesc;
 import com.cocom.music_admin.data.business.MagazineInfo;
 import com.cocom.music_admin.mapper.business.BusinessMapper;
@@ -49,5 +50,26 @@ public class BusinessAPIController {
         return resultMap;
     }
 
-    
+    @PutMapping("/goods/add")
+    public Map<String, Object> putGoodsInfoList(@RequestBody GoodsInfo data){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        Integer isDuplicateGzName = business_mapper.selectGoodsName(data.getGz_name());
+        if(isDuplicateGzName > 0) {
+            resultMap.put("status", false);
+            resultMap.put("message", data.getGz_name()+"은 이미 등록된 굿즈 정보 입니다.");
+            return resultMap;
+        }
+        business_mapper.insertGoodsInfo(data);
+        resultMap.put("status", true);
+        resultMap.put("message", "굿즈 등록을 완료했습니다.");
+        return resultMap;
+    }
+    @DeleteMapping("/goods/list")
+    public Map<String, Object> deleteGoodsList(@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        business_mapper.deleteGoodsInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "굿즈 삭제를 완료했습니다.");
+        return resultMap;
+    }
 }
