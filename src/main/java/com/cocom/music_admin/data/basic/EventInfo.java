@@ -14,4 +14,5 @@ public class EventInfo {
     private Integer eve_mi_seq;
     private Integer eve_gz_seq;
     private Integer eve_ci_seq;
+    private String eve_title_img;
 }

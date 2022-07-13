@@ -1,0 +1,114 @@
+
+
+main {
+    min-width: 1280px;
+}
+#pass_popup{background-color: #fff; position: absolute; right:390px; top: 85px; border: 1px solid #999;
+    font-family: "Noto Sans KR"; color: #333; background-color: #fff;
+    width:120px; height:30px; border-radius: 3px;
+    cursor:pointer;}
+#pass_popup:hover{background-color: rgba(131, 131, 131, 0.329);}
+.item_list{width: 1280px; margin-left: 250px; margin-top: 100px;}
+.item_list td {padding: 12px; border-bottom: 1px solid #767676; text-align: center;}
+.item_list thead td {
+    font-weight: 700; text-align: center; color: #f7f7f7; background-color: rgba(15, 14, 17, 0.781); 
+}
+.item_list .ps_img {width: 60px; height: 50px;}
+.item_list button {
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:60px; height:30px; border-radius: 3px;
+    position: relative;  cursor:pointer; 
+}
+
+.item_list button:hover{
+    background-color: rgba(131, 131, 131, 0.329);
+}
+
+
+.pass_list_area{
+    vertical-align: middle;
+}
+
+.pass_add_popup_wrap{width: 100vw; height: 100vh; position: fixed; left: 0; top: 0; display: none; background-color: #00000055;}
+
+.pass_add_area{
+    margin-left: 550px; margin-top:225px; max-width: 900px; box-shadow: #333; background-color: #fff; border-radius: 5px;
+}
+.pass_img {font-size: 0;}
+    
+.pass_img {position: absolute;}
+
+.pass_add_popup_wrap .pass_img {
+    width: 150px; height: 200px; border: 0; right: 800px;
+    background-size: auto 100% ; background-position:center;
+    background-repeat: no-repeat; margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.pass_add_area input{
+    font-family: "Noto Sans KR";
+    border: 0;
+    border-bottom: 1px solid #999; outline:none;
+}
+.pass_add_area select{
+    width: 200px;
+}
+.pass_add_area #pass_img_save{
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:150px; height:30px; border-radius: 3px;
+    position: relative; top: 2px; left: 20px;
+    cursor:pointer; 
+}
+.pass_add_area button{
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:60px; height:30px; border-radius: 3px;
+    position: relative; top: 0; left: 210px; margin-bottom: 5px;
+    cursor:pointer; 
+}
+.pass_add_area button:hover, #pass_img_save:hover{
+    background-color: rgba(131, 131, 131, 0.329);
+}
+.pass_add_area #ps_img_file{
+    font-family: "Noto Sans KR";
+    border: 0;
+}
+.pass_add_area > p {
+    padding: 30px;
+}
+.pass_add_area > p:first-child {
+    margin-bottom: 30px;
+}
+
+.search_box {margin-top: 10px; position: absolute; left: 780px; top: 70px;}
+.search_box input {
+    font-family: "Noto Sans KR";
+    border: 0;
+    border-bottom: 1px solid #999;
+    height:30px; width: 150px; outline:none;
+}
+.search_box button {
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:60px; height:30px; border-radius: 3px;
+    position: relative; top: 2px; margin-left: 5px;
+    cursor:pointer;
+}
+.search_box button:hover {
+    color: #fff; background-color: #333;
+    border-color: #333;
+}
+.pager_area {margin-top: 30px; text-align: center;}
+.pager_area a {font-weight: 700; color: #999; text-decoration: none;
+margin:10px;}
+.pager_area a:hover {color: #333; text-decoration: underline;}

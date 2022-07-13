@@ -65,7 +65,7 @@ public class FileAPIController {
     public Map<String,Object> putImageUpload(@PathVariable String filetype,@PathVariable String type, @RequestPart MultipartFile file) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         // 업로드 할 파일의 경로 생성
-        Path folderLocation = Paths.get(path+"/"+type); 
+        Path folderLocation = Paths.get(path+"/"+type);
 
         String fileName = file.getOriginalFilename();
         String[] fileNameSplit = fileName.split("\\.");

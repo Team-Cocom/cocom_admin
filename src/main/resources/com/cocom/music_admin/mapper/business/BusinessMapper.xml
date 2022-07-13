@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.business.BusinessMapper">
-    <select id="selectMusicSeq" resultType="java.lang.Integer">
-        select mu_seq from music_info where mu_music_file = #{filename}
-    </select>
     <insert id="insertAdminRecommend">
         INSERT INTO admin_recommend
         (ard_aa_seq, ard_mu_seq, ard_title, ard_ab_seq)
@@ -41,5 +38,18 @@
     </select>
     <select id="selectMusicInfoRecommend" resultType="com.cocom.music_admin.data.basic.MusicInfo">
         select * from music_info order by rand() limit 2
+    </select>
+    <insert id="insertPassInfo">
+        INSERT INTO pass_info
+        (ps_type,ps_name, ps_price,ps_img_file, ps_period)
+        VALUES
+        (#{ps_type},#{ps_name},#{ps_price},#{ps_img_file},#{ps_period})
+    </insert>
+    <select id="selectPassInfo" resultType="com.cocom.music_admin.data.business.PassInfo">
+        select * from pass_info where ps_name like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectPassPageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from pass_info where ps_name like '%${keyword}%'
     </select>
 </mapper>

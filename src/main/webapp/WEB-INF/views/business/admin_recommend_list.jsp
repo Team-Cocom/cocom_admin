@@ -6,10 +6,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Document</title>
+        <script src="/assets/js/business/admin_recommend_list.js"></script>
         <link rel="stylesheet" href="/assets/css/business/admin_recommend_list.css">
     </head>
     <body>
         <main>
+            <button id="playlist_popup_open">재생목록 추가</button>
         <div class="admin_recommend_list_wrap">
             <h1>✨오늘의 추천 리스트</h1>
             <c:forEach items="${list}" var="item" varStatus="stat">
@@ -70,6 +72,50 @@
             </div>
         </section>
     </div>
+    <div class="admin_playlist_popup_wrap">
+    <div class="add_admin_playlist_area">
+        <div class="add_admin_item">
+        <h1>재생목록 타이틀</h1>
+        <input type="text" id="ard_title" placeholder="재생목록 이름">
+        <div class="admin_playlist_add">
+            <p>노래 제목</p>
+            <input type="text" id="music_name" placeholder="노래 제목">
+            <div class="admin_playlist_button_area">
+                <p>노래 파일추가</p>
+                    <input type="text" id="add_music">
+                <div class="add_music_area">
+                </div>
+            </div>
+            <p>앨범정보</p>
+            <input type="text" placeholder="앨범정보 추가가 필요합니다">
+        </div>
+        <button id="playlist_save">등록</button>
+        <button id="cancel_playlist">닫기</button>
+    </div>
+</div>
+</div>
+<div class="music_search_popup" style="display:none; border:1px solid #000">
+    <div class="music_search_form">
+        <h2>배우 검색</h2>
+        <input type="text" id="music_search_keyword">
+        <button id="music_search_button">검색</button>
+        <div class="music_search_list">
+            <table>
+                <thead>
+                    <tr>
+                        <td>노래커버</td><td>노래제목</td>장르<td></td><td></td><td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="music_search_pager_area">
+
+        </div>
+    </div>
+</div>
     </main>
 </body>
 

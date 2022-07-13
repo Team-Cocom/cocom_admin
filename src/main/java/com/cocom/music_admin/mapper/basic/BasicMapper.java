@@ -4,17 +4,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-<<<<<<< HEAD
-import com.cocom.music_admin.data.basic.GenreInfo;
-=======
 import com.cocom.music_admin.data.basic.AlbumInfo;
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
 import com.cocom.music_admin.data.basic.EnterInfo;
->>>>>>> 67e7ee6986ce549a018cc712b96060bea791bcc7
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.basic.ReleaseCompanyInfo;
-import com.cocom.music_admin.data.business.GoodsInfo;
 
 @Mapper
 public interface BasicMapper {
@@ -27,10 +22,6 @@ public interface BasicMapper {
     public void deleteMusicFile(String filename);
     public void updateMusicInfo(MusicInfo data);
 
-<<<<<<< HEAD
-    public List<GenreInfo> selectAllGenre();
-
-=======
     public List<GenreInfo> selectGenreInfo();
     public void insertGenreInfo(String gr_name);
     public void deleteGenreInfo(Integer seq);
@@ -56,10 +47,4 @@ public interface BasicMapper {
     public List<AlbumInfo> selectAlbumsInfo(String keyword, Integer offset);
     public Integer selectAlbumPageCnt(String keyword);
     public void insertAlbumInfo(AlbumInfo data);
-    public List<GoodsInfo> selectAllGoodsList(String keyword, Integer offset);
-    public Integer selectGoodsPageCnt(String keyword);
-    public Integer selectGoodsName(String name);
-    public void insertGoodsInfo(GoodsInfo data);
-    
->>>>>>> 67e7ee6986ce549a018cc712b96060bea791bcc7
 }
