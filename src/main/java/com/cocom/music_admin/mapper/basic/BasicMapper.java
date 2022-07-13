@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.cocom.music_admin.data.basic.GenreInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
 
 @Mapper
@@ -16,5 +17,7 @@ public interface BasicMapper {
     public void deleteMusicImgFile(String filename);
     public void deleteMusicFile(String filename);
     public void updateMusicInfo(MusicInfo data);
+
+    public List<GenreInfo> selectAllGenre();
 
 }

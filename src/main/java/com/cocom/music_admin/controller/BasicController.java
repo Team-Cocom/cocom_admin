@@ -29,12 +29,14 @@ public class BasicController {
     }
     @GetMapping("/music/add")
     public String addMusic(Model model,@RequestParam @Nullable Integer music_no){
+        model.addAttribute("genre_list", basic_mapper.selectAllGenre());
         model.addAttribute("music_no", music_no);
         return "/basic/music_add";
     }
     @GetMapping("/music/detail")
     public String patchMusic(Model model,@RequestParam @Nullable Integer music_no){
         model.addAttribute("list", basic_mapper.selectMusicInfoBySeq(music_no)); 
+        model.addAttribute("genre_list", basic_mapper.selectAllGenre());
         model.addAttribute("music_no", music_no);
         return "/basic/music_add";
     }
