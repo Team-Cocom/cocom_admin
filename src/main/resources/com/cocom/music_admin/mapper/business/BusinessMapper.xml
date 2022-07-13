@@ -19,7 +19,9 @@
     <select id="selectAllRecommendGenre" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
     select a.*,b.mu_name, b.mu_music_file, b.mu_age,b.mu_img_file  from admin_recommend a inner join music_info b on 
     a.ard_mu_seq = b.mu_seq
-    group by a.ard_title order by rand() limit 5
+    group by a.ard_title 
+    having a.ard_title like '%비%'
+    order by rand() limit 5
     </select>
     <select id="selectAllRecommendArtis" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
     select a.*,b.mu_name, b.mu_music_file, b.mu_age,b.mu_img_file  from admin_recommend a inner join music_info b on 
