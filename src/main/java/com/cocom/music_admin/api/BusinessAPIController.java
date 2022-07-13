@@ -5,71 +5,40 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cocom.music_admin.data.business.GoodsInfo;
-import com.cocom.music_admin.data.business.MagazineDesc;
-import com.cocom.music_admin.data.business.MagazineInfo;
+import com.cocom.music_admin.data.business.AdminRecommend;
 import com.cocom.music_admin.mapper.business.BusinessMapper;
 
 @RestController
 @RequestMapping("/api")
 public class BusinessAPIController {
     @Autowired BusinessMapper business_mapper;
-    @PutMapping("/magazine/add")
-    public Map<String, Object> putMagazine(@RequestBody MagazineInfo data) {
-        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        business_mapper.insertMagazine(data);
-        resultMap.put("status", true);
-        resultMap.put("message", "매거진을 등록하였습니다.");
-        return resultMap;
-    }
-    @DeleteMapping("/magazine/delete")
-    public Map<String, Object> deleteMagazine(@RequestParam Integer seq) {
-        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        
-        business_mapper.deleteMagazineInfo(seq);
-        resultMap.put("status", true);
-        resultMap.put("message", "매거진 정보를 삭제하였습니다.");
-        
-        return resultMap;
-    }
-    @PutMapping("/magazine/desc/")
-    public Map<String, Object> PutMagazineDesc(@RequestBody MagazineDesc data){
-        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        
-        business_mapper.insertMagazineDesc(data);
-        resultMap.put("status", true);
-        resultMap.put("message", "매거진 게시글이 등록되었습니다.");
-
-        return resultMap;
-    }
-
-    @PutMapping("/goods/add")
-    public Map<String, Object> putGoodsInfoList(@RequestBody GoodsInfo data){
+    @GetMapping("/admin_recommend/music")
+    public Map<String,Object> getMusic(@RequestParam String filename){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
-        Integer isDuplicateGzName = business_mapper.selectGoodsName(data.getGz_name());
-        if(isDuplicateGzName > 0) {
-            resultMap.put("status", false);
-            resultMap.put("message", data.getGz_name()+"은 이미 등록된 굿즈 정보 입니다.");
+        Integer seq = business_mapper.selectMusicSeq(filename);
+        if(seq == null) {
+            resultMap.put("status",false);
+            resultMap.put("message","등록되어 있지 않은 노래입니다\n노래를 먼저 등록해 주세요.");
             return resultMap;
         }
-        business_mapper.insertGoodsInfo(data);
-        resultMap.put("status", true);
-        resultMap.put("message", "굿즈 등록을 완료했습니다.");
+        resultMap.put("status",true);
+        resultMap.put("message","노래 등록이 완료되었습니다.");
+        resultMap.put("seq", seq);
         return resultMap;
     }
-    @DeleteMapping("/goods/list")
-    public Map<String, Object> deleteGoodsList(@RequestParam Integer seq){
+    @PutMapping("/admin_recommend/add")
+    public Map<String,Object> putMusicList(@RequestBody AdminRecommend data){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
-        business_mapper.deleteGoodsInfo(seq);
-        resultMap.put("status", true);
-        resultMap.put("message", "굿즈 삭제를 완료했습니다.");
+            business_mapper.insertAdminRecommend(data);
+            resultMap.put("status",true);
+            resultMap.put("message",data.getArd_title()+"재생목록에 노래를 등록하였습니다.");
         return resultMap;
     }
 }

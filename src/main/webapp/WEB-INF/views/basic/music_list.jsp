@@ -28,7 +28,6 @@
                             <audio src="/images/music/${item.mu_music_file}" controls></audio>
                         </p>
                     </a>
-                    <!-- <button class="delete_music" data-seq="${item.mu_seq}">&times;</button> -->
                 </c:forEach>
             </div>
         </div>

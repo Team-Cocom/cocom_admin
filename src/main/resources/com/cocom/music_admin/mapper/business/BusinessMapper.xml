@@ -2,41 +2,44 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.business.BusinessMapper">
-    <select id="selectMagazineList" resultType="com.cocom.music_admin.data.business.MagazineInfo">
-        SELECT mz_seq, mz_name, mz_poster_img, mz_reg_dt, mz_mzd_seq
-        FROM magazine_info;
+    <select id="selectMusicSeq" resultType="java.lang.Integer">
+        select mu_seq from music_info where mu_music_file = #{filename}
     </select>
-    <insert id="insertMagazine">
-        INSERT INTO magazine_info (mz_name, mz_poster_img)
-        VALUES(#{mz_name}, #{mz_poster_img});
-    </insert>
-    <delete id="deleteMagazineInfo">
-        delete from magazine_info where mz_seq = #{mz_seq};
-    </delete>
-    <insert id="insertMagazineDesc">
-        INSERT INTO magazine_desc
-            (mzd_name, mzd_text, mzd_img_file)
-        VALUES(#{mzd_name},#{mzd_text} , #{mzd_img_file});
-    </insert>
-
-    <select id="selectAllGoodsList" resultType="com.cocom.music_admin.data.business.GoodsInfo">
-        SELECT * FROM goods_info_ent
-        where gz_name like '%${keyword}%'
-        limit 10 offset #{offset}
-    </select>
-    <select id="selectGoodsPageCnt" resultType="java.lang.Integer">
-        select ceil(count(*)/10) from goods_info where gz_name like '%${keyword}%'
-    </select>
-    <select id="selectGoodsName" resultType="java.lang.Integer">
-        select count(*) from goods_info where gz_name = #{name}
-    </select>
-    <insert id="insertGoodsInfo">
-        INSERT INTO goods_info
-            (gz_name, gz_img_file, gz_ex_text, gz_count, gz_notice, gz_price, gz_stock,gz_ent_seq)
+    <insert id="insertAdminRecommend">
+        INSERT INTO admin_recommend
+        (ard_aa_seq, ard_mu_seq, ard_title, ard_ab_seq)
         VALUES
-            (#{gz_name}, #{gz_img_file}, #{gz_ex_text}, #{gz_count}, #{gz_notice}, #{gz_price}, #{gz_stock},#{gz_ent_seq})
+        (#{ard_aa_seq},#{ard_mu_seq},#{ard_title},#{ard_ab_seq})
     </insert>
-    <delete id="deleteGoodsInfo">
-        delete from goods_info where gz_seq = #{seq}
-    </delete>
+    <select id="selectAllTodayRecommend" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
+        select a.*,b.mu_name, b.mu_music_file, b.mu_age,b.mu_img_file  from admin_recommend a inner join music_info b on 
+        a.ard_mu_seq = b.mu_seq
+        group by a.ard_title limit 1
+    </select>
+    <select id="selectAllRecommendGenre" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
+    select a.*,b.mu_name, b.mu_music_file, b.mu_age,b.mu_img_file  from admin_recommend a inner join music_info b on 
+    a.ard_mu_seq = b.mu_seq
+    group by a.ard_title 
+    having a.ard_title like '%비%'
+    order by rand() limit 5
+    </select>
+    <select id="selectAllRecommendArtis" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
+    select a.*,b.mu_name, b.mu_music_file, b.mu_age,b.mu_img_file  from admin_recommend a inner join music_info b on 
+    a.ard_mu_seq = b.mu_seq
+    group by a.ard_title order by rand() limit 5
+    </select>
+    <select id="selectAllRecommendAlbum" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
+    select a.*,b.mu_name, b.mu_music_file, b.mu_age,b.mu_img_file  from admin_recommend a inner join music_info b on 
+    a.ard_mu_seq = b.mu_seq
+    group by a.ard_title order by rand() limit 5
+    </select>
+    <select id="selectRecommendByString" resultType="com.cocom.music_admin.data.business.request.AdminPlayListVO">
+        select * from admin_play_list where ard_title = #{title}
+    </select>
+    <select id="selectMusicInfoByUser" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info order by rand() limit 2
+    </select>
+    <select id="selectMusicInfoRecommend" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info order by rand() limit 2
+    </select>
 </mapper>

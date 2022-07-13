@@ -1,0 +1,8 @@
+.music_img, .music_img_mod{
+    display: inline-block; vertical-align: top; height: 200px; position: relative;
+    border: 1px solid #000; margin-right: 10px;
+}
+.music_img img, .music_img_mod img {height: 100%;}
+.music_img button, .music_img_mod button {
+    position: absolute; right: 0; top: 0;
+}

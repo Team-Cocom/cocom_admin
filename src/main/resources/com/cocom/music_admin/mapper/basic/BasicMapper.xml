@@ -8,7 +8,6 @@
     VALUES
     (#{mu_name},#{mu_ai_seq},#{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age})
     </insert>
-    
     <select id="selectAllfromMusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
         select * from music_info
         where mu_name like '%${keyword}%'
@@ -28,8 +27,9 @@
     </insert>
     <delete id="deleteGenreInfo">
     DELETE FROM genre_info
-    WHERE gr_seq= #{gr_seq};
+WHERE gr_seq= #{gr_seq};
     </delete>
+
     <select id="selectGenreInfos" resultType="java.lang.Integer">
     SELECT count(*) from genre_info where (gr_name) = (#{name})
     </select>
@@ -37,13 +37,13 @@
     select * from country_info;
     </select>
     <insert id="insertCountry">
-    INSERT INTO country_info
-(cr_name)
-VALUES(#{cr_name});
+        INSERT INTO country_info
+        (cr_name)
+        VALUES(#{cr_name});
     </insert>
     <delete id="deleteCountryInfo">
-    DELETE FROM country_info
-WHERE cr_seq= #{cr_seq};
+        DELETE FROM country_info
+    WHERE cr_seq= #{cr_seq};
     </delete>
     <select id="selectCountryInfos" resultType="java.lang.Integer">
     SELECT count(*) from country_info where (cr_name) = (#{name})
@@ -95,13 +95,25 @@ WHERE cr_seq= #{cr_seq};
     <select id="selectAlbumPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from album_info where ab_name like '%${keyword}%'
     </select>
-    <insert id="">
-    </insert>
-
-</mapper>
 
 
-    <!-- 
-    <select id="" resultType="">
+    <select id="selectMusicInfoBySeq" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info where mu_seq = #{seq}
     </select>
-    --> 
+    <update id="deleteMusicImgFile">
+        update music_info set mu_img_file = ''
+        where mu_img_file = #{filename}
+    </update>
+    <update id="deleteMusicFile">
+        update music_info set mu_music_file = ''
+        where mu_music_file = #{filename}
+    </update>
+    <update id="updateMusicInfo">
+        UPDATE 
+        music_info
+        SET 
+        mu_name=#{mu_name}, mu_ai_seq=#{mu_ai_seq}, mu_lyrics=#{mu_lyrics}, mu_ab_seq=#{mu_ab_seq}, mu_img_file=#{mu_img_file}, mu_music_file=#{mu_music_file},
+        mu_playtime=#{mu_playtime}, mu_explain_txt=#{mu_explain_txt}, mu_age=#{mu_age} 
+        WHERE mu_seq=#{mu_seq}
+    </update>
+</mapper>
