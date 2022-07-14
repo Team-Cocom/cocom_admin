@@ -36,6 +36,7 @@ $(function(){
                     alert(result.message);
                     return;
                 }
+                
                 let split = (result.file).split("\\");
                 split = split[split.length - 1].split(".");
                 let origin_file = split[0] + "." + split[1];
@@ -71,6 +72,7 @@ $(function(){
             }
         })
     })
+    $()
 })
 
 function deleteImg(filename) {
