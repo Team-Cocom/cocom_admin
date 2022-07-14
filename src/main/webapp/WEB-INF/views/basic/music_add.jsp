@@ -31,6 +31,14 @@
                             <td>
                                 <input type="text" id="mu_name">
                             </td>
+                            <td>장르</td>
+                            <td>
+                                <select>
+                                    <c:forEach items="${genre_list}" var="item">
+                                    <option value="${item.gr_seq}">${item.gr_name}</option>
+                                </c:forEach>
+                                </select>
+                            </td>
                             <td>아티스트</td>
                             <td>
                                 <input type="text" value="아티스트 정보 필요">
@@ -104,6 +112,14 @@
                             <td>노래제목 변경</td>
                             <td>
                                 <input type="text" id="mu_mod_name" value="${list.mu_name}">
+                            </td>
+                            <td>장르</td>
+                            <td>
+                                <select>
+                                    <c:forEach items="${genre_list}" var="item">
+                                    <option value="${item.gr_seq}" <c:if test="${item.gr_seq == list.mu_gr_seq}">selected</c:if>>${item.gr_name}</option>
+                                </c:forEach>
+                                </select>
                             </td>
                             <td>아티스트</td>
                             <td>

@@ -149,6 +149,16 @@
         mu_playtime=#{mu_playtime}, mu_explain_txt=#{mu_explain_txt}, mu_age=#{mu_age} 
         WHERE mu_seq=#{mu_seq}
     </update>
+<<<<<<< HEAD
 
     
+=======
+<<<<<<< HEAD
+    <select id="selectAllGenre" resultType="com.cocom.music_admin.data.basic.GenreInfo">
+        select * from genre_info
+    </select>
+>>>>>>> develop
 </mapper>
+=======
+</mapper>
+>>>>>>> 67e7ee6986ce549a018cc712b96060bea791bcc7
