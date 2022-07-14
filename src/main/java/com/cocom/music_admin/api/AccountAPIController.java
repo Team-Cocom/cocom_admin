@@ -89,7 +89,7 @@ public class AccountAPIController {
         
         data.setAa_pwd(AESAlgorithm.Encrypt(data.getAa_pwd()));
         AdminAccountInfo user = account_mapper.login(data);
-
+        
         if(user == null) {
             resultMap.put("status", false);
             resultMap.put("message", "아이디 또는 비밀번호 오류입니다.");

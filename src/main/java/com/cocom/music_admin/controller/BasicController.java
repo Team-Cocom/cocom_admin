@@ -22,7 +22,6 @@ public class BasicController {
         @RequestParam @Nullable String keyword,
         @RequestParam @Nullable Integer page
         ){
-<<<<<<< HEAD
         if(page == null) page = 1;
         model.addAttribute("keyword", keyword);
         model.addAttribute("page", page);
@@ -39,34 +38,6 @@ public class BasicController {
     @GetMapping("/genre/list")
     public String listGenre(Model model) {
         model.addAttribute("genreList", basic_mapper.selectGenreInfo());
-=======
-            if(page == null) page = 1;
-            model.addAttribute("keyword", keyword);
-            model.addAttribute("page", page);
-            model.addAttribute("list", basic_mapper.selectAllfromMusicInfo(keyword,(page-1)*10));
-            model.addAttribute("pageCnt", basic_mapper.selectAllfromMusicPageCnt(keyword));
-            return "/basic/music_list";
-        }
-        @GetMapping("/music/add")
-        public String addMusic(Model model,@RequestParam @Nullable Integer music_no){
-            model.addAttribute("genre_list", basic_mapper.selectGenreInfo());
-            model.addAttribute("country_list", basic_mapper.selectCountryInfo());
-            model.addAttribute("music_no", music_no);
-            return "/basic/music_add";
-        }
-        
-        @GetMapping("/music/detail")
-        public String patchMusic(Model model,@RequestParam @Nullable Integer music_no){
-            model.addAttribute("list", basic_mapper.selectMusicInfoBySeq(music_no)); 
-            model.addAttribute("genre_list", basic_mapper.selectGenreInfo());
-            model.addAttribute("country_list", basic_mapper.selectCountryInfo());
-            model.addAttribute("music_no", music_no);
-            return "/basic/music_add";
-        }
-        @GetMapping("/genre/list")
-        public String listGenre(Model model) {
-        model.addAttribute("list", basic_mapper.selectGenreInfo());
->>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
         return "/basic/genre_list";
     }
     @GetMapping("/genre/add")
@@ -83,7 +54,7 @@ public class BasicController {
         return "/basic/country_list";
     }
     
-    
+
     @GetMapping("/enter/list")
     public String getEnterList(
     Model model,
@@ -122,7 +93,6 @@ public class BasicController {
         model.addAttribute("pageCnt", basic_mapper.selectAlbumPageCnt(keyword));
         return "/basic/album_list";
     }
-<<<<<<< HEAD
     @GetMapping("/album/detail")
     public String getAlbumList (Model model, @RequestParam Integer seq){
         model.addAttribute("list", basic_mapper.selectAlbumInfoBySeq(seq));
@@ -149,7 +119,4 @@ public class BasicController {
         model.addAttribute("music_no", music_no);
         return "/basic/music_add";
     }
-=======
-
->>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
 }

@@ -22,8 +22,4 @@ public class MemberInfo {
     private Integer mi_use;
     private Integer mi_alim;
     private Integer mi_ps_seq;
-<<<<<<< HEAD
-
-=======
->>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
 }

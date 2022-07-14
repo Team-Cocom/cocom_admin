@@ -23,12 +23,8 @@ public interface BasicMapper {
     public void deleteMusicFile(String filename);
     public void updateMusicInfo(MusicInfo data);
 
-<<<<<<< HEAD
-    public List<GenreInfo> selectAllGenre();
-
-=======
->>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     public List<GenreInfo> selectGenreInfo();
+    public List<GenreInfo> selectAllGenre();
     public void insertGenreInfo(String gr_name);
     public void deleteGenreInfo(Integer seq);
     public Integer selectGenreInfos(String name);
@@ -55,15 +51,13 @@ public interface BasicMapper {
     public List<AlbumInfo> selectAlbumsInfo(String keyword, Integer offset);
     public List<AlbumSummary> selectAlbumSummary(String keyword, Integer offset);
     public Integer selectAlbumPageCnt(String keyword);
-<<<<<<< HEAD
     public List<AlbumInfo> selectAllFromAlbums();
     public Integer selectAlbumName(AlbumInfo data);
     public void insertAlbumInfos(AlbumInfo data);
     public void updateAlbumInfo(AlbumInfo data);
     public List<AlbumSummary> selectAlbumInfoBySeq(Integer seq);
+    public Object selectAllEnterInfo();
+    public void deleteAlbumInfo(Integer seq);
 
     
-=======
-    public void insertAlbumInfo(AlbumInfo data);
->>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
 }

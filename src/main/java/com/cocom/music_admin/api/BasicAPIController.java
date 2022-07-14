@@ -6,7 +6,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -58,7 +57,6 @@ public class BasicAPIController {
 
     }
 
-<<<<<<< HEAD
     @PutMapping("/genre/add")
     public Map<String, Object> putgenre(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -86,8 +84,6 @@ public class BasicAPIController {
         
         return resultMap;
     }
-=======
->>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     @PutMapping("/country/add")
     public Map<String, Object> addcountry(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -177,6 +173,15 @@ public class BasicAPIController {
         basic_mapper.updateAlbumInfo(data);
         resultMap.put("status", true);
         resultMap.put("message", "앨범 정보 수정을 완료했습니다.");
+        return resultMap;
+    }
+
+    @DeleteMapping("/album/delete")
+    public Map<String, Object> deleteAlbumsInfo(@RequestParam Integer seq) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteAlbumInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "앨범 정보 삭제를 완료했습니다.");
         return resultMap;
     }
 }

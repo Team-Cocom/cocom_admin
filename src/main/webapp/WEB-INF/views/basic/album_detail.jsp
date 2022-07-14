@@ -68,6 +68,7 @@
                 </c:forEach>
             </tbody>
         </table>
+        
     </main>
 </body>
 </html>

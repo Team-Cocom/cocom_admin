@@ -30,6 +30,7 @@ $(function(){
             }
         })
     })
+
     $("#ab_add_save").click(function(){
         if(!confirm("앨범 정보를 추가하시겠습니까?")) return;
 
@@ -72,4 +73,16 @@ $(function(){
             }
         })
     })
+
+    $("").click(function(){
+        let seq = $(this).attr("ab_seq");
+        $.ajax({
+            url:"/album/list?seq="+seq,
+            type:"delete",
+            success:function(r){
+                location.href="/album/list?seq="+seq
+            }
+        })
+    })
 })
+

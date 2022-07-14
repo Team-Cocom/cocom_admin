@@ -11,18 +11,6 @@
 <body>
     <main>
         <h1>앨범 정보
-            <c:if test="${modify == null}">추가</c:if>
-            <c:if test="${modify == true">수정</c:if>
-        </h1>
-        <c:if test="${modify == null}">
-            <form action="/album/add" method="post">
-        </c:if>
-        <c:if test="${modify == true}">
-            <form action="/album/modify" method="post">
-        </c:if>
-        <c:if test="${modify == true}">
-            <input type="text" name="ab_seq" hidden value="${data.ab_seq}">
-        </c:if>
         <div class="basic_info">
             <table>
                 <tbody>
