@@ -63,10 +63,14 @@
         </div>
         <div class="pass_add_popup_wrap">
             <div class="pass_add_area">
-                        <form id="pass_img_form"><input type="file" name="file" id="ps_img_file" hidden></form>
-                        <button id="pass_img_save" onclick="document.getElementById('ps_img_file').click()">이용권 사진
-                            업로드</button>
-                    </span><span class="img_file"></span></p>
+                <form id="pass_img_form">
+                <input type="file" name="file" hidden id="ps_img_file">
+                </form>
+                <button id="pass_img_save" onclick="document.getElementById('ps_img_file').click()">이용권 사진
+                    업로드</button>
+                    </span><span class="img_file">
+                        
+                    </span></p>
                 <p>이용권 이름 <span><input type="text" id="ps_name"></span></p>
                 <p>이용권 기간 <span><input type="number" id="ps_period">일</span></p>
                 <p>이용권 가격 <span><input type="number" id="ps_price">원</span></p>
