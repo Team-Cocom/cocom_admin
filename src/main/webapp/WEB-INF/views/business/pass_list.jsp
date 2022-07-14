@@ -44,7 +44,7 @@
                                 <c:if test="${item.ps_type == 3}">VVIP회원</c:if>
                             </td>
                             <td>
-                                <img src="/images/pass_img/${item.ps_img_file}" class="ps_img">
+                                <img src="/images/pass_img/${item.ps_img_file}" class="ps_img" data-file="${item.ps_img_file}">
                             </td>
                             <td>
                                 <fmt:formatNumber value="${item.ps_price}" pattern="#,##0"/>원
@@ -55,6 +55,9 @@
                             </td>
                         </tr>
                     </c:forEach>
+                    <div class="ps_origin_img" style="display: none;">
+                        <button id="ps_origin_cancel">닫기</button>
+                    </div>
                 </tbody>
             </table>
         </div>

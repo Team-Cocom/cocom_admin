@@ -28,14 +28,16 @@ main {
 }
 
 
-.pass_list_area{
-    vertical-align: middle;
-}
+
+
+.ps_origin_img {width: 100vw; height: 100vh; position: fixed; left: 0; top: 0; display: none; background-color: #00000055; z-index: 9999;}
+.ps_file_area {margin: 0 auto; text-align: center; margin-top: 350px;} 
+.ps_origin_img button {position: absolute; right:450px; top: 350px;} 
 
 .pass_add_popup_wrap{width: 100vw; height: 100vh; position: fixed; left: 0; top: 0; display: none; background-color: #00000055;}
 
 .pass_add_area{
-    margin-left: 550px; margin-top:225px; max-width: 900px; box-shadow: #333; background-color: #fff; border-radius: 5px;
+    margin-left: 250px; margin-top:225px; max-width: 1300px; box-shadow: #333; background-color: #fff; border-radius: 5px;
 }
 .pass_img {font-size: 0;}
     
@@ -88,6 +90,17 @@ main {
     margin-bottom: 30px;
 }
 
+.img_file .pass_img{width: 1000px; height: 150px; position: absolute; top: 380px; right: 350px;}
+
+
+.pass_add_area .pass_img {
+    border: 0;
+    background-size: auto 100% ; background-position:center; position: absolute;
+    background-repeat: no-repeat; margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
 .search_box {margin-top: 10px; position: absolute; left: 780px; top: 70px;}
 .search_box input {
     font-family: "Noto Sans KR";
@@ -112,3 +125,6 @@ main {
 .pager_area a {font-weight: 700; color: #999; text-decoration: none;
 margin:10px;}
 .pager_area a:hover {color: #333; text-decoration: underline;}
+
+.ps_img:hover{cursor: pointer;}
+.ps_origin_img {background-size: auto;}

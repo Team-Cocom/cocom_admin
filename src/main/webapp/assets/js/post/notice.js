@@ -23,9 +23,8 @@ $(function(){
                 split = split[split.length - 1].split(".");
                 let origin_file = split[0] + "." + split[1];
                 let tag =
-                    '<div class="notice_image" data-name="' + origin_file + '">' +
-                    '<img src="/images/notice_img/' + origin_file + '" >' +
-                    '<button onclick=deleteImg("' + origin_file + '")>&times;</button>'
+                '<div class="notice_image" data-name="'+origin_file+'" style="background-image:url(/images/notice_img/'+origin_file+')">'+
+                    '<button onclick=deleteImg("' + origin_file + '")>&times;</button>'+
                 '</div>';
                 $(".notice_img_area").append(tag);
             }

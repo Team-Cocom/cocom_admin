@@ -2,6 +2,23 @@ $(function(){
     $("#pass_popup").click(function(){$(".pass_add_popup_wrap").show();})
     $("#cancel_pass").click(function(){$(".pass_add_popup_wrap").hide();})
     
+    
+    $(".ps_img").click(function(){
+        $(".ps_origin_img").show();
+        $("#ps_origin_cancel").show();
+        let ps_file = $(this).attr("data-file")
+        let tag = 
+        '<div class="ps_file_area">'+
+        '<img src="/images/pass_img/'+ps_file+'">'+
+        '</div>';
+        $(".ps_origin_img").append(tag);
+    })
+    
+    $("#ps_origin_cancel").click(function(){
+        $(".ps_origin_img").hide();
+        $(".ps_file_area").html("");
+    })
+
     $("#ps_img_file").change(function(){
         let form = $("#pass_img_form");
         let formData = new FormData(form[0]);
@@ -23,10 +40,9 @@ $(function(){
                 split = split[split.length - 1].split(".");
                 let origin_file = split[0] + "." + split[1];
                 let tag =
-                    '<div class="pass_img" data-name="'+origin_file+'">' +
-                    '<img src="/images/pass_img/'+origin_file+'" >' +
-                    '<button onclick=deleteImg("'+origin_file+'")>&times;</button>'
-                '</div>';
+                '<div class="pass_img" data-name="'+origin_file+'" style="background-image:url(/images/pass_img/'+origin_file+')">'+
+                '<button onclick=deleteImg("' + origin_file + '")>&times;</button>'+
+            '</div>';
 
                 $(".img_file").append(tag);
             }
@@ -54,7 +70,6 @@ $(function(){
                 location.reload();
             }
         })
-
     })
 })
 

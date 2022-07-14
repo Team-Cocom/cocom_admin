@@ -79,7 +79,7 @@
         <input type="text" id="ard_title" placeholder="재생목록 이름">
         <div class="admin_playlist_add">
             <p>노래 제목</p>
-            <input type="text" id="music_name" placeholder="노래 제목">
+            <input type="text" id="music_name" placeholder="노래 제목" disabled>
             <div class="admin_playlist_button_area">
                 <p>노래 파일추가</p>
                     <input type="text" id="add_music">
@@ -96,7 +96,7 @@
 </div>
 <div class="music_search_popup" style="display:none; border:1px solid #000">
     <div class="music_search_form">
-        <h2>배우 검색</h2>
+        <h2>노래 검색</h2>
         <input type="text" id="music_search_keyword">
         <button id="music_search_button">검색</button>
         <div class="music_search_list">

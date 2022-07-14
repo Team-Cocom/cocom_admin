@@ -10,8 +10,12 @@
 .notice_add_area{
     margin-left: 550px; margin-top:225px; max-width: 800px; max-height: 900px; box-shadow: #333; background-color: #fff; border-radius: 5px; vertical-align: middle;
 }
+
+.notice_img_area .notice_image{width: 330px; height: 280px; position: absolute; top: 230px; left: 950px;}
+
+
 .notice_add_area .notice_image {
-    width: 150px; height: 200px; border: 0; right: 800px;
+    border: 0;
     background-size: auto 100% ; background-position:center; position: absolute;
     background-repeat: no-repeat; margin: 0 auto;
     margin-bottom: 10px;
