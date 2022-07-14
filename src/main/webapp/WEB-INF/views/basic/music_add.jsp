@@ -33,9 +33,17 @@
                             </td>
                             <td>장르</td>
                             <td>
-                                <select>
+                                <select id="mu_gr_seq">
                                     <c:forEach items="${genre_list}" var="item">
                                     <option value="${item.gr_seq}">${item.gr_name}</option>
+                                </c:forEach>
+                                </select>
+                            </td>
+                            <td>국가</td>
+                            <td>
+                                <select id="mu_cr_seq">
+                                    <c:forEach items="${country_list}" var="item">
+                                    <option value="${item.cr_seq}">${item.cr_name}</option>
                                 </c:forEach>
                                 </select>
                             </td>
@@ -115,12 +123,19 @@
                             </td>
                             <td>장르</td>
                             <td>
-                                <select>
+                                <select id="mu_gr_seq_mod">
                                     <c:forEach items="${genre_list}" var="item">
                                     <option value="${item.gr_seq}" <c:if test="${item.gr_seq == list.mu_gr_seq}">selected</c:if>>${item.gr_name}</option>
                                 </c:forEach>
                                 </select>
                             </td>
+                            <td>국가</td>
+                            <td>
+                                <select id="mu_cr_seq_mod">
+                                    <c:forEach items="${country_list}" var="item">
+                                    <option value="${item.cr_seq}" <c:if test="${item.cr_seq == list.mu_cr_seq}">selected</c:if>>${item.cr_name}</option>
+                                </c:forEach>
+                                </select>
                             <td>아티스트</td>
                             <td>
                                 <input type="text" value="아티스트 정보 필요">

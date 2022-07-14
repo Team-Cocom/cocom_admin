@@ -35,7 +35,12 @@
         <a href="/release/list">발매사 정보</a>
         <a href="/music/list">노래 정보</a>
         <a href="/admin/recommend">관리자 추천 리스트</a>
+<<<<<<< HEAD
         <a href="/album/list">앨범 정보</a>
+=======
+        <a href="/pass/list">이용권 정보</a>
+        <a href="/notice">공지 정보</a>
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     </header>
 </body>
 </html>

@@ -6,10 +6,17 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
+import com.cocom.music_admin.data.business.PassInfo;
 import com.cocom.music_admin.data.business.request.AdminPlayListVO;
 
 @Mapper
 public interface BusinessMapper {
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     public void insertAdminRecommend(AdminRecommend data);
     public Integer selectMusicSeq(String filename);
     public List<AdminPlayListVO> selectAllTodayRecommend();
@@ -20,4 +27,8 @@ public interface BusinessMapper {
 
     public List<MusicInfo> selectMusicInfoByUser();
     public List<MusicInfo> selectMusicInfoRecommend();
+
+    public void insertPassInfo(PassInfo data);
+    public List<PassInfo> selectPassInfo(String keyword, Integer offset);
+    public Integer selectPassPageCnt(String keyword);
 }

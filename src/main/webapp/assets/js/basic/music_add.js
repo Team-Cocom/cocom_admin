@@ -166,8 +166,9 @@ $(function () {
             mu_lyrics: $("#mu_lylic").val(),
             mu_explain_txt: $("#mu_explain").val(),
             mu_playtime: mu_time,
+            mu_gr_seq:$("#mu_gr_seq option:selected").val(),
+            mu_cr_seq:$("#mu_cr_seq option:selected").val()
         }
-        console.log(data);
 
         $.ajax({
             url: "/api/music/add",
@@ -209,6 +210,8 @@ $(function () {
             mu_lyrics:$("#mu_lylic_mod").val(),
             mu_explain_txt:$("#mu_explain_mod").val(),
             mu_playtime:mu_time,
+            mu_gr_seq:$("#mu_gr_seq_mod option:selected").val(),
+            mu_cr_seq:$("#mu_cr_seq_mod option:selected").val()
         }
         console.log(data);
 

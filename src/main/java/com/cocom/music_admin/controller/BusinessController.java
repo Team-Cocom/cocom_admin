@@ -24,15 +24,24 @@ public class BusinessController {
         model.addAttribute("music_recommend", business_mapper.selectMusicInfoRecommend());
         return "/business/admin_recommend_list";
     }
-    @GetMapping("/admin/recommend/add")
-    public String getAdRecommendAdd(Model model){
-        return "/business/admin_recommend_add";
-    }
     @GetMapping("/admin/recommend/list")
     public String getAdRecommendList(Model model, @RequestParam String title){
         List<AdminPlayListVO> ply = business_mapper.selectRecommendByString(title);
         model.addAttribute("list", ply);
         return "/business/admin_recommend_detail";
+    }
+
+    @GetMapping("/pass/list")
+    public String getPass(Model model,
+        @RequestParam @Nullable Integer page,
+        @RequestParam @Nullable String keyword
+    ){
+        if(page == null) page = 1;
+        model.addAttribute("page", page);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("passList", business_mapper.selectPassInfo(keyword,(page-1)*10));
+        model.addAttribute("pageCount", business_mapper.selectPassPageCnt(keyword));
+        return "/business/pass_list";
     }
 
     

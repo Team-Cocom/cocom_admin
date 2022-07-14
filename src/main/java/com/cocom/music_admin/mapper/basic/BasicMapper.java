@@ -4,15 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-<<<<<<< HEAD
-import com.cocom.music_admin.data.basic.GenreInfo;
-=======
 import com.cocom.music_admin.data.basic.AlbumInfo;
 import com.cocom.music_admin.data.basic.AlbumSummary;
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
 import com.cocom.music_admin.data.basic.EnterInfo;
->>>>>>> 67e7ee6986ce549a018cc712b96060bea791bcc7
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.basic.ReleaseCompanyInfo;
 
@@ -27,8 +23,11 @@ public interface BasicMapper {
     public void deleteMusicFile(String filename);
     public void updateMusicInfo(MusicInfo data);
 
+<<<<<<< HEAD
     public List<GenreInfo> selectAllGenre();
 
+=======
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     public List<GenreInfo> selectGenreInfo();
     public void insertGenreInfo(String gr_name);
     public void deleteGenreInfo(Integer seq);
@@ -56,6 +55,7 @@ public interface BasicMapper {
     public List<AlbumInfo> selectAlbumsInfo(String keyword, Integer offset);
     public List<AlbumSummary> selectAlbumSummary(String keyword, Integer offset);
     public Integer selectAlbumPageCnt(String keyword);
+<<<<<<< HEAD
     public List<AlbumInfo> selectAllFromAlbums();
     public Integer selectAlbumName(AlbumInfo data);
     public void insertAlbumInfos(AlbumInfo data);
@@ -63,4 +63,7 @@ public interface BasicMapper {
     public List<AlbumSummary> selectAlbumInfoBySeq(Integer seq);
 
     
+=======
+    public void insertAlbumInfo(AlbumInfo data);
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
 }

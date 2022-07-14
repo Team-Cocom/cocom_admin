@@ -25,7 +25,6 @@ public class BasicAPIController {
     @PutMapping("/music/add")
     public Map<String,Object> putMusic(@RequestBody MusicInfo data){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
-        System.out.println(data);
         basic_mapper.insertMusicInfo(data);
         resultMap.put("status", true);
         resultMap.put("message","노래 정보를 추가하였습니다.");
@@ -36,7 +35,7 @@ public class BasicAPIController {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         basic_mapper.updateMusicInfo(data);
         resultMap.put("status", true);
-        resultMap.put("message","노래 정보를 추가하였습니다.");
+        resultMap.put("message","노래 정보를 수정하였습니다.");
         return resultMap;
     }
     
@@ -59,6 +58,7 @@ public class BasicAPIController {
 
     }
 
+<<<<<<< HEAD
     @PutMapping("/genre/add")
     public Map<String, Object> putgenre(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -86,6 +86,8 @@ public class BasicAPIController {
         
         return resultMap;
     }
+=======
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     @PutMapping("/country/add")
     public Map<String, Object> addcountry(@RequestParam String name) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();

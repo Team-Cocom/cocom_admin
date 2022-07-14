@@ -3,13 +3,21 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.basic.BasicMapper">
     <insert id="insertMusicInfo">
+<<<<<<< HEAD
         INSERT INTO music_info
             (mu_name, mu_ai_seq, mu_lyrics, mu_ab_seq, mu_img_file, mu_music_file, mu_li_seq, mu_playtime, mu_explain_txt, mu_age)
         VALUES
             (#{mu_name},#{mu_ai_seq},#{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age})
+=======
+    INSERT INTO music_info
+    (mu_name, mu_ai_seq, mu_lyrics, mu_ab_seq, mu_img_file, mu_music_file, mu_li_seq, mu_playtime, mu_explain_txt, mu_age,mu_gr_seq,mu_cr_seq)
+    VALUES
+    (#{mu_name},#{mu_ai_seq},#{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age},#{mu_gr_seq},#{mu_cr_seq})
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
     </insert>
     <select id="selectAllfromMusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
-        select * from music_info
+        select a.*,b.gr_name  from music_info a inner join genre_info b on
+        a.mu_gr_seq = b.gr_seq 
         where mu_name like '%${keyword}%'
         limit 10 offset #{offset}
     </select>
@@ -146,9 +154,10 @@
         music_info
         SET 
         mu_name=#{mu_name}, mu_ai_seq=#{mu_ai_seq}, mu_lyrics=#{mu_lyrics}, mu_ab_seq=#{mu_ab_seq}, mu_img_file=#{mu_img_file}, mu_music_file=#{mu_music_file},
-        mu_playtime=#{mu_playtime}, mu_explain_txt=#{mu_explain_txt}, mu_age=#{mu_age} 
+        mu_playtime=#{mu_playtime}, mu_explain_txt=#{mu_explain_txt}, mu_age=#{mu_age} , mu_gr_seq=#{mu_gr_seq} , mu_cr_seq=#{mu_cr_seq}
         WHERE mu_seq=#{mu_seq}
     </update>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     
@@ -158,7 +167,6 @@
         select * from genre_info
     </select>
 >>>>>>> develop
-</mapper>
 =======
+>>>>>>> 32d52224d96bfcfa0fc5bca78d1e6b4bd4f2d134
 </mapper>
->>>>>>> 67e7ee6986ce549a018cc712b96060bea791bcc7
