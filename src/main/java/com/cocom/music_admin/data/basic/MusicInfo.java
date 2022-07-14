@@ -19,11 +19,8 @@ public class MusicInfo {
     private Integer mu_age;
     private Integer mu_str_seq;
     private Date mu_reg_dt;
-<<<<<<< HEAD
     private Integer mu_is_confirm;
-=======
     private Integer mu_gr_seq;
     private Integer mu_cr_seq;
 
->>>>>>> develop
 }

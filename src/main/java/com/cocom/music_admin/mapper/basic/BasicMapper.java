@@ -27,10 +27,8 @@ public interface BasicMapper {
     public void deleteMusicFile(String filename);
     public void updateMusicInfo(MusicInfo data);
 
-<<<<<<< HEAD
     public List<GenreInfo> selectAllGenre();
 
-=======
     public List<GenreInfo> selectGenreInfo();
     public void insertGenreInfo(String gr_name);
     public void deleteGenreInfo(Integer seq);
@@ -65,5 +63,4 @@ public interface BasicMapper {
     public List<AlbumSummary> selectAlbumInfoBySeq(Integer seq);
 
     
->>>>>>> 67e7ee6986ce549a018cc712b96060bea791bcc7
 }
