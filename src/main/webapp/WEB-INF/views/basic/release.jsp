@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${list}" var="item" varStatus="stat">
+                <c:forEach items="${releaseList}" var="item" varStatus="stat">
                     <tr>
                         <td>${stat.count}</td>
                         <td>${item.rci_name}</td>
