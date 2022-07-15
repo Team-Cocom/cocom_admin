@@ -34,6 +34,13 @@ $(function(){
     $("#ab_add_save").click(function(){
         if(!confirm("앨범 정보를 추가하시겠습니까?")) return;
 
+        let ab_name_du = $("#ab_name").val();
+
+        if(isEmpty(ab_name_du),false){
+            alert("올바르게 입력해주세요");
+            return;
+        }
+
         let data = {
             ab_name:$("#ab_name").val(),
             ab_ai_seq:1,
@@ -43,12 +50,11 @@ $(function(){
             ab_rci_seq:$("#ab_rci_seq option:selected").val(),
             ab_mv_seq:$("#ab_mv_seq").val(),
             ab_img_file:$(".ab_cover").attr("filename"),
-            ab_mu_seq:1
+            ab_mu_seq:1,
+            ab_is_confirm:1
         }
-        if(isEmpty(ab_name),false) {
-            alert("올바르게 입력 해주세요.");
-            return;
-        }
+
+
         console.log(data);
 
         $.ajax({

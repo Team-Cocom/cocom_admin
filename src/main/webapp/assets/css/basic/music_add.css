@@ -27,7 +27,7 @@
 .music_mod_area select{
     width: 200px;
 }
-.music_mod_area #pass_img_save{
+.music_mod_area #mod_music{
     border: 1px solid #999;
     font-family: "Noto Sans KR";
     color: #333;
@@ -45,10 +45,10 @@
     position: inherit; top: 0; left: 210px; margin-bottom: 5px;
     cursor:pointer; 
 }
-.music_mod_area button:hover, #pass_img_save:hover{
+.music_mod_area button:hover, #mod_music:hover{
     background-color: rgb(131, 131, 131);
 }
-.music_mod_area #ps_img_file{
+.music_mod_area #music_cover_mod_img{
     font-family: "Noto Sans KR";
     border: 0;
 }
@@ -59,7 +59,7 @@
 .mod_right_area{position: absolute; left: 750px; top: 250px; }
 
 .mod_right_area > p {
-    padding: 50px; margin-top: 50px;
+    padding: 20px;
 }
 
 
