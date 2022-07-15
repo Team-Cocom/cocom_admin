@@ -37,6 +37,7 @@
         <a href="/magazine/list">매거진 정보</a>
         <a href="/goods/list">굿즈 정보</a>
         <a href="/admin/recommend">관리자 추천 리스트</a>
+        <a href="/admin/event/list">이벤트 관리자</a>
     </header>
 </body>
 </html>

@@ -109,5 +109,32 @@ public class BasicAPIController {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         return resultMap;
     }
+        @PutMapping("/country/add")
+    public Map<String, Object> addcountry(@RequestParam String name) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        Integer isDuplicateName = basic_mapper.selectCountryInfos(name);
+        if(isDuplicateName > 0) {
+            resultMap.put("status", false);
+            resultMap.put("message", name+"은 이미 등록된 나라입니다.");
+            return resultMap;
+        }
+        basic_mapper.insertCountry(name);
+        resultMap.put("status", true);
+        resultMap.put("message", "나라정보를 입력하였습니다.");
+        
+        return resultMap;
+    }
+    @DeleteMapping("/country/delete")
+    public Map<String, Object> deletecountry(@RequestParam Integer seq) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+
+        basic_mapper.deleteCountryInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "나라정보를 삭제하였습니다.");
+
+        return resultMap;
+    }
+    
+    
 
 }

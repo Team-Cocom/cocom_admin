@@ -36,6 +36,31 @@ public class BusinessController {
         model.addAttribute("list", ply);
         return "/business/admin_recommend_detail";
     }
+    @GetMapping("/admin/event/list")
+    public String getEventList(Model model, 
+    @RequestParam @Nullable String keyword,
+    @RequestParam @Nullable Integer page
+    ){
+        if(page == null) page = 1;
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("page", page);
+        model.addAttribute("list", business_mapper.selectAllEveInfos(keyword, (page-1)*10));
+        model.addAttribute("pageCnt", business_mapper.selectAllEvePageCnt(keyword));
+        return "/business/admin_event_list";
+    }
+    @GetMapping("/admin/event/add")
+    public String addEventList(Model model){
+        return "/business/admin_event_add";
+    }
+    @GetMapping("/admin/event/delete")
+    public String delEventList(Model model) {
+        return "/business/admin_delete";
+    }
+    @GetMapping("/admin/event_detail")
+    public String modEventInfo(Model model,@RequestParam Integer seq) {
+        model.addAttribute("list", business_mapper.selectEventBySeq(seq));
+        return "/business/admin_event_detail";
+    }
 
     
 }
