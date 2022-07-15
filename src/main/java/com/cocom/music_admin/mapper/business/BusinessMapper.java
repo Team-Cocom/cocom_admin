@@ -10,21 +10,12 @@ import com.cocom.music_admin.data.business.MagazineInfo;
 import com.cocom.music_admin.data.basic.EventInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
+import com.cocom.music_admin.data.business.PassInfo;
 import com.cocom.music_admin.data.business.request.AdminPlayListVO;
 
 @Mapper
 public interface BusinessMapper {
-    public List<MagazineInfo> selectMagazineList();
-    public void insertMagazine(MagazineInfo data);
-    public void deleteMagazineInfo(Integer seq);
-    public List<MagazineDesc> selectMagazineDesc();
-    public void insertMagazineDesc(MagazineDesc data);
 
-    public List<GoodsInfo> selectAllGoodsList(String keyword, Integer offset);
-    public Integer selectGoodsPageCnt(String keyword);
-    public Integer selectGoodsName(String name);
-    public void insertGoodsInfo(GoodsInfo data);
-    public void deleteGoodsInfo(Integer seq);
 
 
     public void insertAdminRecommend(AdminRecommend data);

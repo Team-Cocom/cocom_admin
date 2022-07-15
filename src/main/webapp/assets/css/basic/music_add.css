@@ -6,3 +6,61 @@
 .music_img button, .music_img_mod button {
     position: absolute; right: 0; top: 0;
 }
+
+.music_mod_area{
+    margin-left: 250px; max-width: 1300px; box-shadow: #333; background-color: #fff; border-radius: 5px;
+}
+.music_img_mod {font-size: 0;}
+    
+.img_file .music_img_mod {
+    width: 300px; height: 300px; border: 0; 
+    background-size: auto 100% ; background-position:center;
+    background-repeat: no-repeat; margin: 0 auto;
+    position: inherit; margin-bottom: -50px; margin-right: 100px;
+}
+
+.music_mod_area input{
+    font-family: "Noto Sans KR";
+    border: 0;
+    border-bottom: 1px solid #999; outline:none; border: 1px solid #333; border-radius: 20px;
+}
+.music_mod_area select{
+    width: 200px;
+}
+.music_mod_area #mod_music{
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:150px; height:30px; border-radius: 3px;
+    position: relative; top: 2px; left: 20px;
+    cursor:pointer; 
+}
+.music_mod_area button{
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:120px; height:30px; border-radius: 3px;
+    position: inherit; top: 0; left: 210px; margin-bottom: 5px;
+    cursor:pointer; 
+}
+.music_mod_area button:hover, #mod_music:hover{
+    background-color: rgb(131, 131, 131);
+}
+.music_mod_area #music_cover_mod_img{
+    font-family: "Noto Sans KR";
+    border: 0;
+}
+.music_mod_area > p {
+    padding: 20px;
+}
+
+.mod_right_area{position: absolute; left: 750px; top: 250px; }
+
+.mod_right_area > p {
+    padding: 20px;
+}
+
+
+

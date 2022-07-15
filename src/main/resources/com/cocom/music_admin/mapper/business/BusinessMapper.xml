@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cocom.music_admin.mapper.business.BusinessMapper">
-    <select id="selectMusicSeq" resultType="java.lang.Integer">
-        select mu_seq from music_info where mu_music_file = #{filename}
-    </select>
     <insert id="insertAdminRecommend">
         INSERT INTO admin_recommend
         (ard_aa_seq, ard_mu_seq, ard_title, ard_ab_seq)

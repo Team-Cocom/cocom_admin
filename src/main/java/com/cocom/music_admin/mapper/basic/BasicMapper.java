@@ -5,12 +5,12 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.cocom.music_admin.data.basic.AlbumInfo;
+import com.cocom.music_admin.data.basic.AlbumSummary;
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
 import com.cocom.music_admin.data.basic.EnterInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.basic.ReleaseCompanyInfo;
-import com.cocom.music_admin.data.business.GoodsInfo;
 
 @Mapper
 public interface BasicMapper {
@@ -24,6 +24,7 @@ public interface BasicMapper {
     public void updateMusicInfo(MusicInfo data);
 
     public List<GenreInfo> selectGenreInfo();
+    public List<GenreInfo> selectAllGenre();
     public void insertGenreInfo(String gr_name);
     public void deleteGenreInfo(Integer seq);
     public Integer selectGenreInfos(String name);
@@ -32,6 +33,7 @@ public interface BasicMapper {
     public void insertCountry(String name);
     public void deleteCountryInfo(Integer seq);
     public Integer selectCountryInfos(String name);
+    
     public List<EnterInfo> selectAllEnterInfo(String keyword, Integer offset);
     public Integer selectAllEnterInfoPageCnt(String keyword);
     public void insertEnterInfo(String name);
@@ -44,13 +46,18 @@ public interface BasicMapper {
     public void insertReleaseComInfo(String name);
     public Integer selectReleaseComName(String name);
     public void deleteRelComInfo(Integer seq);
+    public List<ReleaseCompanyInfo> selectAllFromRelInfo();
 
     public List<AlbumInfo> selectAlbumsInfo(String keyword, Integer offset);
+    public List<AlbumSummary> selectAlbumSummary(String keyword, Integer offset);
     public Integer selectAlbumPageCnt(String keyword);
-    public void insertAlbumInfo(AlbumInfo data);
-    public List<GoodsInfo> selectAllGoodsList(String keyword, Integer offset);
-    public Integer selectGoodsPageCnt(String keyword);
-    public Integer selectGoodsName(String name);
-    public void insertGoodsInfo(GoodsInfo data);
+    public List<AlbumInfo> selectAllFromAlbums();
+    public Integer selectAlbumName(AlbumInfo data);
+    public void insertAlbumInfos(AlbumInfo data);
+    public void updateAlbumInfo(AlbumInfo data);
+    public List<AlbumSummary> selectAlbumInfoBySeq(Integer seq);
+    public Object selectAllEnterInfo();
+    public void deleteAlbumInfo(Integer seq);
+
     
 }

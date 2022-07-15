@@ -1,17 +1,18 @@
 main {padding: 30px; min-width: 1280px; text-align: center;
     padding-top: 15px;}
-    .admin_recommend_list_wrap{max-height: 326px;}
+    .admin_recommend_list_wrap{max-height: 326px; margin-bottom: 100px;}
     .admin_recommend_list_wrap > h1 {font-size: 24px; font-weight: 700;}
     .admin_recommend_list_wrap > a {display: inline-block; margin: 10px; 
         vertical-align: top; color: #333; text-decoration: none;
     }
-    .recommend_list_wrap{text-align: center; width: 1280px; vertical-align: middle; margin-left: 500px;}
+    .recommend_list_wrap{text-align: center; width: 1280px; vertical-align: middle; margin-left: 450px;}
     .music_img {font-size: 0;}
     
     .music_img {position: relative;}
 
     .admin_list_item {
         width: 250px;
+        height: 290px;
         padding: 20px;
         border-radius: 5px;
         box-shadow:0 0 10px #00000022;
@@ -37,12 +38,12 @@ main {padding: 30px; min-width: 1280px; text-align: center;
 
 .recommend_list_section{width: 1200px; margin-top: 35px;}
 .recommend_list_section > h1{text-align: left; font-size: 24px; font-weight: 700;}
-.recommend_list_area {text-align-last: left; padding-right: 50px;}
+.recommend_list_area {text-align-last: left; padding-right: 50px; width: 1000px;}
 
 
 .recommend_item {
     display: inline-block; width: 150px; vertical-align: top; font-size: 14px; text-decoration: none;
-    color: #333; margin: 10px; 
+    color: #333; margin: 10px; margin-right: 35px;
 }
 .recommend_item_txt {background-color: #fff; color: #333; padding:2px 0px 7px 0px; text-align: center;}
 .recommend_item .recommend_title {
@@ -108,3 +109,59 @@ main {padding: 30px; min-width: 1280px; text-align: center;
 .recommend_section > h1 {
     font-size: 24px; font-weight: 700; margin-bottom: 30px;
 }
+
+.admin_playlist_popup_wrap{width: 100vw; height: 100vh; position: fixed; left: 0; top: 0;  background-color: #00000055; display: none;}
+.add_admin_playlist_area{
+    margin-left: 650px; margin-top:225px; max-width: 900px; box-shadow: #333; background-color: #fff; border-radius: 5px; 
+    width: 500px; height: 500px;
+}
+
+.add_admin_playlist_area .add_admin_item{padding-top: 85px;}
+
+.add_admin_item > h1 {margin-bottom: 10px;}
+
+.add_admin_item input {font-family: "Noto Sans KR";
+    border: 0;
+    border-bottom: 1px solid #999;
+    height:30px; width: 150px; outline:none;}
+
+.add_admin_item button{
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:120px; height:30px; border-radius: 3px;
+    position: relative; margin-bottom: 5px;
+    cursor:pointer; 
+}
+
+.add_admin_item button:hover{
+    background-color: rgba(15, 14, 17, 0.199); 
+}
+
+.add_admin_item >div,p{padding: 10px; margin-top: 10px;}
+
+#playlist_popup_open {
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:120px; height:30px; border-radius: 3px;
+    position: absolute; margin-bottom: 5px; right:550px;
+    cursor:pointer; 
+}
+
+.music_search_popup{
+    width: 100vw; height: 100vh; position: fixed; left: 0; top: 0;  background-color: #00000055; display: none; z-index: 99999;
+}
+
+
+
+.music_search_popup {position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+z-index: 9; background-color: #00000055;}
+.music_search_form {position: absolute; width: 280px; margin-left: -170px; padding: 30px;
+left: 50%; top: 150px; background-color: #fff; box-shadow:0 0 5px #00000099;}
+.music_search_form {position: absolute; padding:30px; width: 550px; background-color: #fff;
+    left: 50%; top: 80px; margin-left: -305px;
+}
+.music_search_list {max-height:400px; overflow-y:scroll;}

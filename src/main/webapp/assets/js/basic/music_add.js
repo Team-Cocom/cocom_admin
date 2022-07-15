@@ -58,12 +58,12 @@ $(function () {
                 split = split[split.length - 1].split(".");
                 let origin_file = split[0] + "." + split[1];
                 let tag =
-                    '<div class="music_img_mod" data-name="'+origin_file+'">'+
-                    '<img src="/images/music_cover/'+origin_file+'" >'+
-                    '<button onclick=deleteModImg("'+origin_file+'")>&times;</button>'
+                '<div class="music_img_mod" data-name="'+origin_file+'"'+
+                'style="background-image: url( /images/music_cover/'+origin_file+');">'+
+                '<button onclick="deleteModImg('+origin_file+')">&times;</button>'+
                 '</div>';
 
-                $(".cover_img_mod_area").append(tag);
+                $(".img_file").append(tag);
                 $("#cover_img_mod_save").hide();
             }
         })
@@ -166,8 +166,9 @@ $(function () {
             mu_lyrics: $("#mu_lylic").val(),
             mu_explain_txt: $("#mu_explain").val(),
             mu_playtime: mu_time,
+            mu_gr_seq:$("#mu_gr_seq option:selected").val(),
+            mu_cr_seq:$("#mu_cr_seq option:selected").val()
         }
-        console.log(data);
 
         $.ajax({
             url: "/api/music/add",
@@ -209,6 +210,8 @@ $(function () {
             mu_lyrics:$("#mu_lylic_mod").val(),
             mu_explain_txt:$("#mu_explain_mod").val(),
             mu_playtime:mu_time,
+            mu_gr_seq:$("#mu_gr_seq_mod option:selected").val(),
+            mu_cr_seq:$("#mu_cr_seq_mod option:selected").val()
         }
         console.log(data);
 
@@ -237,7 +240,7 @@ function deleteImg(filename) {
         type: "delete",
         success: function (result) {
             alert(result.message);
-            $(".cover_img_area").html("");
+            $(".img_file").html("");
             $("#cover_img_save").show();
         }
     })
@@ -258,7 +261,7 @@ function deleteModImg(filename) {
         type: "delete",
         success: function (result) {
             alert(result.message);
-            $(".cover_img_mod_area").html("");
+            $(".img_file").html("");
         }
     })
 }

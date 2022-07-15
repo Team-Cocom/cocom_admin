@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cocom.music_admin.mapper.post.PostMapper">
+    <insert id="insertPostInfo">
+        INSERT INTO notice_info
+        (ni_ex_text, ni_img_file, ni_title, ni_import)
+        VALUES
+        (#{ni_ex_text},#{ni_img_file},#{ni_title},#{ni_import})
+    </insert>
+    <select id="selectAllfromNoticeInfo" resultType="com.cocom.music_admin.data.post.NoticeInfo">
+        select * from notice_info where ni_title like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectNoticePageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from notice_info where ni_title like '%${keyword}%'
+    </select>
+</mapper>
