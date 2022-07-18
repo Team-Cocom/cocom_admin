@@ -39,9 +39,6 @@ public class BusinessAPIController {
         return resultMap;
     }
 
-    
-
-
     @PutMapping("/admin_recommend/add")
     public Map<String,Object> putMusicList(@RequestBody AdminRecommend data){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -50,6 +47,7 @@ public class BusinessAPIController {
             resultMap.put("message",data.getArd_title()+"재생목록에 노래를 등록하였습니다.");
         return resultMap;
     }
+    
     @PutMapping("/pass/add")
     public Map<String,Object> putPassInfo(@RequestBody PassInfo data){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();

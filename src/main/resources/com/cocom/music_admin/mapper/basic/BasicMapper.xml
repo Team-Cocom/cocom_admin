@@ -130,7 +130,7 @@
         WHERE ab_seq=#{ab_seq}
     </update>
     <delete id="deleteAlbumInfo">
-        delete album_info where ab_seq = #{seq}
+        delete from album_info where ab_seq = #{seq}
     </delete>
 
     <select id="selectMusicInfoBySeq" resultType="com.cocom.music_admin.data.basic.MusicInfo">
@@ -156,4 +156,9 @@
     <select id="selectAllGenre" resultType="com.cocom.music_admin.data.basic.GenreInfo">
         select * from genre_info
     </select>
+
+    <select id="selectAllmusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info;
+    </select>
+
 </mapper>

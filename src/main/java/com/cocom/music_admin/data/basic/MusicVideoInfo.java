@@ -15,4 +15,8 @@ public class MusicVideoInfo {
     private Integer mv_mcom_seq;
     private Integer mv_str_seq;
     private Date mv_reg_dt;
+    
+    private String mv_title;
+    private Integer mv_gr_seq;
+
 }

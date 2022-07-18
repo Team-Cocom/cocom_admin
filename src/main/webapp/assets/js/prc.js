@@ -30,6 +30,7 @@ $(function(){
             }
         })
     })
+
     $("#wk_img_file").change(function(){
         let form = $("#wk_form");
         let formData = new FormData(form[0]);
@@ -55,6 +56,38 @@ $(function(){
                     '<button onclick=deleteImg("'+origin_file+'")>&times;</button>'+
                 '</div>';
                 $(".m_img").append(tag);
+            },
+            error:function(error) {
+                console.log(error);
+            }
+        })
+    })
+
+    $("#prac_img_file").change(function(){
+        let form = $("#prac_form");
+        let formData = new FormData(form[0]);
+        if($(this).val() == '' || $(this).val() == null) return;
+        
+        $.ajax({
+            url:"/images/upload/prac2",
+            type:"put",
+            data:formData,
+            contentType:false,
+            processData:false,
+            success:function(result) {
+                if(!result.status) {
+                    alert(result.message);
+                    return;
+                }
+
+                let split = (result.file).split("\\");
+                split = split[split.length - 1].split(".");
+                let origin_file = split[0] + "." + split[1];
+                let tag = 
+                '<div class="prc_asd" filename="'+origin_file+'" style="background-image:url(/images/wonky/'+origin_file+')">'+
+                    '<button onclick=deleteImg("'+origin_file+'")>&times;</button>'+
+                '</div>';
+                $(".prac_img").append(tag);
             },
             error:function(error) {
                 console.log(error);

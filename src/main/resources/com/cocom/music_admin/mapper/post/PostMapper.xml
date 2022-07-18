@@ -15,4 +15,23 @@
     <select id="selectNoticePageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from notice_info where ni_title like '%${keyword}%'
     </select>
+    <select id="selectNoticeInfoBySeq" resultType="com.cocom.music_admin.data.post.NoticeInfo">
+        select * from notice_info where ni_seq =#{post_no}
+    </select>
+
+    <delete id="deleteNoticeInfo">
+        delete from notice_info where ni_seq = #{post_no}
+    </delete>
+    <update id="deleteNoticeImg">
+        update notice_info
+        set ni_img_file = '' where ni_seq = #{seq}
+    </update>
+    <select id="selectAllNoticeInfo" resultType="com.cocom.music_admin.data.post.NoticeInfo">
+        select * from notice_info
+    </select>
+    <update id="updateNoticDetails">
+        UPDATE notice_info
+        SET ni_ex_text=#{ni_ex_text}, ni_img_file=#{ni_img_file}, ni_title=#{ni_title}, ni_import=#{ni_import}, ni_mod_dt=now()
+        WHERE ni_seq=#{ni_seq}
+    </update>
 </mapper>

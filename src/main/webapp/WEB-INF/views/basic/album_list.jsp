@@ -64,7 +64,7 @@
                         <td>${item.ent_name}</td>
                         <td>${item.rci_name}</td>
                         <td>
-                            <c:if test="${item.ab_age == 0}">모두함께들으슈</c:if>
+                            <c:if test="${item.ab_age == 0}">전연령</c:if>
                             <c:if test="${item.ab_age != 0}">${item.ab_age}세 이상</c:if>
                         </td>
                         <td>
@@ -88,13 +88,13 @@
                         <td>
                             <a href="/album/modify?seq=${item.ab_seq}">
                                 <i class="fas fa-info-circle"></i>
-                                <span>수정</span>
+                                <span class="album_mod_btn">수정</span>
                             </a>
                         </td>
                         <td>
-                            <a href="/album/delete?seq=${item.ab_seq}">
+                            <a href="/album/list">
                                 <i class="fas fa-trash-alt"></i>
-                                <span>삭제</span>
+                                <span class="album_del_btn" data-seq="${item.ab_seq}">삭제</span>
                             </a>
                         </td>
                     </tr>

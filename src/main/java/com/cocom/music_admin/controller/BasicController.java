@@ -5,7 +5,6 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cocom.music_admin.data.basic.AlbumInfo;
@@ -53,7 +52,7 @@ public class BasicController {
         model.addAttribute("list", basic_mapper.selectCountryInfo());
         return "/basic/country_list";
     }
-    
+
 
     @GetMapping("/enter/list")
     public String getEnterList(
@@ -101,6 +100,8 @@ public class BasicController {
     
     @GetMapping("/album/add")
     public String getAlbumAdd(Model model){
+        model.addAttribute("musicList", basic_mapper.selectAllmusicInfo());
+        model.addAttribute("genreList", basic_mapper.selectGenreInfo());
         model.addAttribute("enterList", basic_mapper.selectAllfromEnter());
         model.addAttribute("relList", basic_mapper.selectAllFromRelInfo());
         return "basic/album_add";

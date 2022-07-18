@@ -1,6 +1,20 @@
 $(function(){
     $("#notice_popup_button").click(function(){$(".notice_add_popup").show()})
     $("#notice_cancel").click(function(){$(".notice_add_popup").hide()})
+
+    $(".del_btn").click(function(){
+        if(!confirm("해당 정보를 삭제하시겠습니까?")) return;
+        let post_no = $(this).attr("data-seq");
+        $.ajax({
+            url:"/api/post/delete?post_no="+post_no,
+            type:"delete",
+            success:function(r){
+                alert(r.message);
+                location.href="/notice";
+            }
+        })
+    })
+
     $("#notice_img").change(function(){
         let form = $("#notice_form");
         let formData = new FormData(form[0]);
@@ -31,7 +45,6 @@ $(function(){
         })
     })
 
-
     $("#notice_add").click(function(){
         
         let data = {
@@ -50,14 +63,12 @@ $(function(){
                 alert(r.message);
                 location.reload();
             }
-
         })
     })
 })
 
-
 function deleteImg(filename) {
-    if (!confirm("커버 이미지를 삭제 하시겠습니까?")) {
+    if (!confirm("해당 공지사항 이미지를 삭제 하시겠습니까?")) {
         return;
     }
     $.ajax({
