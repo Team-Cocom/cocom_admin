@@ -25,7 +25,7 @@
             <c:forEach items="${list}" var="item" varStatus="stat">
             <div class="event_img_area">
                 <div class="event_img">
-                    <p class="event_title">
+                    <p class="event_title" data-name="${item.eve_title_img}">
                         <img src="/images/event_title/${item.eve_title_img}" class="event_detail" data-seq="${item.eve_seq}">
                     </p>
                     <p>이미지파일</p>

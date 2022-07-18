@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.executor.loader.ResultLoader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -75,10 +76,26 @@ public Map<String, Object> modifyEventInfo(@RequestBody EventInfo data) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         business_mapper.selectEventInfo();
         business_mapper.updateEventInfo(data);
+        System.out.println(data);
         resultMap.put("list",business_mapper.selectEventInfo());
         resultMap.put("status", true);
         resultMap.put("message", "이벤트 정보를 수정하였습니다.");
         return resultMap;
     }
+
+@PatchMapping("/admin/event_detail/delete_img")
+public Map<String,Object> deleteEventDescImg(@RequestParam String filename){
+    Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+    business_mapper.deleteEventDescImg(filename);
+    resultMap.put("message", "이미지를 삭제하였습니다.");
+    return resultMap;
+}
+@PatchMapping("/admin/event_detail/deletetitle_img")
+public Map<String, Object> uploadEventtitleImg(@RequestParam String filename) {
+    Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+    business_mapper.deleteEventTitleImg(filename);
+
+    return resultMap;
+}
     
 }

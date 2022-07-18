@@ -23,6 +23,7 @@
         <button id="event_title_save" onclick="document.getElementById('event_title_img').click()">
             타이틀 이미지 입력
         </button>
+
         <div class="event_title_img_area">
 
         </div>
