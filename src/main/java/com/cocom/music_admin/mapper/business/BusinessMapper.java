@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.cocom.music_admin.data.business.GoodsInfo;
-import com.cocom.music_admin.data.business.MagazineDesc;
-import com.cocom.music_admin.data.business.MagazineInfo;
+
 import com.cocom.music_admin.data.basic.EventInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
@@ -33,8 +31,15 @@ public interface BusinessMapper {
     public void insertEventInfo(EventInfo data);
     public void deleteEventInfo(Integer seq);
     public void updateEventInfo(EventInfo data);
+    public void deleteEventDescImg(String filename);
+    public void deleteEventTitleImg(String filename);
+    public void updateEventTitleImg(String filename);
     
     public List<EventInfo> selectAllEveInfos(String keyword, Integer offset) ;
     public Integer selectAllEvePageCnt(String keyword);
     public EventInfo selectEventBySeq(Integer seq);
+
+    public void insertPassInfo(PassInfo data);
+    public List<PassInfo> selectPassInfo(String keyword, Integer offset);
+    public Integer selectPassPageCnt(String keyword);
 }
