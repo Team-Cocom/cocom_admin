@@ -22,6 +22,11 @@ public class PostController {
         model.addAttribute("page", page);
         model.addAttribute("list", post_mapper.selectAllfromNoticeInfo(keyword, (page-1)*10));
         model.addAttribute("pageCount", post_mapper.selectNoticePageCnt(keyword));
-        return "post/notice_list";
+        return "/post/notice_list";
+    }
+    @GetMapping("/post/detail")
+    public String getPostDetail(Model model, @RequestParam Integer post_no) {
+        model.addAttribute("noticeList", post_mapper.selectNoticeInfoBySeq(post_no));
+        return "/post/notice_detail";
     }
 }
