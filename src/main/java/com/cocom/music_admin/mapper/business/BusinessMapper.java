@@ -16,10 +16,8 @@ public interface BusinessMapper {
 
     public void insertAdminRecommend(AdminRecommend data);
     public Integer selectMusicSeq(String filename);
-    public List<AdminPlayListVO> selectAllTodayRecommend();
-    public List<AdminPlayListVO> selectAllRecommendGenre();
-    public List<AdminPlayListVO> selectAllRecommendArtis();
-    public List<AdminPlayListVO> selectAllRecommendAlbum();
+    public List<AdminPlayListVO> selectAllRecommendAlbum(String keyword,Integer offset);
+    public Integer selectAllRecommendPageCnt(String keyword);
     public List<AdminPlayListVO> selectRecommendByString(String title);
 
     public List<MusicInfo> selectMusicInfoByUser();

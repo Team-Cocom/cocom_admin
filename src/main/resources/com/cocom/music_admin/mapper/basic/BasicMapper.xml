@@ -87,6 +87,10 @@
     <select id="selectAllFromRelInfo" resultType="com.cocom.music_admin.data.basic.ReleaseCompanyInfo">
         select * from release_company_info
     </select>
+    <select id="selectAlbumSummary" resultType="com.cocom.music_admin.data.basic.AlbumSummary">
+        select * from album_summary where ab_name like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
 
     <select id="selectAlbumsInfo" resultType="com.cocom.music_admin.data.basic.AlbumInfo">
         select * from album_info
@@ -101,11 +105,6 @@
     </select>
     <select id="selectAllFromAlbums" resultType="com.cocom.music_admin.data.basic.AlbumInfo">
         select * from album_info
-    </select>
-    <select id="selectAlbumSummary" resultType="com.cocom.music_admin.data.basic.AlbumSummary">
-        select * from albums_info group by ab_name
-        having ab_name like '%${keyword}%'
-        limit 10 offset #{offset}
     </select>
     <insert id="selectAlbumName">
         INSERT INTO cocom_db.album_info
@@ -132,6 +131,12 @@
     <delete id="deleteAlbumInfo">
         delete album_info where ab_seq = #{seq}
     </delete>
+    <update id="deleteMusicFromAlbum">
+        update music_info a inner join album_info b
+        on a.mu_ab_seq = b.ab_seq 
+        set a.mu_ab_seq  = 0
+        where mu_seq = #{seq}
+    </update>
 
     <select id="selectMusicInfoBySeq" resultType="com.cocom.music_admin.data.basic.MusicInfo">
         select * from music_info where mu_seq = #{seq}

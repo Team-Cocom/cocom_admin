@@ -16,11 +16,16 @@ import com.cocom.music_admin.mapper.business.BusinessMapper;
 public class BusinessController {
     @Autowired BusinessMapper business_mapper;
     @GetMapping("/admin/recommend")
-    public String getAdRecommend(Model model){
-        model.addAttribute("list", business_mapper.selectAllTodayRecommend());
-        model.addAttribute("genre_list", business_mapper.selectAllRecommendGenre());
-        model.addAttribute("artist_list", business_mapper.selectAllRecommendArtis());
-        model.addAttribute("album_list", business_mapper.selectAllRecommendAlbum());
+    public String getAdRecommend(Model model,
+    @RequestParam @Nullable String keyword,
+    @RequestParam @Nullable Integer page
+        ){
+        if(page==null) page=1;
+
+        model.addAttribute("page", page);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("album_list", business_mapper.selectAllRecommendAlbum(keyword,(page-1)*30));
+        model.addAttribute("pageCnt", business_mapper.selectAllRecommendPageCnt(keyword));
         model.addAttribute("musicList", business_mapper.selectMusicInfoByUser());
         model.addAttribute("music_recommend", business_mapper.selectMusicInfoRecommend());
         return "/business/admin_recommend_list";

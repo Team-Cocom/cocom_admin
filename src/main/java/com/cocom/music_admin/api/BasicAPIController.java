@@ -184,4 +184,10 @@ public class BasicAPIController {
         resultMap.put("message", "앨범 정보 삭제를 완료했습니다.");
         return resultMap;
     }
+    @PatchMapping("/album/music/delete")
+    public Map<String, Object> deleteAlbumMusicInfo(@RequestParam Integer seq) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteMusicFromAlbum(seq);
+        return resultMap;
+    }
 }

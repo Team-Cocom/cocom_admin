@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.cocom.music_admin.data.basic.AlbumInfo;
+import com.cocom.music_admin.data.basic.AlbumListInfoVO;
 import com.cocom.music_admin.data.basic.AlbumSummary;
 import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
@@ -55,9 +56,10 @@ public interface BasicMapper {
     public Integer selectAlbumName(AlbumInfo data);
     public void insertAlbumInfos(AlbumInfo data);
     public void updateAlbumInfo(AlbumInfo data);
-    public List<AlbumSummary> selectAlbumInfoBySeq(Integer seq);
+    public List<AlbumListInfoVO> selectAlbumInfoBySeq(Integer seq);
     public Object selectAllEnterInfo();
     public void deleteAlbumInfo(Integer seq);
+    public void deleteMusicFromAlbum(Integer seq);
 
     
 }

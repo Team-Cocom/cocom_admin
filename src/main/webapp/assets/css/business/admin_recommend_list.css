@@ -61,12 +61,6 @@ main {padding: 30px; min-width: 1280px; text-align: center;
 }
 
 
-.starpost_section{ position: absolute; top: 390px; width: 900px; 
-    margin-left: 900px; text-align: center;
-}
-.starpost_section > h1 {
-    font-size: 24px; font-weight: 700; position: relative; margin-bottom: 30px;
-}
 .music_list_wrap > a {display: inline-block; margin: 10px; 
     vertical-align: top; color: #333; text-decoration: none;
 }
@@ -165,3 +159,30 @@ left: 50%; top: 150px; background-color: #fff; box-shadow:0 0 5px #00000099;}
     left: 50%; top: 80px; margin-left: -305px;
 }
 .music_search_list {max-height:400px; overflow-y:scroll;}
+
+.search_box {margin-top: 10px;}
+.search_box input {
+    font-family: "Noto Sans KR";
+    border: 0;
+    border-bottom: 1px solid #999;
+    height:30px; width: 150px; outline:none;
+}
+.search_box button {
+    border: 1px solid #999;
+    font-family: "Noto Sans KR";
+    color: #333;
+    background-color: #fff;
+    width:60px; height:30px; border-radius: 3px;
+    position: relative; top: 2px; margin-left: 5px;
+    cursor:pointer;
+}
+.search_box button:hover {
+    color: #fff; background-color: #333;
+    border-color: #333;
+}
+
+.pager_area {margin-top: 30px; text-align: center;}
+.pager_area a {font-weight: 700; color: #999; text-decoration: none;
+margin:10px;}
+.pager_area a:hover {color: #333; text-decoration: underline;}
+

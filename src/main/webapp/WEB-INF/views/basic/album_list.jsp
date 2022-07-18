@@ -30,9 +30,6 @@
                     <td>번호</td>
                     <td>앨범명</td>
                     <td>앨범 발매일</td>
-                    <td>장르</td>
-                    <td>국적</td>
-                    <td>아티스트</td>
                     <td>소속사</td>
                     <td>발매사</td>
                     <td>앨범 청취연령</td>
@@ -58,9 +55,6 @@
                         <td>
                             <fmt:formatDate value="${item.ab_re_dt}" pattern="yyyy년 MM월 dd일"/>
                         </td>
-                        <td>${item.gr_name}</td>
-                        <td>${item.cr_name}</td>
-                        <td>${item.ai_name}</td>
                         <td>${item.ent_name}</td>
                         <td>${item.rci_name}</td>
                         <td>
