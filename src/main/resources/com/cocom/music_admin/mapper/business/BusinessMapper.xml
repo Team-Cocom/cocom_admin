@@ -29,17 +29,34 @@
     <select id="selectMusicInfoRecommend" resultType="com.cocom.music_admin.data.basic.MusicInfo">
         select * from music_info order by rand() limit 2
     </select>
-    <insert id="insertPassInfo">
-        INSERT INTO pass_info
-        (ps_type,ps_name, ps_price,ps_img_file, ps_period)
-        VALUES
-        (#{ps_type},#{ps_name},#{ps_price},#{ps_img_file},#{ps_period})
+    <insert id="insertEventInfo">
+    INSERT INTO event_info
+(eve_name, eve_ex_text, eve_title_img, eve_img_file)
+VALUES(#{eve_name}, #{eve_ex_text}, #{eve_title_img}, #{eve_img_file});
     </insert>
-    <select id="selectPassInfo" resultType="com.cocom.music_admin.data.business.PassInfo">
-        select * from pass_info where ps_name like '%${keyword}%'
-        limit 10 offset #{offset}
+    <select id="selectEventInfo" resultType="com.cocom.music_admin.data.basic.EventInfo">
+    select * from event_info
     </select>
-    <select id="selectPassPageCnt" resultType="java.lang.Integer">
-        select ceil(count(*)/10) from pass_info where ps_name like '%${keyword}%'
+    <delete id="deleteEventInfo">
+    delete from event_info where eve_seq = #{seq}
+    </delete>
+    <select id="selectAllEveInfos" resultType="com.cocom.music_admin.data.basic.EventInfo">
+    select *from event_info
+    where eve_name like '%${keyword}%'
+    limit 10 offset #{offset}
     </select>
+    <select id="selectEventBySeq" resultType="com.cocom.music_admin.data.basic.EventInfo">
+    select *from event_info where eve_seq = #{seq}
+    </select>
+    <select id="selectAllEvePageCnt" resultType="java.lang.Integer">
+    select ceil(count(*)/10) from event_info where eve_name like '%${keyword}%'
+    </select>
+    <update id="updateEventInfo">
+    UPDATE 
+    event_info
+SET 
+eve_name=#{eve_name}, eve_ex_text=#{eve_ex_text}, eve_img_file=#{eve_img_file}, eve_mi_seq=#{eve_mi_seq}, eve_title_img=#{eve_title_img}
+WHERE eve_seq=#{eve_seq};
+
+    </update>
 </mapper>

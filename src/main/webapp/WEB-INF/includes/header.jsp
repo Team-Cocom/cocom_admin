@@ -35,9 +35,13 @@
         <a href="/release/list">발매사 정보</a>
         <a href="/music/list">노래 정보</a>
         <a href="/admin/recommend">관리자 추천 리스트</a>
+<<<<<<< HEAD
+        <a href="/admin/event/list">이벤트 관리자</a>
+=======
         <a href="/pass/list">이용권 정보</a>
         <a href="/notice">공지 정보</a>
         <a href="/album/list">앨범 정보</a>
+>>>>>>> develop
     </header>
 </body>
 </html>
