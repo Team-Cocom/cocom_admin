@@ -100,7 +100,7 @@ public class BasicAPIController {
         return resultMap;
     }
     @DeleteMapping("/country/delete")
-    public Map<String, Object> deletecountry(@RequestParam Integer seq) {
+    public Map<String, Object> deletecountrys(@RequestParam Integer seq) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
 
         basic_mapper.deleteCountryInfo(seq);

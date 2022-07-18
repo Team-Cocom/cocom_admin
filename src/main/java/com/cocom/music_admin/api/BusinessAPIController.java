@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.executor.loader.ResultLoader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cocom.music_admin.data.basic.EventInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
-import com.cocom.music_admin.data.business.PassInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 import com.cocom.music_admin.mapper.business.BusinessMapper;
 
