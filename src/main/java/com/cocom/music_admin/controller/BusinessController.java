@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cocom.music_admin.data.business.request.AdminPlayListVO;
 import com.cocom.music_admin.mapper.business.BusinessMapper;
+import com.cocom.music_admin.mapper.post.PostMapper;
 
 @Controller
 public class BusinessController {
     @Autowired BusinessMapper business_mapper;
+    @Autowired PostMapper post_mapper;
     @GetMapping("/admin/recommend")
     public String getAdRecommend(Model model,
     @RequestParam @Nullable String keyword,

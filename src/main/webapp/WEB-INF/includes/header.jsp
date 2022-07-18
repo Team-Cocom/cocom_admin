@@ -39,6 +39,10 @@
         <a href="/pass/list">이용권 정보</a>
         <a href="/notice">공지 정보</a>
         <a href="/album/list">앨범 정보</a>
+<<<<<<< HEAD
+=======
+        <a href="/music_video/list">뮤직비디오 정보</a>
+>>>>>>> develop
     </header>
 </body>
 </html>

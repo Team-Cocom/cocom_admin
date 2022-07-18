@@ -53,7 +53,7 @@ $(function (){
                 let tag =
                 '<div class="event_desc_img_file" data-name="'+origin_file+'">'+
                     '<img src="/images/event_desc/'+origin_file+'" >'+
-                    '<button onclick=deleteImg("'+origin_file+'")>&times;</button>'
+                    '<button onclick=deleteImgDesc("'+origin_file+'")>&times;</button>'
                 '</div>';
 
                 $(".event_desc_img_area").append(tag);
@@ -99,23 +99,24 @@ function deleteImg(filename) {
         url: "/images/delete/event_title/" + filename,
         type: "delete",
         success: function (result) {
-            alert(result.message);
             $(".event_title_img_area").html("");
         }
     })
     
 }
-function deleteImg(filename) {
+function deleteImgDesc(filename) {
     if (!confirm("이미지를 삭제 하시겠습니까?")) {
         return;
     }
     $.ajax({
-        url: "/images/delete/event_desc/" + filename,
+        url: "/images/delete/event_desc/"+filename,
         type: "delete",
         success: function (result) {
             alert(result.message);
             $(".event_desc_img_area").html("");
         }
     })
+
 }
+
 

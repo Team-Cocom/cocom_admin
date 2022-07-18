@@ -11,6 +11,7 @@ import com.cocom.music_admin.data.basic.CountryInfo;
 import com.cocom.music_admin.data.basic.GenreInfo;
 import com.cocom.music_admin.data.basic.EnterInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
+import com.cocom.music_admin.data.basic.MusicVideoInfo;
 import com.cocom.music_admin.data.basic.ReleaseCompanyInfo;
 
 @Mapper
@@ -23,6 +24,7 @@ public interface BasicMapper {
     public void deleteMusicImgFile(String filename);
     public void deleteMusicFile(String filename);
     public void updateMusicInfo(MusicInfo data);
+    public List<MusicInfo> selectAllmusicInfo();
 
     public List<GenreInfo> selectGenreInfo();
     public List<GenreInfo> selectAllGenre();
@@ -59,7 +61,10 @@ public interface BasicMapper {
     public List<AlbumListInfoVO> selectAlbumInfoBySeq(Integer seq);
     public Object selectAllEnterInfo();
     public void deleteAlbumInfo(Integer seq);
+<<<<<<< HEAD
     public void deleteMusicFromAlbum(Integer seq);
 
+=======
+>>>>>>> yuna_work
     
 }

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="/assets/js/basic/album_info.js"></script>
+    <link rel="stylesheet" href="/assets/css/basic/album_add.css">
 </head>
 <body>
     <main>
@@ -26,7 +27,11 @@
                             </td>
                             <td>장르</td>
                             <td>
-                                <input type="text" id="gr_name">
+                                <select id="ab_gr_seq">
+                                    <c:forEach items="${genreList}" var="item">
+                                        <option value="${item.gr_seq}">${item.gr_name}</option>
+                                    </c:forEach>
+                                </select>
                             </td>
                             <td>청취연령</td>
                             <td>
@@ -88,6 +93,40 @@
             </div>
             <button id="ab_add_save">추가</button>
             <button id="ab_add_cancel">취소</button>
+            <div class="album_add_music_area">
+                <div class="album_add_music_wrap">
+                    <table class="add_table">
+                        <thead>
+                            <tr>
+                                <td>번호</td>
+                                <td>제목</td>
+                                <td></td>
+                                <td>연령</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <c:forEach items="${musicList}" var="item" varStatus="stat">
+                                <tr>
+                                    <td>${stat.count}</td>
+                                    <td>${item.mu_name}</td>
+                                    <td>
+                                        <audio src="/images/music/${item.mu_music_file}" controls></audio>
+                                    </td>
+                                    <td>
+                                        <c:if test="${item.mu_age == 0}">전체</c:if>
+                                        <c:if test="${item.mu_age != 0}">성인</c:if>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" data-seq="${item.mu_seq}">
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                        <button id="ab_add_music">앨범에 노래 추가</button>
+                </div>
+            </div>
     </main>
 </div>
 </body>

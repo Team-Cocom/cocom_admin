@@ -53,7 +53,7 @@ function getMusicList(keyword, page){
                     '<td>'+r.list[i].gr_name+'</td>'+
                     '<td hidden>'+r.list[i].mu_music_file+'</td>'+
                     '<td>'+
-                        '<button class="music_select" data-seq="'+r.list[i].mu_seq+'" data-name="'+r.list[i].mu_name+'" data-file="'+r.list[i].mu_music_file+'">선택</button>'+
+                        '<button class="music_select" data-seq="'+r.list[i].mu_seq+'" data-name="'+r.list[i].mu_name+'" data-file="'+r.list[i].mu_music_file+'">선택</button>'+  
                     '</td>'+
                 '</tr>';
                 $(".music_search_list tbody").append(tag);

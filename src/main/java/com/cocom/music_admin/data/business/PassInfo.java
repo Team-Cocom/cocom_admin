@@ -14,5 +14,8 @@ public class PassInfo {
     private Integer ps_price;
     private Integer ps_mi_seq;
     private Integer ps_period;
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 }

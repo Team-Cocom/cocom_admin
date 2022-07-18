@@ -129,7 +129,7 @@
         WHERE ab_seq=#{ab_seq}
     </update>
     <delete id="deleteAlbumInfo">
-        delete album_info where ab_seq = #{seq}
+        delete from album_info where ab_seq = #{seq}
     </delete>
     <update id="deleteMusicFromAlbum">
         update music_info a inner join album_info b
@@ -162,4 +162,11 @@
         select * from genre_info
     </select>
 
+<<<<<<< HEAD
+=======
+    <select id="selectAllmusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
+        select * from music_info;
+    </select>
+
+>>>>>>> develop
 </mapper>
