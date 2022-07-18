@@ -89,7 +89,7 @@
     </select>
     <select id="selectAlbumSummary" resultType="com.cocom.music_admin.data.basic.AlbumSummary">
         select * from album_summary where ab_name like '%${keyword}%'
-        limit 10 offset #{offset}
+        limit 10 offset  #{offset}
     </select>
 
     <select id="selectAlbumsInfo" resultType="com.cocom.music_admin.data.basic.AlbumInfo">
