@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cocom.music_admin.data.basic.AlbumInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
+import com.cocom.music_admin.data.basic.MusicVideoInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 @RestController
@@ -184,10 +185,14 @@ public class BasicAPIController {
         resultMap.put("message", "앨범 정보 삭제를 완료했습니다.");
         return resultMap;
     }
+<<<<<<< HEAD
     @PatchMapping("/album/music/delete")
     public Map<String, Object> deleteAlbumMusicInfo(@RequestParam Integer seq) {
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         basic_mapper.deleteMusicFromAlbum(seq);
         return resultMap;
     }
+=======
+
+>>>>>>> yuna_work
 }

@@ -43,9 +43,6 @@ public class BusinessAPIController {
         return resultMap;
     }
 
-    
-
-
     @PutMapping("/admin_recommend/add")
     public Map<String,Object> putMusicList(@RequestBody AdminRecommend data){
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
@@ -54,8 +51,14 @@ public class BusinessAPIController {
             resultMap.put("message",data.getArd_title()+"재생목록에 노래를 등록하였습니다.");
         return resultMap;
     }
+<<<<<<< HEAD
     @PutMapping("/admin/event/add")
     public Map<String, Object> putEventList(@RequestBody EventInfo data) {
+=======
+    
+    @PutMapping("/pass/add")
+    public Map<String,Object> putPassInfo(@RequestBody PassInfo data){
+>>>>>>> yuna_work
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         business_mapper.insertEventInfo(data);
         resultMap.put("status", true);

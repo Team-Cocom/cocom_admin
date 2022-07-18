@@ -80,13 +80,15 @@ $(function(){
         })
     })
 
-    $("").click(function(){
-        let seq = $(this).attr("ab_seq");
+    $(".album_del_btn").click(function(){
+        if(!confirm("앨범 정보를 삭제하시겠습니까?")) return;
+        let seq = $(this).attr("data-seq");
         $.ajax({
-            url:"/album/list?seq="+seq,
+            url:"/api/album/delete?seq="+seq,
             type:"delete",
             success:function(r){
-                location.href="/album/list?seq="+seq
+                alert(r.message);
+                location.href="/album/list"
             }
         })
     })
