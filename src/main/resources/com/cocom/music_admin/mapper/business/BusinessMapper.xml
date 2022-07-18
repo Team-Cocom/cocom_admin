@@ -59,4 +59,12 @@ eve_name=#{eve_name}, eve_ex_text=#{eve_ex_text}, eve_img_file=#{eve_img_file}, 
 WHERE eve_seq=#{eve_seq};
 
     </update>
+
+    <select id="selectPassInfo" resultType="com.cocom.music_admin.data.business.PassInfo">
+        select * from pass_info where ps_name like '%${keyword}%'
+        limit 10 offset #{offset}
+    </select>
+    <select id="selectPassPageCnt" resultType="java.lang.Integer">
+        select ceil(count(*)/10) from pass_info where ps_name like '%${keyword}%'
+    </select>
 </mapper>

@@ -21,6 +21,7 @@
                 <input type="password" id="aa_pwd">
                 <p class="error">비밀번호를 올바르게 입력하세요.</p>
             <button id="login_btn">로그인</button>
+            <a href="/account/join">관리자추가</a>
         </div>
     </main>
 </body>
