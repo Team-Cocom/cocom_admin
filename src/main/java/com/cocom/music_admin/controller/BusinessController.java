@@ -76,6 +76,13 @@ public class BusinessController {
         model.addAttribute("pageCount", business_mapper.selectPassPageCnt(keyword));
         return "/business/pass_list";
     }
-
+    @GetMapping("/pass/add")
+    public String addPass(Model model){
+        return "/business/pass_add";
+    }
+    @GetMapping("/pass/delete")
+    public String deletePass(Model model){
+        return "/business/pass_delete";
+    } 
     
 }

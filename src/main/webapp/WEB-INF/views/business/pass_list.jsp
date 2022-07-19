@@ -51,7 +51,7 @@
                             </td>
                             <td>${item.ps_period}일</td>
                             <td>
-                                <button id="delete_pass">삭제</button>
+                                <button class="delete_pass_info" data-seq="${item.ps_seq}">삭제</button>
                             </td>
                         </tr>
                     </c:forEach>

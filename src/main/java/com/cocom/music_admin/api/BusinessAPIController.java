@@ -51,14 +51,8 @@ public class BusinessAPIController {
             resultMap.put("message",data.getArd_title()+"재생목록에 노래를 등록하였습니다.");
         return resultMap;
     }
-<<<<<<< HEAD
     @PutMapping("/admin/event/add")
     public Map<String, Object> putEventList(@RequestBody EventInfo data) {
-=======
-    
-    @PutMapping("/pass/add")
-    public Map<String,Object> putPassInfo(@RequestBody PassInfo data){
->>>>>>> yuna_work
         Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
         business_mapper.insertEventInfo(data);
         resultMap.put("status", true);
@@ -97,8 +91,27 @@ public Map<String,Object> deleteEventDescImg(@RequestParam String filename){
 public Map<String, Object> uploadEventtitleImg(@RequestParam String filename) {
     Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
     business_mapper.deleteEventTitleImg(filename);
+    
+    return resultMap;
+}
+@PutMapping("/pass/add")
+public Map<String, Object> addPass(@RequestBody PassInfo data) {
+    Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+    business_mapper.insertPassInfo(data);
+    resultMap.put("status", true);
+    resultMap.put("message", "이용권등록이 완료되었습니다.");
+    
+    return resultMap;
+}
+@DeleteMapping("/pass/delete")
+public Map<String, Object> deletePass(@RequestParam Integer seq) {
+    Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+    business_mapper.deletePassInfo(seq);
+    resultMap.put("status", true);
+    resultMap.put("message", "이용권을 삭제하였습니다.");
 
     return resultMap;
 }
+
     
 }

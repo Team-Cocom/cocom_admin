@@ -72,7 +72,18 @@ $(function(){
             }
         })
     })
-    $()
+    $(".delete_pass_info").click(function(){
+        if(!confirm("이용권 정보를 삭제하시겠습니까?")) return;
+        let seq = $(this).attr("data-seq");
+        $.ajax({
+            url:"/api/pass/delete?seq="+seq,
+            type:"delete",
+            success:function(r) {
+                alert(r.message);
+                location.reload;
+            }
+        })
+    })
 })
 
 function deleteImg(filename) {

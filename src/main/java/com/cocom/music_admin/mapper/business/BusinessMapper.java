@@ -40,5 +40,6 @@ public interface BusinessMapper {
     public void insertPassInfo(PassInfo data);
     public List<PassInfo> selectPassInfo(String keyword, Integer offset);
     public Integer selectPassPageCnt(String keyword);
+    public void deletePassInfo(Integer seq);
 
 }

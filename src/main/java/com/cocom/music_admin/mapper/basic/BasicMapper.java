@@ -61,10 +61,7 @@ public interface BasicMapper {
     public List<AlbumListInfoVO> selectAlbumInfoBySeq(Integer seq);
     public Object selectAllEnterInfo();
     public void deleteAlbumInfo(Integer seq);
-<<<<<<< HEAD
     public void deleteMusicFromAlbum(Integer seq);
 
-=======
->>>>>>> yuna_work
     
 }

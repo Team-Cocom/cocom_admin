@@ -74,6 +74,10 @@ VALUES(#{eve_name}, #{eve_ex_text}, #{eve_title_img}, #{eve_img_file});
         select * from pass_info where ps_name like '%${keyword}%'
         limit 10 offset #{offset}
     </select>
+    <delete id="deletePassInfo">
+        DELETE FROM pass_info
+        WHERE ps_seq=#{seq};
+    </delete>
     <select id="selectPassPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from pass_info where ps_name like '%${keyword}%'
     </select>
@@ -82,4 +86,5 @@ VALUES(#{eve_name}, #{eve_ex_text}, #{eve_title_img}, #{eve_img_file});
 SET eve_title_img= #{eve_title_img}
 WHERE eve_seq= #{seq};
         </update>
+
 </mapper>
