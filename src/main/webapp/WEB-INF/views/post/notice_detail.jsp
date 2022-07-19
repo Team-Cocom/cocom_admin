@@ -40,8 +40,10 @@
                         ${noticeList.ni_ex_text}
                     </td>
                     <td class="post_img_area">
+                        <c:if test="${noticeList.ni_img_file != ''}">
                         <img src="/images/notice_img/${noticeList.ni_img_file}" class="ni_detail_info"
                             data-seq="${noticeList.ni_seq}" data-name="{${noticeList.ni_img_file}}">
+                        </c:if>
                     </td>
                 </tbody>
             </table>
