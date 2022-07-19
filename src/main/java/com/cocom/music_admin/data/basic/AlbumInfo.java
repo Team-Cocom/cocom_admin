@@ -12,7 +12,7 @@ public class AlbumInfo {
     private Date ab_re_dt;
     private Integer ab_ai_seq;
     private Integer ab_ent_seq;
-    private String ab_rci_name;
+    private Integer ab_rci_seq;
     private Integer ab_mu_seq;
     private String ab_txt;
     private Integer ab_age;
