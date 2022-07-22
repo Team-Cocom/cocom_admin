@@ -13,11 +13,7 @@
 <body>
     <button class="genre_add">장르 추가하기</button>
     <div class="genre_list">장르 리스트</div>
-<<<<<<< HEAD
-    <c:forEach items="${list}" var="item" varStatus="stat">
-=======
     <c:forEach items="${genreList}" var="item" varStatus="stat">
->>>>>>> develop
         <p>
             <span>번호</span>${stat.count} <span> ${item.gr_name}</span>
             <span>
@@ -25,18 +21,9 @@
             </span> 
         </p>
     </c:forEach>
-<<<<<<< HEAD
-    
-=======
->>>>>>> develop
     <p class="genre_name_add">장르이름</p>
     <input type="text" id="genre_name" placeholder="장르 이름을 입력하세요.">
     <button class="genre_add_btn">추가하기</button>
     <button class="genre_cancel_btn">닫기</button>
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> develop
 </body>
 </html>

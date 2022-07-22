@@ -10,6 +10,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -54,10 +55,7 @@ public class AccountAPIController {
             resultMap.put("status", false);
             resultMap.put("message", "아이디가 입력되지 않았습니다.");    
         }
-        if(data.getAa_name() == null || data.getAa_name().equals("")) {
-            resultMap.put("status", false);
-            resultMap.put("message", "이름이 입력되지 않았습니다.");    
-        }
+
         if(data.getAa_pwd() == null || data.getAa_pwd().equals("")) {
             resultMap.put("status", false);
             resultMap.put("message", "비밀번호가 입력되지 않았습니다.");    
@@ -86,18 +84,29 @@ public class AccountAPIController {
     @PostMapping("/login")
     public Map<String, Object> postAccountLogin(@RequestBody AdminAccountInfo data, HttpSession session) throws Exception {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
         
         data.setAa_pwd(AESAlgorithm.Encrypt(data.getAa_pwd()));
         AdminAccountInfo user = account_mapper.login(data);
         
+
+
         if(user == null) {
             resultMap.put("status", false);
             resultMap.put("message", "아이디 또는 비밀번호 오류입니다.");
             return resultMap;
         }
 
+        session.setAttribute("user", user);
         resultMap.put("status", true);
         resultMap.put("message", "로그인 되었습니다.");
+        return resultMap;
+    }
+
+    @GetMapping("/login")
+    public Map<String,Object> getLogin(HttpSession session){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        resultMap.put("admin", session.getAttribute("user"));
         return resultMap;
     }
 

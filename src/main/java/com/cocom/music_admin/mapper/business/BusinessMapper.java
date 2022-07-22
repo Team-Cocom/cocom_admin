@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-
 import com.cocom.music_admin.data.basic.EventInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
