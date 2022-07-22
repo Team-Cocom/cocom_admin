@@ -56,9 +56,6 @@ VALUES(#{eve_name}, #{eve_ex_text}, #{eve_title_img}, #{eve_img_file});
     SET eve_name=#{eve_name}, eve_ex_text=#{eve_ex_text}, eve_img_file=#{eve_img_file}, eve_title_img=#{eve_title_img}
     WHERE eve_seq=#{eve_seq};
     </update>
-<<<<<<< HEAD
-
-=======
     <update id="deleteEventDescImg">
         update event_info set eve_img_file = '' where eve_img_file = #{filename}
     </update>
@@ -73,7 +70,6 @@ VALUES(#{eve_name}, #{eve_ex_text}, #{eve_title_img}, #{eve_img_file});
         VALUES
         (#{ps_type},#{ps_name},#{ps_price},#{ps_img_file},#{ps_period})
     </insert>
->>>>>>> develop
     <select id="selectPassInfo" resultType="com.cocom.music_admin.data.business.PassInfo">
         select * from pass_info where ps_name like '%${keyword}%'
         limit 10 offset #{offset}
@@ -81,12 +77,9 @@ VALUES(#{eve_name}, #{eve_ex_text}, #{eve_title_img}, #{eve_img_file});
     <select id="selectPassPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from pass_info where ps_name like '%${keyword}%'
     </select>
-<<<<<<< HEAD
-=======
     <update id="updateEventTitleImg">
     UPDATE event_info
 SET eve_title_img= #{eve_title_img}
 WHERE eve_seq= #{seq};
         </update>
->>>>>>> develop
 </mapper>

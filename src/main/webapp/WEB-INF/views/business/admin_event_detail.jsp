@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/assets/js/business/event_detail.js"></script>
+    <link rel="stylesheet" href="/assets/css/business/event_detail.css">
 
 </head>
 
@@ -19,7 +20,7 @@
         <button class="modify_detail">내용수정하기</button>
         <div class="event_detail_wrap">
             <table class="event_detail_area">
-                <tbody>
+                <thead>
                     <tr>
                             <td>표지 이미지</td>
                             <td>이벤트 이름</td>
@@ -28,6 +29,9 @@
                             <td></td>
 
                     </tr>
+                </thead>
+                <tbody>
+                    <tr>
                         <td>
                             <p class="event_title_detail_img_area" data-name="${list.eve_title_img}">
                                 <c:if test="${list.eve_title_img != ''}">
@@ -61,16 +65,16 @@
                             </form>
                                 <button id="event_desc_img_mod_btn" onclick="document.getElementById('event_desc_mod_img_select').click()">이벤트 상세이미지 업로드</button>
                                 <p class="event_desc_mod_img_area">
-
+    
                                 </p>
                             </p>
                             <div class="event_title_img_mod">
-
+    
                             </div>
                             <div class="event_desc_img_mod_area">
-
+    
                             </div>
-
+    
                         </td>
                         <td>
                             <textarea id="event_desc_mod" cols="30" rows="10" >${list.eve_ex_text}</textarea>

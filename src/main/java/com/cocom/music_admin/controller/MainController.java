@@ -7,7 +7,4 @@ public class MainController {
     public String getMain() {
         return "/index";
     }
-    public String getList() {
-        return "/list";
-    }
 }

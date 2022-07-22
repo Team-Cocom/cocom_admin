@@ -162,11 +162,8 @@
         select * from genre_info
     </select>
 
-<<<<<<< HEAD
-=======
     <select id="selectAllmusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
         select * from music_info;
     </select>
 
->>>>>>> develop
 </mapper>
