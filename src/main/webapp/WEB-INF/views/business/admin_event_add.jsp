@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/assets/js/business/event_add.js"></script>
+    <link rel="stylesheet" href="/assets/css/business/event_add.css">
 </head>
 
 <body>
     <main>
     관리자 이벤트 추가 페이지
     <div class="event_add_list">
-        <p>이벤트 타이틀 이미지</p>
+        <h1>이벤트 타이틀 이미지</h1>
         <form id="event_title_form">
             <input type="file" name="file" id="event_title_img" hidden>
         </form>
@@ -28,11 +29,11 @@
 
         </div>
         <div>
-            <p>이벤트 이름</p>
+            <h1>이벤트 이름</h1>
             <div class="event_name_area">
                 <input id="event_name" type="text" placeholder="이벤트 이름을 입력하세요.">
             </div>
-            <p>이벤트 설명 이미지</p>
+            <h1>이벤트 설명 이미지</h1>
             <form id="event_desc_form">
                 <input type="file" name="file" id="event_desc_img" hidden>
             </form>
@@ -44,9 +45,9 @@
 
             </div>
             <div class="event_desc">
-                <p>내용을 입력하세요.</p>
+                <h1>내용을 입력하세요.</h1>
                 <!-- <input type="file" id="event_desc_detail" data-name="${list.eve_img_file}"> -->
-                <textarea id="event_detail_desc" cols="30" rows="10"></textarea>
+                <textarea id="event_detail_desc" cols="100" rows="50"></textarea>
             </div>
         </div>
     </div>

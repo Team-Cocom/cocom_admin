@@ -1,0 +1,7 @@
+.event_detail_area{width: 1280px; margin-left: 250px; margin-top: 100px;}
+.event_detail_area td{padding: 12px; border-bottom: 1px solid #767676; text-align: center;}
+.event_detail_area a{text-align: left; color: #767676; text-decoration: none; }
+.event_detail_area a:hover{text-decoration: underline;}
+.event_detail_area thead td {
+    font-weight: 700; text-align: center; color: #f7f7f7; background-color: rgba(15, 14, 17, 0.781); 
+}

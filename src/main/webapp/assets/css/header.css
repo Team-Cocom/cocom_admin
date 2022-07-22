@@ -1,0 +1,23 @@
+.categories > i{
+    position: fixed; bottom: 100px; right: 100px; font-size: 40px; cursor: pointer;
+}
+
+
+.categories ul {
+    overflow: hidden; height: 0; transition:height 0.2s; bottom: 140px; right: 100px; position: fixed; z-index: 9999;
+}
+
+.categories ul > a {
+    display: block; width: 230px; height: 50px;
+    box-sizing: border-box; color: rgba(0, 0, 0, 0.76); font-weight: 300;
+    padding: 15px 25px; background-color: rgb(194, 223, 241); box-shadow:0 0 10px #00000022; text-decoration: none; 
+}
+
+.categories i:hover+ul{height: 550px;}
+.categories ul:hover{height: 550px;}
+
+
+.categories a{text-align: left; color: #767676; text-decoration: none; }
+.categories a:hover{text-decoration: underline;}
+
+

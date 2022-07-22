@@ -26,7 +26,7 @@ $(function(){
             success:function(r) {
                 alert(r.message);
                 if(r.status) {
-                    location.href = "/release/list";
+                    location.href = "/admin/recommend";
                 }
             }
         })

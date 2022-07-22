@@ -21,6 +21,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" integrity="sha512-9h7XRlUeUwcHUf9bNiWSTO9ovOWFELxTlViP801e5BbwNJ5ir9ua6L20tEroWZdm+HFBAWBLx2qH4l4QHHlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/assets/js/common/util.js"></script>
     <title>Document</title>
+    <script>
+        $(function(){
+            $.ajax({
+                url:"/api/account/login",
+                type:"get",
+                success:function(r){
+                    if(r.admin == null){
+                        alert("로그인 후 이용해주세요");
+                        location.href="/";
+                    }
+                }
+            })
+        })
+    </script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,17 +43,22 @@
 </head>
 <body>
     <header>
-        <a href="/">메인페이지</a>
-        <a href="/country/list">국가 정보</a>
-        <a href="/enter/list">기획사 정보</a>
-        <a href="/release/list">발매사 정보</a>
-        <a href="/music/list">노래 정보</a>
-        <a href="/admin/recommend">관리자 추천 리스트</a>
-        <a href="/admin/event/list">이벤트 관리자</a>
-        <a href="/pass/list">이용권 정보</a>
-        <a href="/notice">공지 정보</a>
-        <a href="/album/list">앨범 정보</a>
-        <a href="/music_video/list">뮤직비디오 정보</a>
+        <div class="categories">
+            <i class="fas fa-bars"></i>
+            <ul>
+                <a href="/admin/recommend">메인페이지</a>
+                <a href="/country/list">국가 정보</a>
+                <a href="/enter/list">기획사 정보</a>
+                <a href="/release/list">발매사 정보</a>
+                <a href="/music/list">노래 정보</a>
+                <a href="/admin/recommend">관리자 추천 리스트</a>
+                <a href="/admin/event/list">이벤트 관리자</a>
+                <a href="/pass/list">이용권 정보</a>
+                <a href="/notice">공지 정보</a>
+                <a href="/album/list">앨범 정보</a>
+                <a href="/account/logout">로그아웃</a>
+            </ul>
+        </div>
     </header>
 </body>
 </html>
