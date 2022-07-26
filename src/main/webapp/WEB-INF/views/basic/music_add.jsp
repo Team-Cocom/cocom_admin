@@ -50,15 +50,11 @@
                             </td>
                             <td>아티스트</td>
                             <td>
-                                <input type="text" value="아티스트 정보 필요">
-                            </td>
-                            <td>앨범정보</td>
-                            <td>
-                                <select id="ab_seq">
-                                    <option value="1">앨범 정보 필요</option>
-                                    <option value="2">앨범2</option>
-                                    <option value="3">앨범3</option>
+                                <c:forEach items="${artist_list}" var="item">
+                                    <select id="ai_seq">
+                                    <option value="${item.ai_seq}">${item.ai_name}</option>
                                 </select>
+                                </c:forEach>
                             </td>
                         <tr>
                             <td>
@@ -122,10 +118,10 @@
         <p>국가 변경 <span> <select id="mu_cr_seq_mod">
                     <c:forEach items="${country_list}" var="item">
                         <option value="${item.cr_seq}" <c:if test="${item.cr_seq == list.mu_cr_seq}">selected</c:if>
-                            >${item.cr_name}</option>
+                            ${item.cr_name}</option>
                     </c:forEach>
                 </select></span></p>
-        <p>아티스트 변경 <span><input type="text" value="아티스트 정보 필요"></span></p>
+        <p>아티스트 변경 <span><input type="text" value="${list.mu_ai_seq}"></span></p>
         <p>앨범 정보 변경<span><select id="mod_ab_seq">
                     <option value="1" <c:if test="${list.mu_ab_seq == 1}">selected</c:if>>앨범 정보 필요</option>
                     <option value="2" <c:if test="${list.mu_ab_seq == 2}">selected</c:if>>앨범2</option>

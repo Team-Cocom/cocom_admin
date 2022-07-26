@@ -6,7 +6,7 @@
     INSERT INTO music_info
     (mu_name, mu_ai_seq, mu_lyrics, mu_ab_seq, mu_img_file, mu_music_file, mu_li_seq, mu_playtime, mu_explain_txt, mu_age,mu_gr_seq,mu_cr_seq)
     VALUES
-    (#{mu_name},#{mu_ai_seq},#{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age},#{mu_gr_seq},#{mu_cr_seq})
+    (#{mu_name},#{mu_ai_seq}, #{mu_lyrics},#{mu_ab_seq},#{mu_img_file},#{mu_music_file},0,#{mu_playtime},#{mu_explain_txt},#{mu_age},#{mu_gr_seq},#{mu_cr_seq})
     </insert>
     <select id="selectAllfromMusicInfo" resultType="com.cocom.music_admin.data.basic.MusicInfo">
         select a.*,b.gr_name  from music_info a inner join genre_info b on
@@ -16,6 +16,10 @@
     </select>
     <select id="selectAllfromMusicPageCnt" resultType="java.lang.Integer">
         select ceil(count(*)/10) from music_info where mu_name like '%${keyword}%'
+    </select>
+    <select id="selectAllArtist" resultType="com.cocom.music_admin.data.basic.ArtistInfo">
+        SELECT *
+        FROM artist_info;
     </select>
 
     <select id="selectGenreInfo" resultType="com.cocom.music_admin.data.basic.GenreInfo">

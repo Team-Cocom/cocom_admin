@@ -9,6 +9,7 @@ public class MusicInfo {
     private Integer mu_seq;
     private String mu_name;
     private Integer mu_ai_seq;
+    private Integer mu_cr_seq;
     private Integer mu_gr_seq;
     private String mu_lyrics;
     private Integer mu_ab_seq;

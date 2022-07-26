@@ -167,8 +167,4 @@ public class BasicAPIController {
         basic_mapper.deleteMusicFromAlbum(seq);
         return resultMap;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 981ced219b2c0ac681179c8f8f848888e87548c7
 }

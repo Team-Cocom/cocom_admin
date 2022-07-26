@@ -30,7 +30,10 @@ public class BasicController {
     }
     @GetMapping("/music/add")
     public String addMusic(Model model,@RequestParam @Nullable Integer music_no){
+
         model.addAttribute("genre_list", basic_mapper.selectAllGenre());
+        model.addAttribute("artist_list", basic_mapper.selectAllArtist());
+        model.addAttribute("country_list", basic_mapper.selectCountryInfo());
         model.addAttribute("music_no", music_no);
         return "/basic/music_add";
     }

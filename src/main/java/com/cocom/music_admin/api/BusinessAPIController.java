@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cocom.music_admin.data.basic.EventInfo;
 import com.cocom.music_admin.data.business.AdminRecommend;
+import com.cocom.music_admin.data.business.PassInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 import com.cocom.music_admin.mapper.business.BusinessMapper;
 

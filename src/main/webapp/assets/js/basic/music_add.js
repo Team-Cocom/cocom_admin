@@ -189,6 +189,7 @@ $(function () {
         let img_file = $(".music_img_mod").attr("data-name");
         let music_file = $(".music_file_mod").attr("data-name");
         let mu_time = $("#mu_playtime_mod").val();
+        let ai_seq = $("#ai_seq option:selected").val();
 
         if (isEmpty(name, false)) {
             alert("노래 제목을 올바르게 입력해 주세요.");
@@ -202,7 +203,7 @@ $(function () {
         let data = {
             mu_seq:$(this).attr("data-seq"),
             mu_name:name,
-            mu_ai_seq:1,
+            mu_ai_seq:ai_seq,
             mu_img_file:img_file,
             mu_ab_seq:$('#mod_ab_seq option:selected').val(),
             mu_music_file:music_file,
