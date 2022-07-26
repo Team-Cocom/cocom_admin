@@ -151,7 +151,7 @@
             </div>
             <div class="mod_right_area">
                 <p>
-                    노래 설명 변경 <span><textarea id="mu_lylic_mod" cols="30" rows="10">${list.mu_lyrics}</textarea></span>
+                    노래 설명 변경 <span><textarea id="mu_lylic_mod" cols="30" rows="10">${list.mu_explain_txt}</textarea></span>
                 </p>
                 <button id="mod_music" data-seq="${list.mu_seq}">노래 수정</button>
             </div>
