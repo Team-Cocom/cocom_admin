@@ -1,6 +1,8 @@
 $(function (){
-    $(".genre_add").click(function () {
+    $(".genre_add_form").hide();
 
+    $(".genre_add").click(function () {
+        $(".genre_add_form").show();
     })
     $(".genre_add_btn").click(function(){ 
         let name = $("#genre_name").val();

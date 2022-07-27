@@ -3,6 +3,7 @@ package com.cocom.music_admin.api;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cocom.music_admin.data.basic.AlbumInfo;
 import com.cocom.music_admin.data.basic.MusicInfo;
-import com.cocom.music_admin.data.basic.MusicVideoInfo;
 import com.cocom.music_admin.mapper.basic.BasicMapper;
 
 @RestController
@@ -167,4 +167,31 @@ public class BasicAPIController {
         basic_mapper.deleteMusicFromAlbum(seq);
         return resultMap;
     }
+
+    @PutMapping("/country/add")
+    public Map<String, Object> putCountry(@RequestParam String name) {
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        Integer isDuplicateCountry = basic_mapper.selectCountryInfos(name);
+        if(isDuplicateCountry > 0) {
+            resultMap.put("status", false);
+            resultMap.put("message", name+"은 이미 등록된 나라입니다.");
+            return resultMap;
+        }
+
+        basic_mapper.insertCountry(name);
+        resultMap.put("status", true);
+        resultMap.put("message", "나라 정보를 추가하였습니다.");
+        
+        return resultMap;
+        
+    }
+
+    @DeleteMapping("/country/delete")
+    public Map<String, Object> deleteCountryInfo(@RequestParam Integer seq){
+        Map<String,Object> resultMap = new LinkedHashMap<String,Object>();
+        basic_mapper.deleteCountryInfo(seq);
+        resultMap.put("status", true);
+        resultMap.put("message", "나라정보 삭제를 완료했습니다.");
+        return resultMap;
+        }
 }

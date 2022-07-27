@@ -1,5 +1,10 @@
 $(function(){
-    
+    $(".release_add_area").hide();
+
+    $(".release_add_btn").click(function () {
+        $(".release_add_area").show();
+    })
+
     $("#add_save").click(function(){
         let r_name = $("#rci_name").val();
         // if(isEmpty(r_name)){

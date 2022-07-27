@@ -1,0 +1,16 @@
+.genre_list_wrap { display: inline-block; text-align: center; margin-left: 150px; top: 150px;}
+.genre_list_wrap > h1 {font-size: 24px; margin: 20px 0; }
+.genre_list {display: inline-block; font-size: 24px; margin: 20px 0;  text-align: left;
+    padding-left: 20px; 
+}
+.genre_list_title {background-color: rgb(186, 192, 194); }
+.genre_list .no_title {margin-left: 5px;}
+.genre_list .name_title {margin-left: 15px;}
+.genre_list .no { padding: 15px; text-align: center; border-right: 1px solid #ccc;}
+.genre_list .name {margin-left: 5px;}
+.genre_list > p {font-size: 20px; line-height: 1.5; width: 250px; border: 1px solid #ccc; border-bottom: 0;}
+.genre_list > span {font-size: 20px; line-height: 1.5; width: 250px; vertical-align: top; margin: 30px 0;
+}
+
+.genre_add {display: inline-block; top: 30px;}
+.genre_add_form {padding: 20px 0;}
