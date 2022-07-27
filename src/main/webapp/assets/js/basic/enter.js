@@ -1,4 +1,10 @@
 $(function(){
+    $(".enter_add_area").hide();
+
+    $("#enter_add_btn").click(function () {
+        $(".enter_add_area").show();
+    })
+
     $("#add_save").click(function(){
         let e_name = $("#ent_name").val();
         if(isEmpty(e_name)) {

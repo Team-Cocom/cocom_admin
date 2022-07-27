@@ -9,34 +9,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/assets/js/basic/genre_info.js"></script>
+    <link rel="stylesheet" href="/assets/css/basic/genre.css">
 </head>
 <body>
-    <button class="genre_add">장르 추가하기</button>
-    <div class="genre_list">장르 리스트</div>
-<<<<<<< HEAD
-    <c:forEach items="${list}" var="item" varStatus="stat">
-=======
-    <c:forEach items="${genreList}" var="item" varStatus="stat">
->>>>>>> 981ced219b2c0ac681179c8f8f848888e87548c7
-        <p>
-            <span>번호</span>${stat.count} <span> ${item.gr_name}</span>
-            <span>
-                <button class="genre_del_btn" data-seq="${item.gr_seq}">삭제</button>
-            </span> 
-        </p>
-    </c:forEach>
-<<<<<<< HEAD
-    
-=======
->>>>>>> 981ced219b2c0ac681179c8f8f848888e87548c7
-    <p class="genre_name_add">장르이름</p>
-    <input type="text" id="genre_name" placeholder="장르 이름을 입력하세요.">
-    <button class="genre_add_btn">추가하기</button>
-    <button class="genre_cancel_btn">닫기</button>
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> 981ced219b2c0ac681179c8f8f848888e87548c7
+    <div class="genre_list_wrap">
+        <button class="genre_add">장르 추가하기</button>
+        <h1>장르 리스트</h1>
+        <div class="genre_list">
+            <p class="genre_list_title">
+                <span class="no_title">No</span> <span class="name_title">장르명</span>
+            </p>
+        <c:forEach items="${genreList}" var="item" varStatus="stat">
+            <p>
+                <span>${stat.count}</span> <span> ${item.gr_name}</span>
+                <span>
+                    <button class="genre_del_btn" data-seq="${item.gr_seq}">삭제</button>
+                </span> 
+            </p>
+        </c:forEach>
+        <div class="genre_add_form">
+            <p class="genre_name_add">장르이름</p>
+            <input type="text" id="genre_name" placeholder="장르 이름을 입력하세요.">
+            <button class="genre_add_btn">추가하기</button>
+            <button class="genre_cancel_btn">닫기</button>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
