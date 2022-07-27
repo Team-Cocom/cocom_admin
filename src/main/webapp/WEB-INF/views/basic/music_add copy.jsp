@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="/assets/js/basic/music_add.js"></script>
-    <script src="https://kit.fontawesome.com/88abdb69bc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/basic/music_add.css">
 </head>
 
@@ -17,36 +16,23 @@
         <c:if test="${music_no == null}">
             <div class="music_add_wrap">
                 <table class="music_add_area">
-                    <thead>
-                        <tr class="music_add_title_area">
+                    <tbody>
+                        <tr>
                             <td>커버이미지</td>
-                            <td>노래제목</td>
-                            <td>장르</td>
-                            <td>국가</td>
-                            <td>아티스트</td>
-                            <td>노래 파일</td>
-                            <td>플레이타임</td>
-                            <td>청취연령</td>
-                            <td>가사</td>
-                            <td>노래 설명</td>
-                        </tr>
-                    </thead>
-                        <tbody>
-                        <tr class="music_add_content_area">
                             <td>
                                 <form id="cover_img_form">
                                     <input type="file" name="file" id="music_cover_img" hidden>
                                 </form>
-                                <button id="cover_img_save_btn"
+                                <button id="cover_img_save"
                                     onclick="document.getElementById('music_cover_img').click()">커버
                                     이미지 업로드</button>
-                                    <div class="cover_img_area">
-                                        
-                                    </div> 
+                            <td class="cover_img_area"></td>
                             </td>
+                            <td>노래제목</td>
                             <td>
                                 <input type="text" id="mu_name">
                             </td>
+                            <td>장르</td>
                             <td>
                                 <select id="mu_gr_seq">
                                     <c:forEach items="${genre_list}" var="item">
@@ -54,6 +40,7 @@
                                     </c:forEach>
                                 </select>
                             </td>
+                            <td>국가</td>
                             <td>
                                 <select id="mu_cr_seq">
                                     <c:forEach items="${country_list}" var="item">
@@ -61,35 +48,43 @@
                                     </c:forEach>
                                 </select>
                             </td>
+                            <td>아티스트</td>
                             <td>
-                                <select id="ai_seq">
-                                        <c:forEach items="${artist_list}" var="item">
-                                        <option value="${item.ai_seq}">${item.ai_name}</option>
-                                    </c:forEach>
+                                <c:forEach items="${artist_list}" var="item">
+                                    <select id="ai_seq">
+                                    <option value="${item.ai_seq}">${item.ai_name}</option>
                                 </select>
+                                </c:forEach>
                             </td>
+                        <tr>
                             <td>
                                 <form id="music_file_form">
                                     <input type="file" name="file" id="music_file" hidden>
                                 </form>
-                                <button id="music_file_save_btn" onclick="document.getElementById('music_file').click()"></button>
+                                <button id="music_file_save" onclick="document.getElementById('music_file').click()">노래
+                                    업로드</button>
                                 <div class="music_file_area"></div>
                             </td>
+                            <td>플레이타임</td>
                             <td>
                                 <input type="number" id="mu_playtime">초
                             </td>
+                            <td>청취연령</td>
                             <td>
                                 <select id="mu_age">
                                     <option value="0">전체</option>
                                     <option value="19">19세 이상</option>
                                 </select>
                             </td>
+                            <td>가사</td>
                             <td>
-                                <textarea id="mu_lylic" cols="30" rows="10" ></textarea>
+                                <textarea id="mu_lylic" cols="30" rows="10"></textarea>
                             </td>
+                            <td>노래 설명</td>
                             <td>
                                 <textarea id="mu_explain" cols="30" rows="10"></textarea>
                             </td>
+                        </tr>
                         </tr>
                     </tbody>
                 </table>
@@ -135,33 +130,33 @@
         플레이타임 변경
         <input type="number" id="mu_playtime_mod" value="${list.mu_playtime}">초
         <p>
-            앨범 정보 변경<span>
-                <select id="mu_age_mod">
-                    <option value="0" <c:if test="${list.mu_age == 0}">selected</c:if>>전체</option>
-                    <option value="19" <c:if test="${list.mu_age == 19}">selected</c:if>>19세 이상</option>
-                </select></span>
+        앨범 정보 변경<span>
+            <select id="mu_age_mod">
+                <option value="0" <c:if test="${list.mu_age == 0}">selected</c:if>>전체</option>
+                <option value="19" <c:if test="${list.mu_age == 19}">selected</c:if>>19세 이상</option>
+            </select></span>
         </p>
-        <form id="music_file_mod_form">
-            <input type="file" name="file" id="music_file_mod" hidden>
-        </form>
-        <button id="music_file_save_mod" onclick="document.getElementById('music_file_mod').click()">노래
-            변경</button>
-        <div class="music_file_area_mod">
-            <c:if test="${list.mu_music_file != ''}">
-                <audio controls class="music_file_mod" data-name="${list.mu_music_file}">
-                    <source src="/images/music/${list.mu_music_file}" type="audio/mp3">
-                </audio>
-                <button onclick="delete_music_file_mod('${list.mu_music_file}')">&times;</button>
+            <form id="music_file_mod_form">
+                <input type="file" name="file" id="music_file_mod" hidden>
+            </form>
+            <button id="music_file_save_mod" onclick="document.getElementById('music_file_mod').click()">노래
+                변경</button>
+            <div class="music_file_area_mod">
+                <c:if test="${list.mu_music_file != ''}">
+                    <audio controls class="music_file_mod" data-name="${list.mu_music_file}">
+                        <source src="/images/music/${list.mu_music_file}" type="audio/mp3">
+                    </audio>
+                    <button onclick="delete_music_file_mod('${list.mu_music_file}')">&times;</button>
+                </c:if>
+            </div>
+            <div class="mod_right_area">
+                <p>
+                    노래 설명 변경 <span><textarea id="mu_lylic_mod" cols="30" rows="10">${list.mu_explain_txt}</textarea></span>
+                </p>
+                <button id="mod_music" data-seq="${list.mu_seq}">노래 수정</button>
+            </div>
+            </div>
             </c:if>
-        </div>
-        <div class="mod_right_area">
-            <p>
-                노래 설명 변경 <span><textarea id="mu_lylic_mod" cols="30" rows="10">${list.mu_explain_txt}</textarea></span>
-            </p>
-            <button id="mod_music" data-seq="${list.mu_seq}">노래 수정</button>
-        </div>
-        </div>
-        </c:if>
     </main>
 </body>
 

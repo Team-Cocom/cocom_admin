@@ -1,3 +1,5 @@
+main{width: 2000px; height: 5000px;}
+
 .music_img, .music_img_mod{
     display: inline-block; vertical-align: top; height: 200px; position: relative;
     border: 1px solid #000; margin-right: 10px;
@@ -61,6 +63,17 @@
 .mod_right_area > p {
     padding: 20px;
 }
+.music_add_wrap {width: 3000px; margin:150px ;padding: 50px;}
+.music_add_area {border-radius: 150px;}
+.music_add_area thead td{  width: 200px; font-size: 28px; height: 50px;
+    font-weight: 700; text-align: center; color: #f7f7f7; background-color: rgba(61, 61, 61, 0.781); 
+}   
+button{outline: none; background-color: transparent; -webkit-tap-highlight-color: transparent; cursor: pointer; border: 0; color: rgb(179, 179, 179);}
+.music_add_area tbody td{width: 150px; line-height: 300px; border-top: #333; margin: auto; text-align: center; background-color: rgb(180, 180, 180);}
 
-
-
+#music_file_save_btn {background-image: url("https://www.music-flo.com/img/sp_button.8292213d.png"); background-position: -370px -380px; width: 41px; height: 41px; 
+    color: transparent; text-indent: 100%; vertical-align: middle; white-space: nowrap; overflow: hidden; }
+#cover_img_save_btn {background-image: url("https://www.music-flo.com/img/sp_button.8292213d.png"); background-position: -370px -380px; width: 41px; height: 41px; 
+    color: transparent; text-indent: 100%; vertical-align: middle; white-space: nowrap; overflow: hidden; }
+#mu_lylic, #mu_explain {padding-top: 20px;}
+#add_music {margin-left: 950px; margin-top: 20px; font-size: 30px ; color: #f7f7f7; background-color: #999; border: 1px #fff solid; border-radius: 15px; box-shadow: rgb(8, 8, 8);}

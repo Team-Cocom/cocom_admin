@@ -1,5 +1,12 @@
 
 $(function () {
+    $("#music_file_save_btn").click(function(){
+        $("#music_file_save_btn").hide();
+        
+    })
+    $("#cover_img_save_btn").click(function(){
+        $("#cover_img_save_btn").hide();
+    })
 
     if($(".music_img_mod").attr("data-name") == null){$("#cover_img_mod_save").show();}
     if($(".music_file_mod").attr("data-name") == null){$("#music_file_save_mod").show();}
